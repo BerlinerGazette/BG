@@ -1,0 +1,26 @@
+/*!
+Theme Name: Berliner Gazette
+Theme URI: http://www.berlinergazette.de/
+Description: Offical Wordpress Theme for online magazines. Mainly used by the Berliner Gazette.
+Version: 1.0
+Author: Marcel Eichner
+Tags: plain, white, black, simple
+*/
+// application default config
+@import "config/default";
+
+// compass mixins
+@import "compass/reset";
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "compass/css3/transform";
+@import "compass/css3/transition";
+@import "compass/css3/gradient";
+@import "compass/css3/images";
+@import "compass/css3/text-shadow";
+@import "compass/typography/links/link-colors";
+@import "compass/utilities/general/clearfix";
+@import "compass/typography/vertical_rhythm";
+
+// app styles
+@import "partial/application";

@@ -1,0 +1,58 @@
+@media screen and (max-width: 480px) {
+	html {
+		@include background(darken($app-background-color, 8));
+		-webkit-text-size-adjust: none;
+	}
+	body, #app, #center, #header {
+		margin: 0;
+		width: auto;
+		padding: 0;
+		border: 0;
+		@include border-radius(0);
+	}
+	#app {
+		padding: 1em;
+	}
+	#header {
+		border-bottom: 3px solid #000;
+		margin: 1em 0;
+		h1 {
+			text-align: center;
+			a {
+				width: auto;
+				margin: 0 auto;
+				img {
+					max-width: 100%;
+				}
+			}
+		}
+	}
+	form fieldset p {
+		label {
+			display: block;
+			width: auto;
+			clear: left;
+		}
+		input, textarea {
+			width: 95%;
+		}
+		input[type="checkbox"] {
+			width: auto;
+		}
+	}
+	#center {
+		font-size: 120%;
+		line-height: 1.5em;
+		img, embed, object, video {
+			max-width: 100%;
+		}
+	}
+	#footer {
+		padding: 1em 1em 1em 1em;
+		margin: 0 1em 1em 1em;
+		border-top: 3px solid #000;
+	}
+	.sidebar, #mainMenu {
+		display: none;
+	}
+}

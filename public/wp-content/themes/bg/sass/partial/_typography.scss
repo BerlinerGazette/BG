@@ -1,0 +1,59 @@
+@import "quoting";
+@import "compass/typography";
+
+$text-color: #000 !default;
+$text-font: Arial !default;
+
+$text-font: Arial !default;
+$headline-font: $text-font !default;
+
+@include establish-baseline();
+
+html {
+	color: $text-color;
+	font-family: $text-font;;
+}
+
+::-moz-selection {
+	color: #1B1B1B;
+	background-color: #F8B29F;
+}
+::selection {
+	color: #1B1B1B;
+	background-color: #F8B29F;
+}
+
+strong {
+	font-weight: bold;
+}
+em {
+	font-style: italic;
+}
+
+
+#{headings()} {
+	margin: 0em 0em .5em 0em;
+	font-weight: bold;
+	> small {
+		font-size: 60%;
+	}
+	> em {
+		font-weight: normal;
+	}
+	a {
+		text-decoration: none;
+	}
+}
+h1 {
+	font-size: 1.20em;
+	line-height: 1.20em;
+}
+h2 {
+	font-size: 1.20em;
+}
+h3 {
+	font-size: 1.20em;
+}
+p {
+	margin-bottom: 0.75em;
+}

@@ -1,0 +1,78 @@
+input, textarea, select {
+	@include border-radius($default-border-radius / 2);
+}
+
+form {
+	p {
+		label {
+			width: 120px;
+			display: table;
+			float: left;
+			&:after {
+				content: ':';
+			}
+		}
+		input {
+			width: 300px;
+		}
+		textarea {
+			width: 420px;
+		}
+	}
+	p.radio label {
+		margin-bottom: 0.5em;
+		clear: both;
+		width: 100%;
+		display: block;
+		input {
+			width: auto;
+		}
+	}
+	input, textarea {
+		$inputBGColor: #F9F9F9;
+		height: auto;
+		font-size: 11px;
+		padding: 2px 3px;
+		background: $inputBGColor;
+		border: 1px solid #A4A4A4;
+		color: #525252;
+		outline: none;
+		@include box-shadow(darken($inputBGColor, 5), 0px, 2px, 2px, 0px, true);
+		&:focus, &:hover {
+			color: #000;
+			background-color: #FEFDE1;
+		}
+		&.submit, &[type="submit"] {
+			$inputBGColor: #DFDFDF;
+			$borderColor: #B1B1B1;
+			text-align: center;
+			width: auto;
+			border: 1px solid $borderColor;
+			background-color: $inputBGColor;
+			text-shadow: 0px 1px 0px rgba(255,255,255,0.75);
+			@include box-shadow(lighten($inputBGColor, 10), 0px, 1px, 1px, 0px, true);
+			&:hover {
+				border-color: #958CFA;
+				background-color: #EAEBEA;
+				@include box-shadow(lighten(#958CFA, 17), 0px, 0px, 10px);
+				cursor: pointer;
+			}
+			&:active {
+				position: relative;
+				top: 1px;
+				left: 1px;
+			}
+		}
+	}
+}
+
+#NewsletterForm input {
+	width: 115px;
+	&.submit {
+		width: 75px;
+	}
+}
+
+.sidebar input {
+	width: auto;
+}

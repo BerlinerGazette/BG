@@ -1,0 +1,18 @@
+$link-color: #0080FF !default;
+$link-hover-color: lighten($link-color, 10) !default;
+$link-visited-color: darken($link-color, 5) !default;
+$link-active-color: $link-hover-color;
+$link-focus-color: $link-hover-color;
+
+a {
+	@include link-colors($link-color, $link-hover-color, $link-active-color, $link-visited-color, $link-focus-color);
+	outline: none;
+	&:hover, &:hover, &:focus {
+		background-color: #C9DCFA !important;
+		-moz-outline-style: none;
+		outline: none;
+	}
+	&.more-link {
+		font-weight: bold;
+	}
+}

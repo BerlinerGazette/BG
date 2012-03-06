@@ -1,0 +1,176 @@
+@import "partial/links";
+@import "partial/typography";
+@import "partial/form";
+
+@import "partial/sidebar";
+@import "partial/mainMenu";
+@import "partial/pagination";
+@import "partial/post";
+@import "partial/footer";
+
+body {
+	width: $app-width + 20;
+	margin: 1em auto 2em auto;
+	@include background(
+		darken($app-background-color, 8),
+		image-url('bg_gradient.gif') repeat-x top left
+	);
+}
+
+#app {
+	background-color: $app-background-color;
+	width: $app-width;
+	border: 1px solid #E5E5E5;
+	display: table;
+	clear: both;
+	@include border-radius(4px);
+	.leftSidebar {
+		margin-left: 5px;
+		width: 220px;
+		float: left;
+	}
+	.rightSidebar {
+		margin-right: 5px;
+		float: right;
+		width: 220px;
+	}
+}
+#center {
+	float: left;
+	width: 430px;
+	margin-left: 30px;
+}
+#header {
+	padding: 5px;
+	margin: 1em 0em 1.5em 0em;
+	h1 a {
+		width: 540px;
+		height: 100px;
+		margin: 0px 0px 0px 218px;
+		&:hover {
+			background: transparent !important;
+		}
+	}
+}
+
+@each $icon in feed, flickr, youtube, twitter, facebook, delicious, spreadshirt, vimeo, flattr, google-plus, soundcloud {
+	.icon-#{$icon} {
+		$image: "icon/" + $icon + "-16x16.png";
+		@include background(inline-image($image) no-repeat left center);
+		padding-left: image-width($image) + 4px;
+	}
+}
+span.comments a {
+	$image: "icon/comment-16x16.png";
+	@include background(inline-image($image) no-repeat left center);
+	padding-left: image-width($image) + 2px;
+}
+
+/** hint and error boxes **/
+p.hint, p.error, p.success {
+	border: 2px solid #999;
+	background-color: #DFDFDF;
+	padding: 0.75em 1em;
+}
+p.hint {
+	border-color: #A1D591;
+	background-color: #E2FDE1;
+}
+p.error {
+	background-color: #EEB5B5;
+	border-color: #AA2725;
+}
+
+.widget_randomauthor h2,
+.widget_currentauthor h2 {
+	margin: 0em;
+}
+.widget_randomauthor .avatar,
+.widget_currentauthor .avatar {
+	width: 204px;
+	height: 204px;
+	float: left;
+	margin: 2px 5px 0px 0px;
+}
+
+/** teaser styles **/
+a.teaser {
+	font-size: 1.2em;
+	line-height: 1.2em;
+	font-weight: bold;
+	text-decoration: none;
+}
+.widget_randomauthor,
+.widget_links,
+.widget_betterblogroll,
+.widget_currentauthor,
+.teaser {
+	display: block;
+	line-height: 1.5em;
+	background-color: #ebebeb;
+	border: 1px solid #dbdbdb;
+	margin-bottom: 1em;
+	padding: .6em .5em .5em .5em;
+}
+.widget_text {
+	margin-bottom: 1em;
+	display: block;
+}
+.teaser.noBorder {
+	border: none;
+	background-color: inherit;
+	padding: 0;
+}
+.teaser {
+	select {
+		width: 200px;
+	}
+	a img {
+		text-decoration: none;
+	}
+	img.full {
+		margin-top: -0.8em;
+		margin-left: -8px;
+		margin-bottom: 0.5em;
+	}
+	ul {
+		margin-bottom: 1em;
+		&.last {
+			margin-bottom: 0em;
+		}
+	}
+	&.white {
+		background-color: #ffffff;
+	}
+}
+div.teaser img {
+	margin: 0em 0em 1em 0em;
+}
+
+/** better blogroll **/
+.widget_betterblogroll h2 {
+	display: none;
+}
+
+#searchForm {
+	margin-top: -1px;
+	display: table;
+	float: right;
+	input {
+		width: 155px;
+		&.submit {
+			width: 50px;
+		}
+	}
+}
+
+
+/** Breadcrumb **/
+.breadcrumb {
+	margin-bottom: 1em;
+	li {
+		display: inline-block;
+	}	
+}
+
+@import "partial/mobile";

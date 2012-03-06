@@ -1,0 +1,14 @@
+Berliner Gazette Wordpress
+==========================
+
+# Centered Descriptions for Categories
+
+If you want to display a blog-post like description for the current category page in the archive or in the website, just create a new Page with the title of the category with a "_Center" at the end.
+
+# Category Description in the Sidebar
+
+Same like the centered description just add "_Sidebar" as the name.
+
+# Tag Description Pages
+
+It’s possible to create Pages for Tags as well. They are displayed in the right sidebar and should be named `[Tag]_TagSidebar` or `[Tag]_Sidebar`.

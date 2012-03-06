@@ -1,0 +1,16 @@
+.widget_rss {
+	display: block;
+	line-height: 1.5em;
+	background-color: #ebebeb;
+	border: 1px solid #dbdbdb;
+	margin-bottom: 1em;
+	padding: .6em .5em .5em .5em;
+	ul {
+		li {
+			margin-bottom: 0.5em;
+			span.rss-date {
+				font-weight: bold;
+			}
+		}
+	}
+}

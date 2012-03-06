@@ -1,0 +1,56 @@
+// reset backgrounds
+body, #app, #center, .post {
+	background: transparent;
+	width: auto !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	float: none;
+	clear: both;
+	display: table;
+	border: none;
+	height: auto;
+	overflow: scroll;
+}
+.post {
+	img {
+		clear: both;
+		float: none;
+	}
+	.meta {
+		clear: both;
+	}
+}
+
+body {
+	font: normal 14px/1.5em Arial, Verdana, Helvetica, Geneva, sans-serif;
+	margin: 1em !important;
+}
+
+#app {
+	display: table;
+	#header {
+		border-bottom: 3px solid #000;
+		margin-bottom: 1em;
+		h1 a {
+			margin: 0 auto;
+			width: auto;
+		}
+	}
+}
+
+
+#footer {
+	clear: both;
+}
+.sidebar, #mainMenu {
+	display: none !important;
+}
+
+p.hint, p.error, p.success {
+	border-color: #999 !important;
+	background-color: #E5E5E5 !important;
+}
+
+#CommentForm {
+	display: none;
+}
