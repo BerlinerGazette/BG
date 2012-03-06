@@ -24,12 +24,12 @@
 	require TEMPLATEPATH.'/elements/tagPage.php';
 	
 	if (is_category() || is_home() || is_archive()) {
-		$showComments = true;
+		$showRecentComments = true;
 	}
 	$oikonomiaCategoryId = 957;
 	$europakriseCategoryId = 899;
 	if (isset($cat) && in_array($cat, array($oikonomiaCategoryId, $europakriseCategoryId))) {
-		$showComments = false;
+		$showRecentComments = false;
 	}
 	if ($showRecentComments) {
 		require TEMPLATEPATH.'/elements/recentComments.php';
