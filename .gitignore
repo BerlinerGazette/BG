@@ -6,5 +6,6 @@ public/wp-content/uploads/*
 public/wp-content/uploads/userphoto/*
 public/wp-content/plugins/wp-file-cache/cache/*
 public/wp-content/gallery/*
+public/wp-content/themes/bg/js/min/app.js
 public/.htaccess
 public/sitemap*
