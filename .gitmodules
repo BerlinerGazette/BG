@@ -1,0 +1,3 @@
+[submodule "vendor/phing-tasks"]
+	path = vendor/phing-tasks
+	url = git@github.com:Ephigenia/phing-tasks.git

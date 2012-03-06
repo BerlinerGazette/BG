@@ -1,0 +1,10 @@
+.DS_Store
+.sass-cache
+wp-config.php
+bin/*
+public/wp-content/uploads/*
+public/wp-content/uploads/userphoto/*
+public/wp-content/plugins/wp-file-cache/cache/*
+public/wp-content/gallery/*
+public/.htaccess
+public/sitemap*
