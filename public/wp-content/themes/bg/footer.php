@@ -16,7 +16,7 @@
 		} ?>
 	</div>
 	<?php if (getenv('APPLICATION_ENV') == 'ephigenia') { ?>
-	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/source/vendor/jquery-1.6.2.min.js"></script>
+	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/source/vendor/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/source/app.js"></script>
 	<?php } else { ?>
 	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/min/app.js?r=3"></script>

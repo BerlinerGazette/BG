@@ -57,17 +57,7 @@ $(document).ready(function() {
 		}
 		return true;
 	});
-	
-	// comment slideshow
-	// $(function(){
-	// 	$('.rightSidebar ul.comments li:gt(0)').hide();
-	// 	setInterval(function() {
-	// 		$('.rightSidebar ul.comments li:eq(0)').hide()
-	// 			.next('li').fadeIn()
-	// 			.end().appendTo('ul.comments');
-	// 	}, 5000);
-	// });
-	
+
 });
 
 // google analytics
