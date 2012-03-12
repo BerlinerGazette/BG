@@ -28,7 +28,9 @@
 	}
 	$oikonomiaCategoryId = 957;
 	$europakriseCategoryId = 899;
-	if (isset($cat) && in_array($cat, array($oikonomiaCategoryId, $europakriseCategoryId))) {
+	$zeitung20CategoryId = 549;
+	$bildDerWocheCategoryId = 961;
+	if (isset($cat) && in_array($cat, array($oikonomiaCategoryId, $europakriseCategoryId, $zeitung20CategoryId, $bildDerWocheCategoryId))) {
 		$showRecentComments = false;
 	}
 	if ($showRecentComments) {
