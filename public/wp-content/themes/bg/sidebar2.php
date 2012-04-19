@@ -94,6 +94,10 @@
 		if (isset($cat) && !is_front_page() && $cat == BGProjectConfig::$l311['category_id']) {
 			dynamic_sidebar('l311-right');
 		}
+		// BQV (2012)
+		if (isset($cat) && !is_front_page() && $cat == BGProjectConfig::$bqv['category_id']) {
+			dynamic_sidebar('bqv-right');
+		}
 	}
 	
 	?>

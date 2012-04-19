@@ -30,6 +30,8 @@ RewriteRule ^(.*)$         http://berlinergazette.de/seminar/projekte/lebenskuen
 RewriteRule ^lebenskuenstler/? /seminar/projekte/lebenskuenstler/ [QSA,R,L]
 # L311 / Learning from Fukushima Symposium
 RewriteRule ^learning-from-fukushima/? /symposium/learning-from-fukushima/ [QSA,R,L]
+# BQV (2012)
+RewriteRule ^bqv/? /seminar/projekte/bqv/ [QSA,R,L]
 
 # wp-rewrite rules
 RewriteCond %{REQUEST_FILENAME} !-f
