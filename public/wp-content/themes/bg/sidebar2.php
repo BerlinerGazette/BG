@@ -51,7 +51,8 @@
 	if (!isset($cat) || (isset($cat) && !in_array($cat, array(
 		BGProjectConfig::$liquidwriting['category_id'],
 		BGProjectConfig::$lebenskuenstler['category_id'],
-		BGProjectConfig::$l311['category_id']
+		BGProjectConfig::$l311['category_id'],
+		BGProjectConfig::$bqv['category_id'],
 		)))) {
 		require TEMPLATEPATH.'/elements/feeds.php';
 		require TEMPLATEPATH.'/elements/teaser/hund.php';
