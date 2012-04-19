@@ -20,7 +20,11 @@
 		if (isset($category)) unset($category);
 	}
 	
-	require TEMPLATEPATH.'/elements/categoryPage.php';
+	if (!isset($cat) || (isset($cat) && !in_array($cat, array(
+		BGProjectConfig::$bqv['category_id']
+		)))) {
+		require TEMPLATEPATH.'/elements/categoryPage.php';
+	}
 	require TEMPLATEPATH.'/elements/tagPage.php';
 	
 	if (is_category() || is_home() || is_archive()) {
@@ -47,7 +51,6 @@
 	// if (is_single()) {
 	// 	require TEMPLATEPATH.'/elements/recentPosts.php';
 	// }
-	
 	if (!isset($cat) || (isset($cat) && !in_array($cat, array(
 		BGProjectConfig::$liquidwriting['category_id'],
 		BGProjectConfig::$lebenskuenstler['category_id'],
@@ -58,6 +61,12 @@
 		require TEMPLATEPATH.'/elements/teaser/hund.php';
 		require TEMPLATEPATH.'/elements/newsletterForm.php';	
 	}
+	if (!isset($cat) || (isset($cat) && in_array($cat, array(
+		BGProjectConfig::$bqv['category_id']
+		)))) {
+		require TEMPLATEPATH.'/elements/teaser/hund.php';
+	}
+		
 	
 	// show sidebar only in author, index page, search
 	if (is_home() || (is_tag() && empty($cat))) {

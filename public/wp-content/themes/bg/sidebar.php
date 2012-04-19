@@ -48,7 +48,7 @@
 				require TEMPLATEPATH.'/elements/twitterWidget.php';
 			// BQV (2012)
 			} elseif (isset($cat) && !is_front_page() && $cat == BGProjectConfig::$bqv['category_id']) {
-				$displayYearlyTopics = true;
+				$displayYearlyTopics = false;
 				dynamic_sidebar('bqv-left');
 				$TwitterWidgetConfig = array(
 					'search' => '#bqv',
