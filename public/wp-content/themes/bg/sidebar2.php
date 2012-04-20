@@ -20,7 +20,11 @@
 		if (isset($category)) unset($category);
 	}
 	
-	require TEMPLATEPATH.'/elements/categoryPage.php';
+	if (!isset($cat) || (isset($cat) && !in_array($cat, array(
+		BGProjectConfig::$bqv['category_id']
+		)))) {
+		require TEMPLATEPATH.'/elements/categoryPage.php';
+	}
 	require TEMPLATEPATH.'/elements/tagPage.php';
 	
 	if (is_category() || is_home() || is_archive()) {
@@ -47,16 +51,16 @@
 	// if (is_single()) {
 	// 	require TEMPLATEPATH.'/elements/recentPosts.php';
 	// }
-	
 	if (!isset($cat) || (isset($cat) && !in_array($cat, array(
 		BGProjectConfig::$liquidwriting['category_id'],
 		BGProjectConfig::$lebenskuenstler['category_id'],
-		BGProjectConfig::$l311['category_id']
+		BGProjectConfig::$l311['category_id'],
+		BGProjectConfig::$bqv['category_id'],
 		)))) {
 		require TEMPLATEPATH.'/elements/feeds.php';
 		require TEMPLATEPATH.'/elements/teaser/hund.php';
 		require TEMPLATEPATH.'/elements/newsletterForm.php';	
-	}
+	}	
 	
 	// show sidebar only in author, index page, search
 	if (is_home() || (is_tag() && empty($cat))) {
@@ -93,6 +97,10 @@
 		// L311 / Symposium Learning from Fukushima Fukushima
 		if (isset($cat) && !is_front_page() && $cat == BGProjectConfig::$l311['category_id']) {
 			dynamic_sidebar('l311-right');
+		}
+		// BQV (2012)
+		if (isset($cat) && !is_front_page() && $cat == BGProjectConfig::$bqv['category_id']) {
+			dynamic_sidebar('bqv-right');
 		}
 	}
 	

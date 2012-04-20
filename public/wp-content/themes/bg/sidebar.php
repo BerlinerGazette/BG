@@ -46,7 +46,11 @@
 					'subject' => 'Fukushima',
 				);
 				require TEMPLATEPATH.'/elements/twitterWidget.php';
-
+			// BQV (2012)
+			} elseif (isset($cat) && !is_front_page() && $cat == BGProjectConfig::$bqv['category_id']) {
+				$displayYearlyTopics = false;
+				dynamic_sidebar('bqv-left');
+				require TEMPLATEPATH.'/elements/teaser/hund.php';
 			// Everything else
 			} else { ?>
 				<?php dynamic_sidebar('main_sidebar_left_top'); ?>
@@ -56,7 +60,9 @@
 		}
 		
 		// Jahresthemen
-		require TEMPLATEPATH.'/elements/yearlyTopics.php';
+		if (!isset($displayYearlyTopics) || $displayYearlyTopics) {
+			require TEMPLATEPATH.'/elements/yearlyTopics.php';
+		}
 
 		?>
 	</ul>

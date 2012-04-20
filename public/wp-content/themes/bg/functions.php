@@ -98,6 +98,9 @@ class BGProjectConfig {
 	public static $l311 = array(
 		'category_id' => 714,
 	);
+	public static $bqv = array(
+		'category_id' => 1112,
+	);
 }
 
 /* blast you red baron! */
@@ -147,6 +150,16 @@ if ( function_exists('register_sidebars') ) {
 	register_sidebar(array(
 		'name' => 'l311-right',
 		'id' => 'sidebar-l311-right'
+	));
+	
+	// bqv (2012)
+	register_sidebar(array(
+		'name' => 'bqv-left',
+		'id' => 'sidebar-bqv-left',
+	));
+	register_sidebar(array(
+		'name' => 'bqv-right',
+		'id' => 'sidebar-bqv-right',
 	));
 }
 
