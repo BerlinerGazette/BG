@@ -61,6 +61,8 @@
 					<img src="<?php bloginfo('template_directory'); ?>/images/berliner_gazette_logo.gif" alt="" />
 				</a>
 			</h1>
-			<?php require dirname(__FILE__).'/elements/mainMenu.php'; ?>
+			<div id="mainMenu">
+				<?php require_once TEMPLATEPATH.'/elements/searchform.php'; ?>
+			</div>
 		</div>
 		<div id="body">

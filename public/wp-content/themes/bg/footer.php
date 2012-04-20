@@ -1,6 +1,8 @@
 		</div>
 	</div>
 	<div id="footer">
+		<?php require dirname(__FILE__).'/elements/footer-navigation.php'; ?>
+		
 		CC <?= date('Y'); ?> <a href="<?php bloginfo('url') ?>" rel="index" title="Zur Startseite"><?= mb_strtoupper(get_bloginfo('name')); ?></a> - <?= mb_strtoupper(get_bloginfo('description')); ?>
 		&mdash;
 			<a href="<?php bloginfo('url'); ?>/impressum/" title="Impressum">Impressum</a> |

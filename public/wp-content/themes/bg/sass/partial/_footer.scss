@@ -6,3 +6,13 @@
 		color: #999;
 	}
 }
+
+#footer-navigation ul li {
+	display: inline;
+	&:after {
+		content: '|';
+	}
+	&:last-child:after {
+		content: '';		
+	}
+}
