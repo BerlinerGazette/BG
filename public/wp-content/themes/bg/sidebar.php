@@ -50,11 +50,7 @@
 			} elseif (isset($cat) && !is_front_page() && $cat == BGProjectConfig::$bqv['category_id']) {
 				$displayYearlyTopics = false;
 				dynamic_sidebar('bqv-left');
-				$TwitterWidgetConfig = array(
-					'search' => '#bqv',
-					'subject' => 'BGV',
-				);
-				require TEMPLATEPATH.'/elements/twitterWidget.php';
+				require TEMPLATEPATH.'/elements/teaser/hund.php';
 			// Everything else
 			} else { ?>
 				<?php dynamic_sidebar('main_sidebar_left_top'); ?>

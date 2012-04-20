@@ -60,13 +60,7 @@
 		require TEMPLATEPATH.'/elements/feeds.php';
 		require TEMPLATEPATH.'/elements/teaser/hund.php';
 		require TEMPLATEPATH.'/elements/newsletterForm.php';	
-	}
-	if (!isset($cat) || (isset($cat) && in_array($cat, array(
-		BGProjectConfig::$bqv['category_id']
-		)))) {
-		require TEMPLATEPATH.'/elements/teaser/hund.php';
-	}
-		
+	}	
 	
 	// show sidebar only in author, index page, search
 	if (is_home() || (is_tag() && empty($cat))) {
