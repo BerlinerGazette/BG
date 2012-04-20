@@ -81,6 +81,9 @@ class BGTime
  */
 
 class BGProjectConfig {
+	public static $dossiers = array(
+		'category_id' => 40,
+	);
 	public static $learningFromFukushima = array(
 		'tag_id' => 714,
 	);
@@ -108,7 +111,7 @@ require_once (ABSPATH . WPINC . '/class-snoopy.php');
 
 if ( function_exists('register_sidebars') ) {
 
-	// main sidebar
+	// left sidebar
 	register_sidebar(array(
 		'name' => 'Sidebar left top (global)',
 		'id' => 'main_sidebar_left_top',
@@ -117,11 +120,12 @@ if ( function_exists('register_sidebars') ) {
 		'name' => 'Sidebar left btm (global)',
 		'id' => 'main_sidebar_left_btm',
 	));
+	
+	// right sidebar
 	register_sidebar(array(
 		'name' => 'Sidebar right (global)',
 		'id' => 'main_sidebar_right',
 	));
-	
 	register_sidebar(array(
 		'name' => 'Sidebar right (detailpage)',
 		'id' => 'main_sidebar_right_detailpage',

@@ -142,6 +142,13 @@ a.teaser {
 		background-color: #ffffff;
 	}
 }
+li.widget_sidebar_category_dropdown {
+	@extend .teaser;
+	background-color: #ffffff;
+}
+li.widget_sidebar_current_category_feed {
+	@extend .teaser;
+}
 div.teaser img {
 	margin: 0em 0em 1em 0em;
 }
