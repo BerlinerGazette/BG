@@ -61,7 +61,8 @@
 					<img src="<?php bloginfo('template_directory'); ?>/images/berliner_gazette_logo.gif" alt="" />
 				</a>
 			</h1>
-			<div id="mainMenu">
+			<div id="topbar">
+				<?php require_once TEMPLATEPATH.'/elements/blogpost-ticker.php' ?>
 				<?php require_once TEMPLATEPATH.'/elements/searchform.php'; ?>
 			</div>
 		</div>

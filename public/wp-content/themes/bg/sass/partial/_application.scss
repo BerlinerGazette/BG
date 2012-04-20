@@ -3,24 +3,23 @@
 @import "partial/form";
 
 @import "partial/sidebar";
-@import "partial/mainMenu";
+@import "partial/topbar";
 @import "partial/pagination";
 @import "partial/post";
 @import "partial/footer";
 
+$background-canvas-color: #fff;
+
 body {
 	width: $app-width + 20;
 	margin: 1em auto 2em auto;
-	@include background(
-		darken($app-background-color, 8),
-		image-url('bg_gradient.gif') repeat-x top left
-	);
+	@include background($background-canvas-color);
 }
 
 #app {
 	background-color: $app-background-color;
 	width: $app-width;
-	border: 1px solid #E5E5E5;
+	border: 1px solid darken($app-background-color, 10);
 	display: table;
 	clear: both;
 	@include border-radius(4px);

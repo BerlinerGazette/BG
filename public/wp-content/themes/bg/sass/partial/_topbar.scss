@@ -1,4 +1,4 @@
-#mainMenu {
+#topbar {
 	border-top: 3px solid #000;
 	border-bottom: 3px solid #000;
 	line-height: 2em;
@@ -7,6 +7,19 @@
 	padding: 0em 0.1em 0em 0.5em;
 	text-transform: uppercase;
 	font-weight: bold;
+}
+
+#blogpost-ticker {
+	float: left;
+	a {
+		text-decoration: none;
+	}
+	> li {
+		display: none;
+		&:first-child {
+			display: block;
+		}
+	}
 }
 
 

@@ -17,9 +17,10 @@
 			printf('<br />'.__('%d queries. %s seconds.', 'kubrick'), get_num_queries(), timer_stop(0, 3));
 		} ?>
 	</div>
-	<?php if (getenv('APPLICATION_ENV') == 'ephigenia') { ?>
+	<?php if (getenv('APPLICATION_ENV') == 'development') { ?>
 	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/source/vendor/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/source/app.js"></script>
+	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/source/ticker.js"></script>
 	<?php } else { ?>
 	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/min/app.js?r=3"></script>
 	<?php } ?>
