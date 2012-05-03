@@ -34,7 +34,13 @@
 	$europakriseCategoryId = 899;
 	$zeitung20CategoryId = 549;
 	$bildDerWocheCategoryId = 961;
-	if (isset($cat) && in_array($cat, array($oikonomiaCategoryId, $europakriseCategoryId, $zeitung20CategoryId, $bildDerWocheCategoryId))) {
+	$recentCommentsIgnoreCategoryIds = array(
+		$oikonomiaCategoryId, $europakriseCategoryId, $zeitung20CategoryId, $bildDerWocheCategoryId,
+		$pornoRamaCategoryId = 905,
+		$terrorVonRechtsCategoryId = 894,
+		$wikiLeaksCategoryId = 343,
+	);
+	if (isset($cat) && in_array($cat, $recentCommentsIgnoreCategoryIds)) {
 		$showRecentComments = false;
 	}
 	if ($showRecentComments) {
