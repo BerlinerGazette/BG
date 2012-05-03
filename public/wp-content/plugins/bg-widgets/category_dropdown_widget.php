@@ -36,6 +36,7 @@ class CategoryDropdownWidget extends WP_Widget
 	{
 		$instance = array();
 		$instance['parent_category_id'] = strip_tags($new_instance['parent_category_id']);
+		$instance['ignore_category_ids'] = preg_replace('/[^\d,]/', '', $new_instance['ignore_category_ids']);
 		$instance['title'] = strip_tags($new_instance['title']);
 		return $instance;
 	}
@@ -59,6 +60,11 @@ class CategoryDropdownWidget extends WP_Widget
 		} else {
 			$parent_category_id = 0;
 		}
+		if (isset($instance['ignore_category_ids'])) {
+			$ignore_category_ids = $instance['ignore_category_ids'];
+		} else {
+			$ignore_category_ids = '';
+		}
 		?>
 		<p>
 			<label for="<?php echo $this->get_field_id('title'); ?>">
@@ -70,6 +76,12 @@ class CategoryDropdownWidget extends WP_Widget
 			<label for="<?php echo $this->get_field_id('parent_category_id'); ?>">
 				<?php _e('Parent Kategorie ID:'); ?>
 				<input calss="widefat" id="<?php echo $this->get_field_id('parent_category_id'); ?>" name="<?php echo $this->get_field_name('parent_category_id'); ?>" type="text" value="<?php echo esc_attr($parent_category_id); ?>" />
+			</label>
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id('ignore_category_ids'); ?>">
+				<?php _e('Ignore Categories (id,id,id ...):'); ?>
+				<input calss="widefat" id="<?php echo $this->get_field_id('ignore_category_ids'); ?>" name="<?php echo $this->get_field_name('ignore_category_ids'); ?>" type="text" value="<?php echo esc_attr($ignore_category_ids); ?>" />
 			</label>
 		</p>
 		<?php
@@ -92,6 +104,9 @@ class CategoryDropdownWidget extends WP_Widget
 			'pad_counts' => 0,
 			'hide_empty' => 0
 		));
+		
+		// ignore category ids
+		$ignore_category_ids = explode(',', $instance['ignore_category_ids']);
 
 		$current_category_id = 0;
 		if ($current_categories = get_the_category()) {
@@ -105,6 +120,9 @@ class CategoryDropdownWidget extends WP_Widget
 				<select name="cat" size="1" class="autoLink">
 					<option value=""><?= __('Auswählen …'); ?></option>
 					<?php foreach($topics as $subCategory) {
+					if (in_array($subCategory->cat_ID, $ignore_category_ids)) {
+						continue;
+					}
 					$selected = $subCategory->cat_ID == $current_category_id;
 					?>
 					<option value="<?= get_category_link($subCategory->term_id) ?>"<?php
