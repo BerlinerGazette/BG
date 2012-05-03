@@ -14,7 +14,6 @@
 		padding: 1em;
 	}
 	#header {
-		border-bottom: 3px solid #000;
 		margin: 1em 0;
 		h1 {
 			text-align: center;
@@ -25,6 +24,18 @@
 					max-width: 100%;
 				}
 			}
+		}
+	}
+	#searchForm {
+		display: block;
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+		input.search_input {
+			width: 70%;
+		}
+		input.search_submit {
+			width: 20%;
 		}
 	}
 	form fieldset p {
@@ -43,7 +54,7 @@
 	#center {
 		font-size: 120%;
 		line-height: 1.5em;
-		img, embed, object, video {
+		img, embed, object, video, iframe {
 			max-width: 100%;
 		}
 	}
