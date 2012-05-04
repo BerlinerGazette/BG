@@ -8,6 +8,11 @@
 		// blog post content
 		$content = get_the_content('weiterlesen &raquo;');
 		
+		if (!is_single()) {
+			// replace first image link with permalink
+			$content = preg_replace('@<a href="([^"]+)"><img (.+)>@si', '<a href="'.get_permalink($post->ID).'"><img $2>', $content);
+		}
+		
 		// replace old >quote content< notation
 		$content = preg_replace('@([\s,.(]|^)>([^<]+)<([\s,.!?)]|$)@', '$1<q>$2</q>$3', $content);
 		// apply wordpress filters 

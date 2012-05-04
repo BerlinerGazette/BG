@@ -1,6 +1,5 @@
 <div class="rightSidebar sidebar">
 	<ul>
-		
 	<?php
 	if (is_tag() && in_array($tag, BGProjectConfig::$lebenskuenstler['tags'])) {
 		$cat = get_category(BGProjectConfig::$lebenskuenstler['category_id']);
@@ -20,37 +19,31 @@
 		if (isset($category)) unset($category);
 	}
 	
+	// CATEGORY PAGE
 	if (!isset($cat) || (isset($cat) && !in_array($cat, array(
 		BGProjectConfig::$bqv['category_id']
 		)))) {
 		require TEMPLATEPATH.'/elements/categoryPage.php';
 	}
+	
+	// TAG PAGE
 	require TEMPLATEPATH.'/elements/tagPage.php';
 	
-	if (is_category() || is_home() || is_archive()) {
-		$showRecentComments = true;
-	}
-	$oikonomiaCategoryId = 957;
-	$europakriseCategoryId = 899;
-	$zeitung20CategoryId = 549;
-	$bildDerWocheCategoryId = 961;
-	$recentCommentsIgnoreCategoryIds = array(
-		$oikonomiaCategoryId, $europakriseCategoryId, $zeitung20CategoryId, $bildDerWocheCategoryId,
-		$pornoRamaCategoryId = 905,
-		$terrorVonRechtsCategoryId = 894,
-		$wikiLeaksCategoryId = 343,
-	);
-	if (isset($cat) && in_array($cat, $recentCommentsIgnoreCategoryIds)) {
-		$showRecentComments = false;
-	}
-	if ($showRecentComments) {
+	// RECENT COMMENTS
+	if (is_home()) {
 		require TEMPLATEPATH.'/elements/recentComments.php';
 	}
 	
+	// GLOBAL RIGHT DETAILPAGE SIDEBAR
+	$showMainSidebarDetailPage = true;
 	if (is_single()) {
-		if (function_exists('dynamic_sidebar')) {
-			dynamic_sidebar('main_sidebar_right_detailpage');
-		}
+		$showMainSidebarDetailPage = true;
+	}
+	if (isset($cat) && in_array($cat, array(BGProjectConfig::$bqv['category_id']))) {
+		$showMainSidebarDetailPage = false;
+	}
+	if ($showMainSidebarDetailPage) {
+		dynamic_sidebar('main_sidebar_right_detailpage');
 	}
 
 	// recent blog posts
