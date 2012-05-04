@@ -1,6 +1,5 @@
 <div class="rightSidebar sidebar">
 	<ul>
-		
 	<?php
 	if (is_tag() && in_array($tag, BGProjectConfig::$lebenskuenstler['tags'])) {
 		$cat = get_category(BGProjectConfig::$lebenskuenstler['category_id']);
@@ -39,6 +38,7 @@
 		$pornoRamaCategoryId = 905,
 		$terrorVonRechtsCategoryId = 894,
 		$wikiLeaksCategoryId = 343,
+		BGProjectConfig::$bqv['category_id'],
 	);
 	if (isset($cat) && in_array($cat, $recentCommentsIgnoreCategoryIds)) {
 		$showRecentComments = false;
@@ -47,10 +47,16 @@
 		require TEMPLATEPATH.'/elements/recentComments.php';
 	}
 	
+	// GLOBAL RIGHT DETAILPAGE SIDEBAR
+	$showMainSidebarDetailPage = true;
 	if (is_single()) {
-		if (function_exists('dynamic_sidebar')) {
-			dynamic_sidebar('main_sidebar_right_detailpage');
-		}
+		$showMainSidebarDetailPage = true;
+	}
+	if (isset($cat) && in_array($cat, array(BGProjectConfig::$bqv['category_id']))) {
+		$showMainSidebarDetailPage = false;
+	}
+	if ($showMainSidebarDetailPage) {
+		dynamic_sidebar('main_sidebar_right_detailpage');
 	}
 
 	// recent blog posts
