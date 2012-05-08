@@ -19,22 +19,18 @@
 		if (isset($category)) unset($category);
 	}
 	
+	// CATEGORY PAGE
 	if (!isset($cat) || (isset($cat) && !in_array($cat, array(
 		BGProjectConfig::$bqv['category_id']
 		)))) {
 		require TEMPLATEPATH.'/elements/categoryPage.php';
 	}
+	
+	// TAG PAGE
 	require TEMPLATEPATH.'/elements/tagPage.php';
 	
-	$showRecentComments = false;
-	if (is_category() || is_home() || is_archive()) {
-		$showRecentComments = true;
-	}
-	// don’t show recent comments in dossiers category
-	if (!empty($category) && $category->category_parent == 40) {
-		$showRecentComments = false;
-	}
-	if ($showRecentComments) {
+	// RECENT COMMENTS
+	if (is_home()) {
 		require TEMPLATEPATH.'/elements/recentComments.php';
 	}
 	
