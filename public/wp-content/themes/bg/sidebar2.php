@@ -26,21 +26,12 @@
 	}
 	require TEMPLATEPATH.'/elements/tagPage.php';
 	
+	$showRecentComments = false;
 	if (is_category() || is_home() || is_archive()) {
 		$showRecentComments = true;
 	}
-	$oikonomiaCategoryId = 957;
-	$europakriseCategoryId = 899;
-	$zeitung20CategoryId = 549;
-	$bildDerWocheCategoryId = 961;
-	$recentCommentsIgnoreCategoryIds = array(
-		$oikonomiaCategoryId, $europakriseCategoryId, $zeitung20CategoryId, $bildDerWocheCategoryId,
-		$pornoRamaCategoryId = 905,
-		$terrorVonRechtsCategoryId = 894,
-		$wikiLeaksCategoryId = 343,
-		BGProjectConfig::$bqv['category_id'],
-	);
-	if (isset($cat) && in_array($cat, $recentCommentsIgnoreCategoryIds)) {
+	// don’t show recent comments in dossiers category
+	if (!empty($category) && $category->category_parent == 40) {
 		$showRecentComments = false;
 	}
 	if ($showRecentComments) {

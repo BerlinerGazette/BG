@@ -41,7 +41,9 @@ class CurrentAuthor extends WP_Widget
 			$url = get_bloginfo('url', true).'/autor/'.$author->user_nicename.'/';
 			$fullname = $author->first_name.' '.$author->last_name;
 			if (function_exists('userphoto_thumbnail')) {
+				echo '<a href="'.$url.'">';
 				userphoto($author, null, null, array('class' => 'avatar'));
+				echo '</a>';
 			}
 			echo '<h2><a href="'.$url.'">'.$fullname.'</a></h2>';
 			if (!empty($author->description) && $showDescription) {
