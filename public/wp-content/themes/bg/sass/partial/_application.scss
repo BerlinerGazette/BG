@@ -142,7 +142,7 @@ a.teaser {
 		background-color: #ffffff;
 	}
 }
-li.widget_sidebar_category_dropdown {
+li.widget_sidebar_category_dropdown, li.ngg_images {
 	@extend .teaser;
 	background-color: #ffffff;
 }
