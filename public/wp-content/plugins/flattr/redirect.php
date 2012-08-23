@@ -2,10 +2,11 @@
 
 if (isset ($_GET['id'])&&
         isset ($_GET['md5'])&&
-        isset ($_GET['flattrss_redirect'])&&
-        function_exists('curl_init')) {
+        isset ($_GET['flattrss_redirect'])) {
 
     header('Status-Code: 307');
+
+    $flattr_domain = 'flattr.com';
 
     $old_charset = ini_get('default_charset');
     ini_set('default_charset',get_option('blog_charset'));
@@ -27,6 +28,12 @@ if (isset ($_GET['id'])&&
             $tags .= $tag->name;
         }
     }
+
+    $additionalTags = get_option('flattr_atags', 'blog');
+    if (!empty($additionalTags)) {
+        $tags .= ',' . $additionalTags;
+    }
+    $tags = trim($tags, ', ');
 
     $category = get_post_meta($post['ID'], '_flattr_post_category', true);
     if (empty($category)) {
@@ -84,7 +91,7 @@ if (isset ($_GET['id'])&&
     else
         $flattr_uid = get_option('flattr_uid');
 
-    $location = "https://flattr.com/submit/auto?user_id=".urlencode($flattr_uid).
+    $location = "https://" . $flattr_domain . "/submit/auto?user_id=".urlencode($flattr_uid).
                 "&url=".urlencode($url).
                 "&title=".urlencode($title).
                 "&description=".urlencode($content).

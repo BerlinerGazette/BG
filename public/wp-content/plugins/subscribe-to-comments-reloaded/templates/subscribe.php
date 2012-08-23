@@ -32,8 +32,7 @@ if (!empty($email)){
 	}
 
 	$clean_email = $wp_subscribe_reloaded->clean_email($email);
-	$enable_double_check = get_option('subscribe_reloaded_enable_double_check', 'no');
-	
+
 	// If the case, send a message to the administrator
 	if (get_option('subscribe_reloaded_enable_admin_messages', 'no') == 'yes'){
 		$from_name = stripslashes(get_option('subscribe_reloaded_from_name', 'admin'));
@@ -47,7 +46,7 @@ if (!empty($email)){
 		$headers .= "Content-Type: text/plain; charset=".get_bloginfo('charset')."\n";
 		wp_mail(get_bloginfo('admin_email'), $subject, $message, $headers);
 	}	
-	if ($enable_double_check == 'yes' && !$wp_subscribe_reloaded->is_user_subscribed($post_ID, $clean_email, 'C')){
+	if (get_option('subscribe_reloaded_enable_double_check', 'no') == 'yes' && !$wp_subscribe_reloaded->is_user_subscribed($post_ID, $clean_email, 'C')){
 		$wp_subscribe_reloaded->add_subscription($post_ID, $clean_email, 'YC');
 		$wp_subscribe_reloaded->confirmation_email($post_ID, $clean_email);
 		$message = html_entity_decode(stripslashes(get_option('subscribe_reloaded_subscription_confirmed_dci')), ENT_COMPAT, 'UTF-8');

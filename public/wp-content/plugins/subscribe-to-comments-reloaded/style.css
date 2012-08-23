@@ -2,7 +2,7 @@
  background-image:url(images/subscribe-to-comments.png);
  background-position:center; 
  background-repeat:no-repeat; 
- margin-top:8px;
+ margin: 8px 6px 0 4px;
 }
 #subscribe-to-comments-icon.rtl{
  float:right;
@@ -69,12 +69,13 @@
 }
 .postbox .subscribe-column{
  float:left;
+ padding-right:6px;
 }
 .postbox .subscribe-column-1{
  min-width:35%;
 }
 .postbox .subscribe-column-2{
- min-width:30%;
+ min-width:25%;
 }
 .postbox .subscribe-column-3{
  min-width:20%;
@@ -82,9 +83,6 @@
 .postbox .subscribe-column-4{
  min-width:5%;
  text-align:center;
-}
-.postbox .subscribe-column img{
- margin-right:10px;
 }
 .postbox ul li{
  margin-bottom:0;

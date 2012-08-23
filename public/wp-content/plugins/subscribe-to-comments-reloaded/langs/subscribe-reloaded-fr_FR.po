@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Subscribe to Comments Reloaded v1.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-25 16:00-0500\n"
-"PO-Revision-Date: 2011-07-27 15:15+0100\n"
-"Last-Translator: Maxime Garcia <maxime.garcia@free.fr>\n"
+"POT-Creation-Date: 2011-08-01 08:27-0500\n"
+"PO-Revision-Date: 2011-08-01 08:27-0500\n"
+"Last-Translator: due chiacchiere <info@duechiacchiere.it>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -52,7 +52,6 @@ msgid "All"
 msgstr "S'abonner"
 
 #: subscribe-to-comments-reloaded.php:69
-#: templates/user.php:65
 msgid "Replies to my comments"
 msgstr "Seulement les réponses à mes commentaires"
 
@@ -248,7 +247,7 @@ msgstr "Notifications"
 #: options/index.php:45
 #: options/panel2.php:35
 #: options/panel3.php:39
-#: options/panel4.php:34
+#: options/panel4.php:36
 msgid "Options"
 msgstr "Options"
 
@@ -274,21 +273,18 @@ msgstr "Abonnement effacé."
 # @ subscribe-reloaded
 #: options/panel1-business-logic.php:54
 #: templates/author.php:22
-#: templates/user.php:22
 msgid "Subscriptions deleted:"
 msgstr "Abonnements effacés :"
 
 # @ subscribe-reloaded
 #: options/panel1-business-logic.php:58
 #: templates/author.php:26
-#: templates/user.php:26
 msgid "Subscriptions suspended:"
 msgstr "Abonnements suspendus :"
 
 # @ subscribe-reloaded
 #: options/panel1-business-logic.php:62
 #: templates/author.php:30
-#: templates/user.php:30
 msgid "Subscriptions activated:"
 msgstr "Abonnements activés :"
 
@@ -297,7 +293,6 @@ msgstr "Abonnements activés :"
 #: options/panel1-business-logic.php:70
 #: templates/author.php:34
 #: templates/author.php:38
-#: templates/user.php:34
 msgid "Subscriptions updated:"
 msgstr "Abonnements mis à jour :"
 
@@ -320,9 +315,8 @@ msgstr "Mise à jour de l'abonnement"
 #: options/panel1-edit-subscription.php:10
 #: options/panel1.php:19
 #: options/panel1.php:81
-#: options/panel1.php:113
+#: options/panel1.php:114
 #: templates/author.php:50
-#: templates/user.php:46
 msgid "Please remember: this operation cannot be undone. Are you sure you want to proceed?"
 msgstr "Rappelez-vous : cette opération ne peut pas être annulée. Êtes-vous sûr de vouloir l'effectuer ?"
 
@@ -408,7 +402,6 @@ msgstr "Billet (ID)"
 #: options/panel1.php:90
 #: templates/request-management-link.php:65
 #: templates/subscribe.php:87
-#: templates/user.php:51
 msgid "Email"
 msgstr "Émail"
 
@@ -511,7 +504,6 @@ msgstr "de"
 
 #: options/panel1.php:93
 #: templates/author.php:56
-#: templates/user.php:52
 msgid "Legend: Y = all comments, R = replies only, C = inactive"
 msgstr "Légende : Y = tous les commentaires, R = réponses seulement, C = inactif"
 
@@ -520,59 +512,54 @@ msgstr "Légende : Y = tous les commentaires, R = réponses seulement, C = inact
 msgid "Date and Time"
 msgstr "Date et heure"
 
-#: options/panel1.php:112
+#: options/panel1.php:113
 msgid "Edit"
 msgstr "Modifier"
 
 # @ subscribe-reloaded
-#: options/panel1.php:113
+#: options/panel1.php:114
 #: templates/author.php:69
-#: templates/user.php:63
 msgid "Delete"
 msgstr "Supprimer"
 
 # @ subscribe-reloaded
-#: options/panel1.php:121
+#: options/panel1.php:122
 #: templates/author.php:68
-#: templates/user.php:62
 msgid "Action:"
 msgstr "Action :"
 
 # @ subscribe-reloaded
-#: options/panel1.php:122
+#: options/panel1.php:123
 msgid "Delete forever"
 msgstr "Suppression définitive"
 
 # @ subscribe-reloaded
-#: options/panel1.php:123
+#: options/panel1.php:124
 #: templates/author.php:70
-#: templates/user.php:64
 msgid "Suspend"
 msgstr "Suspendre"
 
-#: options/panel1.php:124
+#: options/panel1.php:125
 msgid "Activate and set to Y"
 msgstr "Activer et mettre à Y"
 
-#: options/panel1.php:125
+#: options/panel1.php:126
 msgid "Activate and set to R"
 msgstr "Activer et mettre à R"
 
-#: options/panel1.php:126
+#: options/panel1.php:127
 #: templates/author.php:72
-#: templates/user.php:66
 msgid "Activate"
 msgstr "Activer"
 
 # @ subscribe-reloaded
-#: options/panel1.php:127
+#: options/panel1.php:128
 #: templates/author.php:73
-#: templates/user.php:67
 msgid "Update subscriptions"
 msgstr "Mettre à jour les abonnements"
 
 # @ subscribe-reloaded
-#: options/panel1.php:131
+#: options/panel1.php:132
 msgid "Sorry, no subscriptions match your search criteria."
 msgstr "Désolé, aucun abonnement ne correspond à votre recherche."
 
@@ -631,7 +618,7 @@ msgstr "Texte pour l'auteur"
 # @ subscribe-reloaded
 #: options/panel2.php:25
 #: options/panel3.php:26
-#: options/panel4.php:23
+#: options/panel4.php:25
 #: options/panel5.php:22
 msgid "Your settings have been successfully updated."
 msgstr "Vos réglages ont été sauvegardés avec succès."
@@ -639,7 +626,7 @@ msgstr "Vos réglages ont été sauvegardés avec succès."
 # @ subscribe-reloaded
 #: options/panel2.php:28
 #: options/panel3.php:29
-#: options/panel4.php:26
+#: options/panel4.php:28
 #: options/panel5.php:25
 msgid "There was an error updating the following fields:"
 msgstr "Une erreur est apparue lors de la mise à jour des champs suivants :"
@@ -704,7 +691,7 @@ msgstr "Message affiché aux auteurs (et administrateurs). Tag autorisé: [manag
 # @ default
 #: options/panel2.php:97
 #: options/panel3.php:145
-#: options/panel4.php:103
+#: options/panel4.php:105
 #: options/panel5.php:83
 msgid "Save Changes"
 msgstr "Sauvegarder les modifications"
@@ -806,7 +793,7 @@ msgstr "Indiquer le code HTML que vous voulez ajouter dans la section HEAD de la
 
 # @ subscribe-reloaded
 #: options/panel3.php:70
-#: options/panel4.php:50
+#: options/panel4.php:52
 msgid "Messages"
 msgstr "Messages"
 
@@ -817,9 +804,9 @@ msgstr "Messages"
 #: options/panel3.php:115
 #: options/panel3.php:125
 #: options/panel3.php:135
-#: options/panel4.php:61
-#: options/panel4.php:77
-#: options/panel4.php:93
+#: options/panel4.php:63
+#: options/panel4.php:79
+#: options/panel4.php:95
 msgid "Bold"
 msgstr "Gras"
 
@@ -830,9 +817,9 @@ msgstr "Gras"
 #: options/panel3.php:116
 #: options/panel3.php:126
 #: options/panel3.php:136
-#: options/panel4.php:62
-#: options/panel4.php:78
-#: options/panel4.php:94
+#: options/panel4.php:64
+#: options/panel4.php:80
+#: options/panel4.php:96
 msgid "Italic"
 msgstr "Italic"
 
@@ -843,9 +830,9 @@ msgstr "Italic"
 #: options/panel3.php:117
 #: options/panel3.php:127
 #: options/panel3.php:137
-#: options/panel4.php:63
-#: options/panel4.php:79
-#: options/panel4.php:95
+#: options/panel4.php:65
+#: options/panel4.php:81
+#: options/panel4.php:97
 msgid "Link"
 msgstr "Lien"
 
@@ -856,9 +843,9 @@ msgstr "Lien"
 #: options/panel3.php:118
 #: options/panel3.php:128
 #: options/panel3.php:138
-#: options/panel4.php:64
-#: options/panel4.php:80
-#: options/panel4.php:96
+#: options/panel4.php:66
+#: options/panel4.php:82
+#: options/panel4.php:98
 msgid "Image"
 msgstr "Image"
 
@@ -898,90 +885,90 @@ msgid "Introductory text for the users' management page."
 msgstr "Texte d'introduction pour la page de gestion des utilisateurs."
 
 # @ subscribe-reloaded
-#: options/panel4.php:11
-#: options/panel4.php:38
+#: options/panel4.php:13
+#: options/panel4.php:40
 msgid "Sender name"
 msgstr "Nom de l'expéditeur"
 
 # @ subscribe-reloaded
-#: options/panel4.php:12
-#: options/panel4.php:43
+#: options/panel4.php:14
+#: options/panel4.php:45
 msgid "Sender email address"
 msgstr "Adresse émail de l'expéditeur"
 
 # @ subscribe-reloaded
-#: options/panel4.php:13
-#: options/panel4.php:54
+#: options/panel4.php:15
+#: options/panel4.php:56
 msgid "Notification subject"
 msgstr "Sujet de notification"
 
 # @ subscribe-reloaded
-#: options/panel4.php:14
-#: options/panel4.php:59
+#: options/panel4.php:16
+#: options/panel4.php:61
 msgid "Notification message"
 msgstr "Message de notification"
 
 # @ subscribe-reloaded
-#: options/panel4.php:15
-#: options/panel4.php:70
+#: options/panel4.php:17
+#: options/panel4.php:72
 msgid "Double check subject"
 msgstr "Sujet de vérification"
 
 # @ subscribe-reloaded
-#: options/panel4.php:16
-#: options/panel4.php:75
+#: options/panel4.php:18
+#: options/panel4.php:77
 msgid "Double check message"
 msgstr "Message de vérification"
 
 # @ subscribe-reloaded
-#: options/panel4.php:17
-#: options/panel4.php:86
+#: options/panel4.php:19
+#: options/panel4.php:88
 msgid "Management subject"
 msgstr "Sujet de gestion"
 
 # @ subscribe-reloaded
-#: options/panel4.php:18
-#: options/panel4.php:91
+#: options/panel4.php:20
+#: options/panel4.php:93
 msgid "Management message"
 msgstr "Message de gestion"
 
 # @ subscribe-reloaded
-#: options/panel4.php:40
+#: options/panel4.php:42
 msgid "Name to use for the \"from\" field when sending a new notification to the user."
 msgstr "Nom à utiliser pour le champ \"de\" lors de l'envoi d'une nouvelle notification à l'utilisateur."
 
 # @ subscribe-reloaded
-#: options/panel4.php:45
+#: options/panel4.php:47
 msgid "Email address to use for the \"from\" field when sending a new notification to the user."
 msgstr "Adresse émail à utiliser pour le champ \"de\" lors de l'envoi d'une nouvelle notification à l'utilisateur."
 
 # @ subscribe-reloaded
-#: options/panel4.php:56
+#: options/panel4.php:58
 msgid "Subject of the notification email. Allowed tag: [post_title]"
 msgstr "Sujet de l'émail de notification. Tag autorisé : [post_title]"
 
 # @ subscribe-reloaded
-#: options/panel4.php:67
+#: options/panel4.php:69
 msgid "Content of the notification email. Allowed tags: [post_title], [comment_permalink], [comment_author], [comment_content], [post_permalink], [manager_link]"
 msgstr "Contenu de l'émail de notification. Tags autorisés : [post_title], [comment_permalink], [comment_author], [comment_content], [post_permalink], [manager_link]"
 
 # @ subscribe-reloaded
-#: options/panel4.php:72
+#: options/panel4.php:74
 msgid "Subject of the confirmation email. Allowed tag: [post_title]"
 msgstr "Sujet de l'émail de confirmation. Tag autorisé : [post_title]"
 
 # @ subscribe-reloaded
-#: options/panel4.php:83
+#: options/panel4.php:85
 msgid "Content of the confirmation email. Allowed tags: [post_permalink], [confirm_link], [post_title], [manager_link]"
 msgstr "Contenu de l'émail de confirmation. Tags autorisés : [post_permalink], [confirm_link], [post_title], [manager_link]"
 
 # @ subscribe-reloaded
-#: options/panel4.php:88
+#: options/panel4.php:90
 msgid "Subject of the mail sent to those who request to access their management page. Allowed tag: [blog_name]"
 msgstr "Sujet de l'émail envoyé à ceux qui demandent à accéder à leur page de gestion. Tag autorisé : [blog_name]"
 
 # @ subscribe-reloaded
-#: options/panel4.php:99
+#: options/panel4.php:101
 msgid "Content of the management email. Allowed tags: [blog_name], [manager_link]"
 msgstr "Contenu de l'émail de gestion. Tags autorisés : [blog_name], [manager_link]"
 
@@ -1118,13 +1105,11 @@ msgstr "Titre"
 
 # @ subscribe-reloaded
 #: templates/author.php:66
-#: templates/user.php:60
 msgid "Select all"
 msgstr "Sélectionner tout"
 
 # @ subscribe-reloaded
 #: templates/author.php:67
-#: templates/user.php:61
 msgid "Invert selection"
 msgstr "Inverser la sélection"
 
@@ -1133,7 +1118,6 @@ msgid "Set to Y"
 msgstr "Mettre à Y"
 
 #: templates/author.php:77
-#: templates/user.php:71
 msgid "No subscriptions match your search criteria."
 msgstr "Aucun abonnement ne correspond à votre recherche."
 

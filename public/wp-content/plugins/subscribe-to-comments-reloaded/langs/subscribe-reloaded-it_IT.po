@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Subscribe to Comments Reloaded\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-25 16:01-0500\n"
-"PO-Revision-Date: 2011-07-25 16:02-0500\n"
+"POT-Creation-Date: 2011-08-01 10:19-0500\n"
+"PO-Revision-Date: 2011-08-01 10:19-0500\n"
 "Last-Translator: due chiacchiere <info@duechiacchiere.it>\n"
 "Language-Team: due chiacchiere <info@duechiacchiere.it>\n"
 "MIME-Version: 1.0\n"
@@ -45,7 +45,6 @@ msgid "All"
 msgstr "Tutti"
 
 #: subscribe-to-comments-reloaded.php:69
-#: templates/user.php:65
 msgid "Replies to my comments"
 msgstr "Risposte ai miei commenti"
 
@@ -141,36 +140,7 @@ msgstr ""
 "Hai richiesto di poter gestire le tue iscrizioni agli articoli su [blog_name]. Clicca sul link qui di seguito per accedere alla tua area riservata:\n"
 "[manager_link]"
 
-#: subscribe-to-comments-reloaded.php:986
-msgid "Subscribed"
-msgstr "Iscritto"
-
 #: subscribe-to-comments-reloaded.php:1000
-#: options/panel2.php:41
-#: options/panel2.php:48
-#: options/panel2.php:55
-#: options/panel5.php:42
-#: options/panel5.php:49
-#: options/panel5.php:56
-#: options/panel5.php:63
-#: options/panel5.php:70
-#: options/panel5.php:77
-msgid "Yes"
-msgstr "Si"
-
-#: subscribe-to-comments-reloaded.php:1002
-msgid "Replies"
-msgstr "Solo risposte"
-
-#: subscribe-to-comments-reloaded.php:1004
-msgid "Digest"
-msgstr "Riassunto giornaliero"
-
-#: subscribe-to-comments-reloaded.php:1006
-msgid "Pending"
-msgstr "In sospeso"
-
-#: subscribe-to-comments-reloaded.php:1007
 #: options/panel2.php:42
 #: options/panel2.php:49
 #: options/panel2.php:56
@@ -183,23 +153,19 @@ msgstr "In sospeso"
 msgid "No"
 msgstr "No"
 
-#: subscribe-to-comments-reloaded.php:1016
-msgid "Subscriptions"
-msgstr "Iscrizioni"
-
-#: subscribe-to-comments-reloaded.php:1039
+#: subscribe-to-comments-reloaded.php:1024
 msgid "Need help on how to use Subscribe to Comments Reloaded? Visit the official"
 msgstr "Serve aiuto su come usare al meglio Subscribe to Comments Reloaded? Visita il"
 
-#: subscribe-to-comments-reloaded.php:1039
+#: subscribe-to-comments-reloaded.php:1024
 msgid "support forum"
 msgstr "forum di supporto"
 
-#: subscribe-to-comments-reloaded.php:1040
+#: subscribe-to-comments-reloaded.php:1025
 msgid "Feeling generous?"
 msgstr "Ti senti generoso?"
 
-#: subscribe-to-comments-reloaded.php:1040
+#: subscribe-to-comments-reloaded.php:1025
 msgid "Donate a few bucks!"
 msgstr "Dona qualche euro!"
 
@@ -218,7 +184,7 @@ msgstr "Notifiche"
 #: options/index.php:45
 #: options/panel2.php:35
 #: options/panel3.php:39
-#: options/panel4.php:34
+#: options/panel4.php:36
 msgid "Options"
 msgstr "Opzioni"
 
@@ -240,19 +206,16 @@ msgstr "Iscrizioni rimosse."
 
 #: options/panel1-business-logic.php:54
 #: templates/author.php:22
-#: templates/user.php:22
 msgid "Subscriptions deleted:"
 msgstr "Iscrizioni rimosse:"
 
 #: options/panel1-business-logic.php:58
 #: templates/author.php:26
-#: templates/user.php:26
 msgid "Subscriptions suspended:"
 msgstr "Iscrizioni sospese:"
 
 #: options/panel1-business-logic.php:62
 #: templates/author.php:30
-#: templates/user.php:30
 msgid "Subscriptions activated:"
 msgstr "Iscrizioni attivate:"
 
@@ -260,7 +223,6 @@ msgstr "Iscrizioni attivate:"
 #: options/panel1-business-logic.php:70
 #: templates/author.php:34
 #: templates/author.php:38
-#: templates/user.php:34
 msgid "Subscriptions updated:"
 msgstr "Iscrizioni aggiornate:"
 
@@ -277,11 +239,20 @@ msgid "Update Subscription"
 msgstr "Aggiorna iscrizione"
 
 #: options/panel1-edit-subscription.php:10
+#: options/panel1-edit-subscription.php:14
+#: options/panel1-edit-subscription.php:15
+#: options/panel1-edit-subscription.php:16
+#: options/panel1.php:23
+#: options/panel1.php:24
+#: options/panel1.php:25
+msgid "optional"
+msgstr "facoltativo"
+
+#: options/panel1-edit-subscription.php:10
 #: options/panel1.php:19
 #: options/panel1.php:81
-#: options/panel1.php:113
+#: options/panel1.php:117
 #: templates/author.php:50
-#: templates/user.php:46
 msgid "Please remember: this operation cannot be undone. Are you sure you want to proceed?"
 msgstr "Ricorda: questa operazione non pu&ograve; essere annullata. Confermi di voler procedere?"
 
@@ -299,36 +270,36 @@ msgstr "Da"
 msgid "To"
 msgstr "In"
 
-#: options/panel1-edit-subscription.php:15
+#: options/panel1-edit-subscription.php:17
 #: options/panel1.php:26
 #: options/panel1.php:45
 #: options/panel1.php:103
 msgid "Status"
 msgstr "Stato"
 
-#: options/panel1-edit-subscription.php:17
+#: options/panel1-edit-subscription.php:19
 #: options/panel1.php:28
 msgid "Keep unchanged"
 msgstr "Non cambiare"
 
-#: options/panel1-edit-subscription.php:18
+#: options/panel1-edit-subscription.php:20
 #: options/panel1.php:29
 #: options/panel1.php:47
 msgid "Active"
 msgstr "Attiva"
 
-#: options/panel1-edit-subscription.php:19
+#: options/panel1-edit-subscription.php:21
 #: options/panel1.php:30
 #: options/panel1.php:48
 msgid "Replies only"
 msgstr "Solo risposte"
 
-#: options/panel1-edit-subscription.php:20
+#: options/panel1-edit-subscription.php:22
 #: options/panel1.php:31
 msgid "Suspended"
 msgstr "Sospesa"
 
-#: options/panel1-edit-subscription.php:21
+#: options/panel1-edit-subscription.php:23
 #: options/panel1.php:32
 msgid "Update"
 msgstr "Aggiorna"
@@ -336,12 +307,6 @@ msgstr "Aggiorna"
 #: options/panel1.php:17
 msgid "Mass Update Subscriptions"
 msgstr "Aggiorna iscrizioni"
-
-#: options/panel1.php:23
-#: options/panel1.php:24
-#: options/panel1.php:25
-msgid "optional"
-msgstr "facoltativo"
 
 #: options/panel1.php:39
 msgid "Add New Subscription"
@@ -355,7 +320,6 @@ msgstr "ID Articolo"
 #: options/panel1.php:90
 #: templates/request-management-link.php:65
 #: templates/subscribe.php:87
-#: templates/user.php:51
 msgid "Email"
 msgstr "Email"
 
@@ -443,7 +407,6 @@ msgstr "di"
 
 #: options/panel1.php:93
 #: templates/author.php:56
-#: templates/user.php:52
 msgid "Legend: Y = all comments, R = replies only, C = inactive"
 msgstr "Legenda: Y = tutti i commenti, R = solo risposte, C = sospesa"
 
@@ -451,53 +414,52 @@ msgstr "Legenda: Y = tutti i commenti, R = solo risposte, C = sospesa"
 msgid "Date and Time"
 msgstr "Data e ora"
 
-#: options/panel1.php:112
+#: options/panel1.php:114
+msgid "Subscription"
+msgstr "Iscrizione"
+
+#: options/panel1.php:116
 msgid "Edit"
 msgstr "Modifica"
 
-#: options/panel1.php:113
+#: options/panel1.php:117
 #: templates/author.php:69
-#: templates/user.php:63
 msgid "Delete"
 msgstr "Rimuovi"
 
-#: options/panel1.php:121
+#: options/panel1.php:125
 #: templates/author.php:68
-#: templates/user.php:62
 msgid "Action:"
 msgstr "Azione:"
 
-#: options/panel1.php:122
+#: options/panel1.php:126
 msgid "Delete forever"
 msgstr "Cancella definitivamente"
 
-#: options/panel1.php:123
+#: options/panel1.php:127
 #: templates/author.php:70
-#: templates/user.php:64
 msgid "Suspend"
 msgstr "Sospendi"
 
-#: options/panel1.php:124
+#: options/panel1.php:128
 msgid "Activate and set to Y"
 msgstr "Attiva ed imposta ad Y"
 
-#: options/panel1.php:125
+#: options/panel1.php:129
 msgid "Activate and set to R"
 msgstr "Attiva ed imposta ad R"
 
-#: options/panel1.php:126
+#: options/panel1.php:130
 #: templates/author.php:72
-#: templates/user.php:66
 msgid "Activate"
 msgstr "Attiva"
 
-#: options/panel1.php:127
+#: options/panel1.php:131
 #: templates/author.php:73
-#: templates/user.php:67
 msgid "Update subscriptions"
 msgstr "Aggiorna iscrizioni"
 
-#: options/panel1.php:131
+#: options/panel1.php:135
 msgid "Sorry, no subscriptions match your search criteria."
 msgstr "Spiacente, nessuna iscrizione soddisfa i tuoi parametri di ricerca."
 
@@ -546,17 +508,29 @@ msgstr "Descrizione per l'autore"
 
 #: options/panel2.php:25
 #: options/panel3.php:26
-#: options/panel4.php:23
+#: options/panel4.php:25
 #: options/panel5.php:22
 msgid "Your settings have been successfully updated."
 msgstr "La configurazione &egrave; stata aggiornata con successo."
 
 #: options/panel2.php:28
 #: options/panel3.php:29
-#: options/panel4.php:26
+#: options/panel4.php:28
 #: options/panel5.php:25
 msgid "There was an error updating the following fields:"
 msgstr "Si &egrave; verificato un errore nell'aggiornamento dei seguenti campi:"
+
+#: options/panel2.php:41
+#: options/panel2.php:48
+#: options/panel2.php:55
+#: options/panel5.php:42
+#: options/panel5.php:49
+#: options/panel5.php:56
+#: options/panel5.php:63
+#: options/panel5.php:70
+#: options/panel5.php:77
+msgid "Yes"
+msgstr "Si"
 
 #: options/panel2.php:43
 msgid "Disable this option if you want to move the subscription checkbox to a different place on your page."
@@ -608,7 +582,7 @@ msgstr "Testo da mostrare ad autori ed amministratori. Tag consentito: [manager_
 
 #: options/panel2.php:97
 #: options/panel3.php:145
-#: options/panel4.php:103
+#: options/panel4.php:105
 #: options/panel5.php:83
 msgid "Save Changes"
 msgstr "Salva le opzioni"
@@ -697,7 +671,7 @@ msgid "Specify your custom HTML code to be added to the HEAD section of the page
 msgstr "Specifica il codice HTML che vuoi inserire nella parte HEAD della pagina di gestione. Usa <strong>singoli</strong> aplici per i valori."
 
 #: options/panel3.php:70
-#: options/panel4.php:50
+#: options/panel4.php:52
 msgid "Messages"
 msgstr "Messaggi"
 
@@ -708,9 +682,9 @@ msgstr "Messaggi"
 #: options/panel3.php:115
 #: options/panel3.php:125
 #: options/panel3.php:135
-#: options/panel4.php:61
-#: options/panel4.php:77
-#: options/panel4.php:93
+#: options/panel4.php:63
+#: options/panel4.php:79
+#: options/panel4.php:95
 msgid "Bold"
 msgstr "Grassetto"
 
@@ -721,9 +695,9 @@ msgstr "Grassetto"
 #: options/panel3.php:116
 #: options/panel3.php:126
 #: options/panel3.php:136
-#: options/panel4.php:62
-#: options/panel4.php:78
-#: options/panel4.php:94
+#: options/panel4.php:64
+#: options/panel4.php:80
+#: options/panel4.php:96
 msgid "Italic"
 msgstr "Corsivo"
 
@@ -734,9 +708,9 @@ msgstr "Corsivo"
 #: options/panel3.php:117
 #: options/panel3.php:127
 #: options/panel3.php:137
-#: options/panel4.php:63
-#: options/panel4.php:79
-#: options/panel4.php:95
+#: options/panel4.php:65
+#: options/panel4.php:81
+#: options/panel4.php:97
 msgid "Link"
 msgstr "Link"
 
@@ -747,9 +721,9 @@ msgstr "Link"
 #: options/panel3.php:118
 #: options/panel3.php:128
 #: options/panel3.php:138
-#: options/panel4.php:64
-#: options/panel4.php:80
-#: options/panel4.php:96
+#: options/panel4.php:66
+#: options/panel4.php:82
+#: options/panel4.php:98
 msgid "Image"
 msgstr "Immagine"
 
@@ -781,75 +755,75 @@ msgstr "Testo introduttivo per la pagina di gestione riservata agli autori."
 msgid "Introductory text for the users' management page."
 msgstr "Testo introduttivo per la pagina di gestione riservata ai visitatori."
 
-#: options/panel4.php:11
-#: options/panel4.php:38
+#: options/panel4.php:13
+#: options/panel4.php:40
 msgid "Sender name"
 msgstr "Nome del mittente"
 
-#: options/panel4.php:12
-#: options/panel4.php:43
+#: options/panel4.php:14
+#: options/panel4.php:45
 msgid "Sender email address"
 msgstr "Indirizzo email mittente"
 
-#: options/panel4.php:13
-#: options/panel4.php:54
+#: options/panel4.php:15
+#: options/panel4.php:56
 msgid "Notification subject"
 msgstr "Oggetto della notifica"
 
-#: options/panel4.php:14
-#: options/panel4.php:59
+#: options/panel4.php:16
+#: options/panel4.php:61
 msgid "Notification message"
 msgstr "Contenuto della notifica"
 
-#: options/panel4.php:15
-#: options/panel4.php:70
+#: options/panel4.php:17
+#: options/panel4.php:72
 msgid "Double check subject"
 msgstr "Oggetto doppia conferma"
 
-#: options/panel4.php:16
-#: options/panel4.php:75
+#: options/panel4.php:18
+#: options/panel4.php:77
 msgid "Double check message"
 msgstr "Contenuto doppia conferma"
 
-#: options/panel4.php:17
-#: options/panel4.php:86
+#: options/panel4.php:19
+#: options/panel4.php:88
 msgid "Management subject"
 msgstr "Oggetto email di gestione"
 
-#: options/panel4.php:18
-#: options/panel4.php:91
+#: options/panel4.php:20
+#: options/panel4.php:93
 msgid "Management message"
 msgstr "Contenuto email di gestione"
 
-#: options/panel4.php:40
+#: options/panel4.php:42
 msgid "Name to use for the \"from\" field when sending a new notification to the user."
 msgstr "Nome da usare nel campo From quando il sistema invia una notifica all'utente."
 
-#: options/panel4.php:45
+#: options/panel4.php:47
 msgid "Email address to use for the \"from\" field when sending a new notification to the user."
 msgstr "Indirizzo email da usare nel campo From."
 
-#: options/panel4.php:56
+#: options/panel4.php:58
 msgid "Subject of the notification email. Allowed tag: [post_title]"
 msgstr "Oggetto dell'email di notifica. Tag consentito: [post_title]"
 
-#: options/panel4.php:67
+#: options/panel4.php:69
 msgid "Content of the notification email. Allowed tags: [post_title], [comment_permalink], [comment_author], [comment_content], [post_permalink], [manager_link]"
 msgstr "Contenuto del messaggio di notifica. Tag consentiti: [post_title],  [comment_permalink], [comment_author], [comment_content], [post_permalink], [manager_link]"
 
-#: options/panel4.php:72
+#: options/panel4.php:74
 msgid "Subject of the confirmation email. Allowed tag: [post_title]"
 msgstr "Oggetto dell'email di notifica. Tag consentito: [post_title]"
 
-#: options/panel4.php:83
+#: options/panel4.php:85
 msgid "Content of the confirmation email. Allowed tags: [post_permalink], [confirm_link], [post_title], [manager_link]"
 msgstr "Contenuto dell'email di conferma. Tag consentiti: [post_permalink], [confirm_link], [post_title], [manager_link]"
 
-#: options/panel4.php:88
+#: options/panel4.php:90
 msgid "Subject of the mail sent to those who request to access their management page. Allowed tag: [blog_name]"
 msgstr "Oggetto della mail inviata a coloro che richiedono di poter gestire le proprie iscrizioni. Tag consentito: [blog_name]"
 
-#: options/panel4.php:99
+#: options/panel4.php:101
 msgid "Content of the management email. Allowed tags: [blog_name], [manager_link]"
 msgstr "Contenuto dell'email di gestione. Tag consentiti: [blog_name],[manager_link]"
 
@@ -963,12 +937,10 @@ msgid "Title"
 msgstr "Titolo"
 
 #: templates/author.php:66
-#: templates/user.php:60
 msgid "Select all"
 msgstr "Seleziona tutti"
 
 #: templates/author.php:67
-#: templates/user.php:61
 msgid "Invert selection"
 msgstr "Inverti la selezione"
 
@@ -977,7 +949,6 @@ msgid "Set to Y"
 msgstr "Imposta ad Y"
 
 #: templates/author.php:77
-#: templates/user.php:71
 msgid "No subscriptions match your search criteria."
 msgstr "Nessuna iscrizione corrispondente ai parametri di ricerca."
 
@@ -994,6 +965,18 @@ msgstr "Nuova iscrizione per"
 #: templates/subscribe.php:43
 msgid "User:"
 msgstr "Utente:"
+
+#~ msgid "Replies"
+#~ msgstr "Solo risposte"
+
+#~ msgid "Digest"
+#~ msgstr "Riassunto giornaliero"
+
+#~ msgid "Pending"
+#~ msgstr "In sospeso"
+
+#~ msgid "Subscribed"
+#~ msgstr "Iscritto"
 
 #~ msgid "Management Page ID"
 #~ msgstr "ID Pagina di gestione"

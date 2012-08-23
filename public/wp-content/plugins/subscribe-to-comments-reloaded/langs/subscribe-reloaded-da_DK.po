@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Subscribe to Comments Reloaded\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-25 16:00-0500\n"
-"PO-Revision-Date: 2011-07-25 16:00-0500\n"
+"POT-Creation-Date: 2011-08-01 10:08-0500\n"
+"PO-Revision-Date: 2011-08-01 10:08-0500\n"
 "Last-Translator: due chiacchiere <info@duechiacchiere.it>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -46,7 +46,6 @@ msgid "All"
 msgstr ""
 
 #: subscribe-to-comments-reloaded.php:69
-#: templates/user.php:65
 msgid "Replies to my comments"
 msgstr ""
 
@@ -125,10 +124,6 @@ msgid ""
 "[manager_link]"
 msgstr "Du har bedt om at redigere dit abonnement på kommentarer på [blog_name].Følg dette link for at komme til din personlige abonnements side:[manager_link]"
 
-#: subscribe-to-comments-reloaded.php:986
-msgid "Subscribed"
-msgstr "Abonneret"
-
 #: subscribe-to-comments-reloaded.php:1000
 #: options/panel2.php:41
 #: options/panel2.php:48
@@ -167,24 +162,19 @@ msgstr ""
 msgid "No"
 msgstr "Nej"
 
-#: subscribe-to-comments-reloaded.php:1016
-#, fuzzy
-msgid "Subscriptions"
-msgstr "Abonnementer til"
-
-#: subscribe-to-comments-reloaded.php:1039
+#: subscribe-to-comments-reloaded.php:1029
 msgid "Need help on how to use Subscribe to Comments Reloaded? Visit the official"
 msgstr "Brug for hjælp til at bruge Subscribe to Comments Reloaded? Besøg den officielle"
 
-#: subscribe-to-comments-reloaded.php:1039
+#: subscribe-to-comments-reloaded.php:1029
 msgid "support forum"
 msgstr "support forum"
 
-#: subscribe-to-comments-reloaded.php:1040
+#: subscribe-to-comments-reloaded.php:1030
 msgid "Feeling generous?"
 msgstr "Føler du dig generøs?"
 
-#: subscribe-to-comments-reloaded.php:1040
+#: subscribe-to-comments-reloaded.php:1030
 msgid "Donate a few bucks!"
 msgstr "Doner et par dollar!"
 
@@ -206,7 +196,7 @@ msgstr "E-mail emne"
 #: options/index.php:45
 #: options/panel2.php:35
 #: options/panel3.php:39
-#: options/panel4.php:34
+#: options/panel4.php:36
 msgid "Options"
 msgstr "Indstillinger"
 
@@ -231,21 +221,18 @@ msgstr "Abonnement udført"
 
 #: options/panel1-business-logic.php:54
 #: templates/author.php:22
-#: templates/user.php:22
 #, fuzzy
 msgid "Subscriptions deleted:"
 msgstr "Abonnementer til:"
 
 #: options/panel1-business-logic.php:58
 #: templates/author.php:26
-#: templates/user.php:26
 #, fuzzy
 msgid "Subscriptions suspended:"
 msgstr "Abonnement udført"
 
 #: options/panel1-business-logic.php:62
 #: templates/author.php:30
-#: templates/user.php:30
 #, fuzzy
 msgid "Subscriptions activated:"
 msgstr "Abonnementer til:"
@@ -254,7 +241,6 @@ msgstr "Abonnementer til:"
 #: options/panel1-business-logic.php:70
 #: templates/author.php:34
 #: templates/author.php:38
-#: templates/user.php:34
 #, fuzzy
 msgid "Subscriptions updated:"
 msgstr "Abonnementer pr. dag"
@@ -273,11 +259,21 @@ msgid "Update Subscription"
 msgstr "Opdater abonnement"
 
 #: options/panel1-edit-subscription.php:10
+#: options/panel1-edit-subscription.php:14
+#: options/panel1-edit-subscription.php:15
+#: options/panel1-edit-subscription.php:16
+#: options/panel1.php:23
+#: options/panel1.php:24
+#: options/panel1.php:25
+#, fuzzy
+msgid "optional"
+msgstr "Indstillinger"
+
+#: options/panel1-edit-subscription.php:10
 #: options/panel1.php:19
 #: options/panel1.php:81
-#: options/panel1.php:113
+#: options/panel1.php:117
 #: templates/author.php:50
-#: templates/user.php:46
 msgid "Please remember: this operation cannot be undone. Are you sure you want to proceed?"
 msgstr "Vær opmærksom: Denne operation kan ikke fortrydes! Er du sikker på at du vil fortsætte?"
 
@@ -296,38 +292,38 @@ msgstr "Fra"
 msgid "To"
 msgstr "Til"
 
-#: options/panel1-edit-subscription.php:15
+#: options/panel1-edit-subscription.php:17
 #: options/panel1.php:26
 #: options/panel1.php:45
 #: options/panel1.php:103
 msgid "Status"
 msgstr "Status"
 
-#: options/panel1-edit-subscription.php:17
+#: options/panel1-edit-subscription.php:19
 #: options/panel1.php:28
 msgid "Keep unchanged"
 msgstr ""
 
-#: options/panel1-edit-subscription.php:18
+#: options/panel1-edit-subscription.php:20
 #: options/panel1.php:29
 #: options/panel1.php:47
 #, fuzzy
 msgid "Active"
 msgstr "Opgave"
 
-#: options/panel1-edit-subscription.php:19
+#: options/panel1-edit-subscription.php:21
 #: options/panel1.php:30
 #: options/panel1.php:48
 msgid "Replies only"
 msgstr ""
 
-#: options/panel1-edit-subscription.php:20
+#: options/panel1-edit-subscription.php:22
 #: options/panel1.php:31
 #, fuzzy
 msgid "Suspended"
 msgstr "Annuller"
 
-#: options/panel1-edit-subscription.php:21
+#: options/panel1-edit-subscription.php:23
 #: options/panel1.php:32
 msgid "Update"
 msgstr "Opdater"
@@ -336,13 +332,6 @@ msgstr "Opdater"
 #, fuzzy
 msgid "Mass Update Subscriptions"
 msgstr "Opdater abonnementer"
-
-#: options/panel1.php:23
-#: options/panel1.php:24
-#: options/panel1.php:25
-#, fuzzy
-msgid "optional"
-msgstr "Indstillinger"
 
 #: options/panel1.php:39
 #, fuzzy
@@ -358,7 +347,6 @@ msgstr "Indlæg (ID)"
 #: options/panel1.php:90
 #: templates/request-management-link.php:65
 #: templates/subscribe.php:87
-#: templates/user.php:51
 msgid "Email"
 msgstr "E-mail"
 
@@ -451,7 +439,6 @@ msgstr "af"
 
 #: options/panel1.php:93
 #: templates/author.php:56
-#: templates/user.php:52
 msgid "Legend: Y = all comments, R = replies only, C = inactive"
 msgstr ""
 
@@ -459,53 +446,53 @@ msgstr ""
 msgid "Date and Time"
 msgstr "Dato og tid"
 
-#: options/panel1.php:112
+#: options/panel1.php:114
+#, fuzzy
+msgid "Subscription"
+msgstr "Abonnementer til"
+
+#: options/panel1.php:116
 msgid "Edit"
 msgstr ""
 
-#: options/panel1.php:113
+#: options/panel1.php:117
 #: templates/author.php:69
-#: templates/user.php:63
 msgid "Delete"
 msgstr "Slet"
 
-#: options/panel1.php:121
+#: options/panel1.php:125
 #: templates/author.php:68
-#: templates/user.php:62
 msgid "Action:"
 msgstr "Opgave:"
 
-#: options/panel1.php:122
+#: options/panel1.php:126
 msgid "Delete forever"
 msgstr "Slet for altid"
 
-#: options/panel1.php:123
+#: options/panel1.php:127
 #: templates/author.php:70
-#: templates/user.php:64
 msgid "Suspend"
 msgstr "Annuller"
 
-#: options/panel1.php:124
+#: options/panel1.php:128
 msgid "Activate and set to Y"
 msgstr ""
 
-#: options/panel1.php:125
+#: options/panel1.php:129
 msgid "Activate and set to R"
 msgstr ""
 
-#: options/panel1.php:126
+#: options/panel1.php:130
 #: templates/author.php:72
-#: templates/user.php:66
 msgid "Activate"
 msgstr ""
 
-#: options/panel1.php:127
+#: options/panel1.php:131
 #: templates/author.php:73
-#: templates/user.php:67
 msgid "Update subscriptions"
 msgstr "Opdater abonnementer"
 
-#: options/panel1.php:131
+#: options/panel1.php:135
 #, fuzzy
 msgid "Sorry, no subscriptions match your search criteria."
 msgstr "Beklager, der er ikke fundet nogle abonnenter til"
@@ -557,14 +544,14 @@ msgstr "Forfatter besked"
 
 #: options/panel2.php:25
 #: options/panel3.php:26
-#: options/panel4.php:23
+#: options/panel4.php:25
 #: options/panel5.php:22
 msgid "Your settings have been successfully updated."
 msgstr "Dine indstillinger er blevet opdateret."
 
 #: options/panel2.php:28
 #: options/panel3.php:29
-#: options/panel4.php:26
+#: options/panel4.php:28
 #: options/panel5.php:25
 msgid "There was an error updating the following fields:"
 msgstr "Der var en fejl i opdateringen af disse felter:"
@@ -621,7 +608,7 @@ msgstr "Besked vist til forfattere (og administratorer). Tilladt tag: [manager_l
 
 #: options/panel2.php:97
 #: options/panel3.php:145
-#: options/panel4.php:103
+#: options/panel4.php:105
 #: options/panel5.php:83
 msgid "Save Changes"
 msgstr "Gem ændringer"
@@ -712,7 +699,7 @@ msgid "Specify your custom HTML code to be added to the HEAD section of the page
 msgstr ""
 
 #: options/panel3.php:70
-#: options/panel4.php:50
+#: options/panel4.php:52
 #, fuzzy
 msgid "Messages"
 msgstr "E-mail beskeder"
@@ -724,9 +711,9 @@ msgstr "E-mail beskeder"
 #: options/panel3.php:115
 #: options/panel3.php:125
 #: options/panel3.php:135
-#: options/panel4.php:61
-#: options/panel4.php:77
-#: options/panel4.php:93
+#: options/panel4.php:63
+#: options/panel4.php:79
+#: options/panel4.php:95
 msgid "Bold"
 msgstr "Fed"
 
@@ -737,9 +724,9 @@ msgstr "Fed"
 #: options/panel3.php:116
 #: options/panel3.php:126
 #: options/panel3.php:136
-#: options/panel4.php:62
-#: options/panel4.php:78
-#: options/panel4.php:94
+#: options/panel4.php:64
+#: options/panel4.php:80
+#: options/panel4.php:96
 msgid "Italic"
 msgstr "Kursiv"
 
@@ -750,9 +737,9 @@ msgstr "Kursiv"
 #: options/panel3.php:117
 #: options/panel3.php:127
 #: options/panel3.php:137
-#: options/panel4.php:63
-#: options/panel4.php:79
-#: options/panel4.php:95
+#: options/panel4.php:65
+#: options/panel4.php:81
+#: options/panel4.php:97
 msgid "Link"
 msgstr "Link"
 
@@ -763,9 +750,9 @@ msgstr "Link"
 #: options/panel3.php:118
 #: options/panel3.php:128
 #: options/panel3.php:138
-#: options/panel4.php:64
-#: options/panel4.php:80
-#: options/panel4.php:96
+#: options/panel4.php:66
+#: options/panel4.php:82
+#: options/panel4.php:98
 msgid "Image"
 msgstr "Billede"
 
@@ -797,75 +784,75 @@ msgstr "Introduktions tekst til forfatterens administrations side."
 msgid "Introductory text for the users' management page."
 msgstr "Introduktions tekst til brugerens administrations side."
 
-#: options/panel4.php:11
-#: options/panel4.php:38
+#: options/panel4.php:13
+#: options/panel4.php:40
 msgid "Sender name"
 msgstr "Afsender navn"
 
-#: options/panel4.php:12
-#: options/panel4.php:43
+#: options/panel4.php:14
+#: options/panel4.php:45
 msgid "Sender email address"
 msgstr "Afsender e-mail adresse"
 
-#: options/panel4.php:13
-#: options/panel4.php:54
+#: options/panel4.php:15
+#: options/panel4.php:56
 msgid "Notification subject"
 msgstr "E-mail emne"
 
-#: options/panel4.php:14
-#: options/panel4.php:59
+#: options/panel4.php:16
+#: options/panel4.php:61
 msgid "Notification message"
 msgstr "E-mail besked"
 
-#: options/panel4.php:15
-#: options/panel4.php:70
+#: options/panel4.php:17
+#: options/panel4.php:72
 msgid "Double check subject"
 msgstr "Bekræftelses e-mail emne"
 
-#: options/panel4.php:16
-#: options/panel4.php:75
+#: options/panel4.php:18
+#: options/panel4.php:77
 msgid "Double check message"
 msgstr "Bekræftelses e-mail besked"
 
-#: options/panel4.php:17
-#: options/panel4.php:86
+#: options/panel4.php:19
+#: options/panel4.php:88
 msgid "Management subject"
 msgstr "Administrations e-mail emne"
 
-#: options/panel4.php:18
-#: options/panel4.php:91
+#: options/panel4.php:20
+#: options/panel4.php:93
 msgid "Management message"
 msgstr "Administrations e-mail besked"
 
-#: options/panel4.php:40
+#: options/panel4.php:42
 msgid "Name to use for the \"from\" field when sending a new notification to the user."
 msgstr "Navn som afsender i \"fra\" feltet når der sendes en besked til brugeren."
 
-#: options/panel4.php:45
+#: options/panel4.php:47
 msgid "Email address to use for the \"from\" field when sending a new notification to the user."
 msgstr "E-mail adresse som afsender i \"fra\" feltet når der sendes en besked til brugeren."
 
-#: options/panel4.php:56
+#: options/panel4.php:58
 msgid "Subject of the notification email. Allowed tag: [post_title]"
 msgstr "Emne til adviserings e-mail. Tilladt tag: [post_title]"
 
-#: options/panel4.php:67
+#: options/panel4.php:69
 msgid "Content of the notification email. Allowed tags: [post_title], [comment_permalink], [comment_author], [comment_content], [post_permalink], [manager_link]"
 msgstr "Indhold af adviserings e-mailen. Tilladte tags: [post_title], [comment_permalink], [comment_author], [comment_content], [post_permalink], [manager_link]"
 
-#: options/panel4.php:72
+#: options/panel4.php:74
 msgid "Subject of the confirmation email. Allowed tag: [post_title]"
 msgstr "Emnet i bekræftelses e-mailen. Tilladt tag: [post_title]"
 
-#: options/panel4.php:83
+#: options/panel4.php:85
 msgid "Content of the confirmation email. Allowed tags: [post_permalink], [confirm_link], [post_title], [manager_link]"
 msgstr "Indhold af bekræftelses e-mailen. Tilladte tags: [post_permalink], [confirm_link], [post_title], [manager_link]"
 
-#: options/panel4.php:88
+#: options/panel4.php:90
 msgid "Subject of the mail sent to those who request to access their management page. Allowed tag: [blog_name]"
 msgstr "Emnet i e-mailen sendt til dem der beder om adgang til deres administrations side. Tilladt tag: [blog_name]"
 
-#: options/panel4.php:99
+#: options/panel4.php:101
 msgid "Content of the management email. Allowed tags: [blog_name], [manager_link]"
 msgstr "Indhold af administrations e-mailen. Tilladte tags: [blog_name], [manager_link]"
 
@@ -980,12 +967,10 @@ msgid "Title"
 msgstr "Titel"
 
 #: templates/author.php:66
-#: templates/user.php:60
 msgid "Select all"
 msgstr "Vælg alt"
 
 #: templates/author.php:67
-#: templates/user.php:61
 msgid "Invert selection"
 msgstr "Vend det udvalgte"
 
@@ -994,7 +979,6 @@ msgid "Set to Y"
 msgstr ""
 
 #: templates/author.php:77
-#: templates/user.php:71
 msgid "No subscriptions match your search criteria."
 msgstr ""
 
@@ -1011,6 +995,9 @@ msgstr "Ny abonnent til"
 #: templates/subscribe.php:43
 msgid "User:"
 msgstr "Bruger:"
+
+#~ msgid "Subscribed"
+#~ msgstr "Abonneret"
 
 #~ msgid "Management Page ID"
 #~ msgstr "Administrer Side ID"

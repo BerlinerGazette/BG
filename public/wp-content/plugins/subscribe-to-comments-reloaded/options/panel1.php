@@ -96,25 +96,28 @@ if (is_readable(WP_PLUGIN_DIR."/subscribe-to-comments-reloaded/options/panel1-bu
 		echo "<li class='subscribe-list-header'>
 				<input class='checkbox' type='checkbox' name='subscription_list_select_all' id='stcr_select_all' 
 					onchange='t=document.forms[\"subscription_form\"].elements[\"subscriptions_list[]\"];c=t.length;if(!c){t.checked=this.checked}else{for(var i=0;i<c;i++){t[i].checked=!t[i].checked}}'/>
-				<span class='subscribe-column' style='width:52px'>&nbsp;</span>
+				<span class='subscribe-column' style='width:38px'>&nbsp;</span>
 				$show_post_column
 				$show_email_column
 				<span class='subscribe-column subscribe-column-3'>".__('Date and Time','subscribe-reloaded')." &nbsp;&nbsp;$order_dt</span>
 				<span class='subscribe-column subscribe-column-4'>".__('Status','subscribe-reloaded')." &nbsp;&nbsp;$order_status</span></li>\n";
 		$alternate = '';
+		$date_time_format = get_option('date_format').' '.get_option('time_format');
 		foreach($subscriptions as $a_subscription){
 			$title = get_the_title($a_subscription->post_id);
+			$title = (strlen($title) > 35)?substr($title, 0, 35).'..':$title;
 			$row_post = ($operator != 'equals' || $search_field != 'post_id')?"<a class='subscribe-column subscribe-column-1' href='options-general.php?page=subscribe-to-comments-reloaded/options/index.php&amp;subscribepanel=1&amp;srf=post_id&amp;srt=equals&amp;srv=$a_subscription->post_id'>$title ($a_subscription->post_id)</a> ":'';
 			$row_email = ($operator != 'equals' || $search_field != 'email')?"<span class='subscribe-column subscribe-column-2'><a href='options-general.php?page=subscribe-to-comments-reloaded/options/index.php&subscribepanel=1&amp;srf=email&amp;srt=equals&amp;srv=".urlencode($a_subscription->email)."'>$a_subscription->email</a></span> ":'';
+			$date_time = date_i18n($date_time_format, strtotime($a_subscription->dt));
 			$alternate = ($alternate==' class="row"')?' class="row alternate"':' class="row"';
 			echo "<li$alternate>
-					<label for='sub_{$a_subscription->meta_id}' class='hidden'>Blah</label>
+					<label for='sub_{$a_subscription->meta_id}' class='hidden'>".__('Subscription','subscribe-reloaded')." {$a_subscription->meta_id}</label>
 					<input class='checkbox' type='checkbox' name='subscriptions_list[]' value='$a_subscription->post_id,".urlencode($a_subscription->email)."' id='sub_{$a_subscription->meta_id}' />
 					<a class='subscribe-column' href='options-general.php?page=subscribe-to-comments-reloaded/options/index.php&amp;subscribepanel=1&amp;sra=edit-subscription&amp;srp=".$a_subscription->post_id."&amp;sre=".urlencode($a_subscription->email)."'><img src='".WP_PLUGIN_URL."/subscribe-to-comments-reloaded/images/edit.png' alt='".__('Edit','subscribe-reloaded')."' width='16' height='16' /></a>
 					<a class='subscribe-column' href='options-general.php?page=subscribe-to-comments-reloaded/options/index.php&amp;subscribepanel=1&amp;sra=delete-subscription&amp;srp=".$a_subscription->post_id."&amp;sre=".urlencode($a_subscription->email)."' onclick='return confirm(\"".__('Please remember: this operation cannot be undone. Are you sure you want to proceed?', 'subscribe-reloaded')."\");'><img src='".WP_PLUGIN_URL."/subscribe-to-comments-reloaded/images/delete.png' alt='".__('Delete','subscribe-reloaded')."' width='16' height='16' /></a>
 					$row_post
 					$row_email
-					<span class='subscribe-column subscribe-column-3'>$a_subscription->dt</span>
+					<span class='subscribe-column subscribe-column-3'>$date_time</span>
 					<span class='subscribe-column subscribe-column-4'>$a_subscription->status</span>
 					</li>\n";
 		}

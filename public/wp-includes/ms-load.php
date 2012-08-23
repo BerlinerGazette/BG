@@ -211,10 +211,12 @@ function wpmu_current_site() {
 	}
 
 	// Still no dice.
+	wp_load_translations_early();
+
 	if ( 1 == count( $sites ) )
-		wp_die( sprintf( /*WP_I18N_BLOG_DOESNT_EXIST*/'Dieser Blog existiert nicht. Bitte versuche <a href="%s">%s</a>.'/*/WP_I18N_BLOG_DOESNT_EXIST*/, $sites[0]->domain . $sites[0]->path ) );
+		wp_die( sprintf( __( 'That site does not exist. Please try <a href="%s">%s</a>.' ), 'http://' . $sites[0]->domain . $sites[0]->path ) );
 	else
-		wp_die( /*WP_I18N_NO_SITE_DEFINED*/'Auf diesem Host sind keine Sites definiert. Wenn du der Besitzer dieser Site bist, findest du Hilfe auf der Seite <a href="http://codex.wordpress.org/Debugging_a_WordPress_Network">Debugging a WordPress Network (engl.)</a>.'/*/WP_I18N_NO_SITE_DEFINED*/ );
+		wp_die( __( 'No site defined on this host. If you are the owner of this site, please check <a href="http://codex.wordpress.org/Debugging_a_WordPress_Network">Debugging a WordPress Network</a> for help.' ) );
 }
 
 /**
@@ -228,20 +230,21 @@ function wpmu_current_site() {
 function ms_not_installed() {
 	global $wpdb, $domain, $path;
 
-	$title = /*WP_I18N_FATAL_ERROR*/'Fehler bei der Datenbankverbindung'/*/WP_I18N_FATAL_ERROR*/;
+	wp_load_translations_early();
+
+	$title = __( 'Error establishing database connection' );
 	$msg  = '<h1>' . $title . '</h1>';
 	if ( ! is_admin() )
 		die( $msg );
-	$msg .= '<p>' . /*WP_I18N_CONTACT_OWNER*/'Wenn dein Blog nicht angezeigt wird, nehme bitte Kontakt zum Betreiber des Blog-Netzwerks auf.'/*/WP_I18N_CONTACT_OWNER*/ . '';
-	$msg .= ' ' . /*WP_I18N_CHECK_MYSQL*/'Wenn du der Besitzer dieses Netzwerks bist, überprüfe bitte, dass MySQL störungsfrei läuft und alle Tabellen fehlerfrei sind.'/*/WP_I18N_CHECK_MYSQL*/ . '</p>';
+	$msg .= '<p>' . __( 'If your site does not display, please contact the owner of this network.' ) . '';
+	$msg .= ' ' . __( 'If you are the owner of this network please check that MySQL is running properly and all tables are error free.' ) . '</p>';
 	if ( false && !$wpdb->get_var( "SHOW TABLES LIKE '$wpdb->site'" ) )
-		$msg .= '<p>' . sprintf( /*WP_I18N_TABLES_MISSING_LONG*/'<strong>Es fehlen Datenbanktabellen.</strong> Das bedeutet, dass MySQL nicht läuft. WordPress wurde nicht richtig installiert, oder <code>%s</code> wurde gelöscht. Du solltest dir jetzt deine Datenbank anschauen.'/*/WP_I18N_TABLES_MISSING_LONG*/, $wpdb->site ) . '</p>';
+		$msg .= '<p>' . sprintf( __( '<strong>Database tables are missing.</strong> This means that MySQL is not running, WordPress was not installed properly, or someone deleted <code>%s</code>. You really should look at your database now.' ), $wpdb->site ) . '</p>';
 	else
-		$msg .= '<p>' . sprintf( /*WP_I18N_NO_SITE_FOUND*/'<strong>Konnte Blog nicht finden. <code>%1$s</code>.</strong> Suche nach Tabelle <code>%2$s</code> in der Datenbank <code>%3$s</code>. Ist das richtig?'/*/WP_I18N_NO_SITE_FOUND*/, rtrim( $domain . $path, '/' ), $wpdb->blogs, DB_NAME ) . '</p>';
-	$msg .= '<p><strong>' . /*WP_I18N_WHAT_DO_I_DO*/'Was mache ich jetzt?'/*/WP_I18N_WHAT_DO_I_DO*/ . '</strong> ';
-	$msg .= /*WP_I18N_RTFM*/'Lese die <a target="_blank" href="http://codex.wordpress.org/Debugging_a_WordPress_Network">Fehler-Report</a> Seite. 
-Einige der Richtlinien können dir helfen herauszufinden, was falsch gelaufen ist.'/*/WP_I18N_RTFM*/;
-	$msg .= ' ' . /*WP_I18N_STUCK*/'Wenn du noch immer in der Nachricht festhängst, dann prüfe ob die Datenbank die folgenden Tabellen enthält:'/*/WP_I18N_STUCK*/ . '</p><ul>';
+		$msg .= '<p>' . sprintf( __( '<strong>Could not find site <code>%1$s</code>.</strong> Searched for table <code>%2$s</code> in database <code>%3$s</code>. Is that right?' ), rtrim( $domain . $path, '/' ), $wpdb->blogs, DB_NAME ) . '</p>';
+	$msg .= '<p><strong>' . __( 'What do I do now?' ) . '</strong> ';
+	$msg .= __( 'Read the <a target="_blank" href="http://codex.wordpress.org/Debugging_a_WordPress_Network">bug report</a> page. Some of the guidelines there may help you figure out what went wrong.' );
+	$msg .= ' ' . __( 'If you&#8217;re still stuck with this message, then check that your database contains the following tables:' ) . '</p><ul>';
 	foreach ( $wpdb->tables('global') as $t => $table ) {
 		if ( 'sitecategories' == $t )
 			continue;
@@ -251,5 +254,3 @@ Einige der Richtlinien können dir helfen herauszufinden, was falsch gelaufen is
 
 	wp_die( $msg, $title );
 }
-
-?>

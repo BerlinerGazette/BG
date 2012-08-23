@@ -11,8 +11,8 @@ if (isset($_POST['options'])){
 	if (isset($_POST['options']['show_subscription_box']) && !subscribe_reloaded_update_option('show_subscription_box', $_POST['options']['show_subscription_box'], 'yesno')) $faulty_fields = __('Enable default checkbox','subscribe-reloaded').', ';
 	if (isset($_POST['options']['checked_by_default']) && !subscribe_reloaded_update_option('checked_by_default', $_POST['options']['checked_by_default'], 'yesno')) $faulty_fields = __('Checked by default','subscribe-reloaded').', ';	
 	if (isset($_POST['options']['enable_advanced_subscriptions']) && !subscribe_reloaded_update_option('enable_advanced_subscriptions', $_POST['options']['enable_advanced_subscriptions'], 'yesno')) $faulty_fields = __('Advanced subscription','subscribe-reloaded').', ';	
-	if (isset($_POST['options']['checkbox_inline_style']) && !subscribe_reloaded_update_option('checkbox_inline_style', $_POST['options']['checkbox_inline_style'], 'text')) $faulty_fields = __('Custom inline style','subscribe-reloaded').', ';
-	if (isset($_POST['options']['checkbox_html']) && !subscribe_reloaded_update_option('checkbox_html', $_POST['options']['checkbox_html'], 'text')) $faulty_fields = __('Custom HTML','subscribe-reloaded').', ';
+	if (isset($_POST['options']['checkbox_inline_style']) && !subscribe_reloaded_update_option('checkbox_inline_style', $_POST['options']['checkbox_inline_style'], 'text-no-encode')) $faulty_fields = __('Custom inline style','subscribe-reloaded').', ';
+	if (isset($_POST['options']['checkbox_html']) && !subscribe_reloaded_update_option('checkbox_html', $_POST['options']['checkbox_html'], 'text-no-encode')) $faulty_fields = __('Custom HTML','subscribe-reloaded').', ';
 
 	if (isset($_POST['options']['checkbox_label']) && !subscribe_reloaded_update_option('checkbox_label', $_POST['options']['checkbox_label'], 'text')) $faulty_fields = __('Checkbox label','subscribe-reloaded').', ';
 	if (isset($_POST['options']['subscribed_label']) && !subscribe_reloaded_update_option('subscribed_label', $_POST['options']['subscribed_label'], 'text')) $faulty_fields = __('Subscribed label','subscribe-reloaded').', ';
