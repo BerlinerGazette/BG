@@ -26,7 +26,6 @@
 		// Everything else
 		} else {
 			dynamic_sidebar('main_sidebar_left_top');
-			dynamic_sidebar('main_sidebar_left_btm');
 		}
 		?>
 	</ul>

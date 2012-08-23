@@ -3,7 +3,7 @@ Contributors: GamerZ
 Donate link: http://lesterchan.net/site/donation/
 Tags: poll, polls, polling, vote, booth, democracy, ajax, survey, post, widget
 Requires at least: 2.8
-Tested up to: 3.0.4
+Tested up to: 3.3.1
 Stable tag: trunk
 
 Adds an AJAX poll system to your WordPress blog. You can also easily add a poll into your WordPress's blog post/page.
@@ -36,6 +36,11 @@ WP-Polls is extremely customizable via templates and css styles and there are to
 * I spent most of my free time creating, updating, maintaining and supporting these plugins, if you really love my plugins and could spare me a couple of bucks, I will really appericiate it. If not feel free to use it without any obligations.
 
 == Changelog ==
+
+= Version 2.63 (21-05-2012) =
+* Move AJAX Request to wp-admin/admin-ajax.php
+* Added nonce To AJAX Calls
+* FIXED: PHP Notices/add_options() Deprecated Arguments ([Dewey Bushaw](http://www.parapxl.com/ "Dewey Bushaw"))
 
 = Version 2.62 (31-08-2011) =
 * FIXED: Escaped Hostname. Thanks to Renaud Feil ([Renaud Feil](http://www.stratsec.net "Renaud Feil"))
@@ -329,6 +334,27 @@ N/A
 * To solve this issue, Open poll-css.css
 * Find: `/* background-color: #ffffff; */`
 * Replace: `background-color: #ffffff;` (where #ffffff should be your background color for the poll.)
+
+= How Do I Have Individual Colors For Each Poll's Bar? =
+* Courtesy Of [TreedBox.com](http://treedbox.com "TreedBox.com")
+* Open poll-css.css
+* Add to the end of the file:
+<code>
+/* css3 for coloring each pollbars */
+.wp-polls-ul li:nth-child(01) .pollbar{ background:#8FA0C5}
+.wp-polls-ul li:nth-child(02) .pollbar{ background:#FF8}
+.wp-polls-ul li:nth-child(03) .pollbar{ background:#ff8a3b}
+.wp-polls-ul li:nth-child(04) .pollbar{ background:#a61e2a}
+.wp-polls-ul li:nth-child(05) .pollbar{ background:#4ebbff}
+.wp-polls-ul li:nth-child(06) .pollbar{ background:#fbca54}
+.wp-polls-ul li:nth-child(07) .pollbar{ background:#aad34f}
+.wp-polls-ul li:nth-child(08) .pollbar{ background:#66cc9a}
+.wp-polls-ul li:nth-child(09) .pollbar{ background:#98CBCB}
+.wp-polls-ul li:nth-child(10) .pollbar{ background:#a67c52}
+/* little transition */
+.wp-polls-ul li .pollbar{-webkit-transition: background 0.7s ease-in-out}
+.wp-polls-ul li .pollbar:hover{background:#F00}
+</code>
 
 = Polls Stats (Outside WP Loop) =
 

@@ -12,7 +12,7 @@ switch ($action){
 		$status = !empty($_POST['srs'])?$_POST['srs']:(!empty($_GET['srs'])?$_GET['srs']:'');
 
 		$wp_subscribe_reloaded->add_subscription($post_id, $email, $status);
-		if ($status == 'YC')
+		if (strpos($status, 'C') !== false)
 			$wp_subscribe_reloaded->confirmation_email($post_id, $email);
 		
 		echo '<div class="updated"><p>'.__('Subscription added.', 'subscribe-reloaded').'</p></div>';

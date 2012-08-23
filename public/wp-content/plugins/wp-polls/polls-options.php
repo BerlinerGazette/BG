@@ -2,8 +2,8 @@
 /*
 +----------------------------------------------------------------+
 |																							|
-|	WordPress 2.8 Plugin: WP-Polls 2.62										|
-|	Copyright (c) 2009 Lester "GaMerZ" Chan									|
+|	WordPress Plugin: WP-Polls										|
+|	Copyright (c) 2012 Lester "GaMerZ" Chan									|
 |																							|
 |	File Written By:																	|
 |	- Lester "GaMerZ" Chan															|
@@ -26,11 +26,10 @@ if(!current_user_can('manage_polls')) {
 ### Variables Variables Variables
 $base_name = plugin_basename('wp-polls/polls-options.php');
 $base_page = 'admin.php?page='.$base_name;
-$id = intval($_GET['id']);
-
+$id = (isset($_GET['id']) ? intval($_GET['id']) : 0);
 
 ### If Form Is Submitted
-if($_POST['Submit']) {
+if( isset($_POST['Submit']) && $_POST['Submit'] ) {
 	check_admin_referer('wp-polls_options');
 	$poll_bar_style = strip_tags(trim($_POST['poll_bar_style']));
 	$poll_bar_background = strip_tags(trim($_POST['poll_bar_bg']));

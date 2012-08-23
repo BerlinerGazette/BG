@@ -1,12 +1,12 @@
 === Flattr ===
-Contributors: aphex3k
+Contributors: aphex3k, VoxPelli
 Donate link: https://flattr.com/donation/give/to/der_michael
 Tags: flattr, donate, micropayments
-Requires at least: 3.0
-Tested up to: 3.2
-Stable tag: trunk
+Requires at least: 3.3
+Tested up to: 3.4
+Stable tag: 1.2.0
 
-This plugin allows you to easily add a Flattr button to your wordpress blog.
+This plugin allows you to easily add a Flattr donation buttons to your blog and blog posts.
 
 == Description ==
 
@@ -18,24 +18,98 @@ Flattr solves this issue. When you're registered to flattr, you pay a small mont
 
 == Installation ==
 
-Note that we only support PHP 5 and WordPress 2.9 or above.
-To use advanced features like auto-submission or feed-buttons, your web server needs cURL extension installed.
-
 1. Upload the folder 'flattr' to your server in the folder '/wp-content/plugins/'
 2. Go to the WordPress control panel and find the 'Plugins' section
 3. Activate the plugin 'Flattr'
-4. Go to the 'Options' section and authrize your blog against flattr.com
-5. Select your default category (which usually would be 'text' if you have a normal blog), select your default language and type in your Flattr user ID (your user ID can be found on your dashboard on http://flattr.com/ )
-6. If you want the Flattr button to be automagically included at the end of your posts, leave the checkbox checked
-7. If you want to add the Flattr button manually in your theme, uncheck the checkbox and use the following code snippet:
-8. When writing or editing a blog post you have the ability to select category and language for this specific blog post.
+4. Select your default category (which usually would be 'text' if you have a normal blog), select your default language and type in your Flattr username
+5. When writing or editing a blog post you have the ability to select category and language for this specific blog post.
+6. Live long and prosper. :)
 
-`<?php the_flattr_permalink(); ?>`
+== Frequently Asked Questions ==
 
-8. Live long and prosper. :)
+= How do I use the shortcode? =
 
+The shortcode is [flattr url="http://example.com/"]. It has many attributes but the url attribute is the only one required.
+
+Supported attributes are:
+
+* **url** - the URL that should be flattred. *Required*
+* **type** - overrides the default setting of the button style to use. Can be either "js", "compact", "text", "image" or "url".
+* **popout** - overrides the default setting on whether the popout should be shown. Should be either "yes" or "no".
+
+Additional autosubmit related attributes:
+
+* **user** - the username of the user owning the thing - needed for autosubmits.
+* **hidden** - overrides the default setting on whether an autosubmit of the thing should be hidden. Should be either "yes" or "no".
+* **language** - overrides the blog language as the language of an autosubmit of the thing. Should be a language code like en_GB.
+* **category** - overrides the default category for an autosubmit of the thing. Should be one of the [supported ones](http://developers.flattr.net/api/resources/categories/).
+* **title** - the title used in an autosubmit of the thing.
+* **description** - the description used in an autosubmit of the thing.
+* **tags** - a comma separated list of tags that's used in an autosubmit of the thing.
+
+For options that use "yes" or "no" you can instead of "no" use "n" or "off" - any other value will be interpreted as "yes".
+
+== Upgrade Notice ==
+
+= 1.2.0 =
+Flattr buttons now detectable by browsers, site itself can now be flattred, a new shortcode and widgets is available etc.
 
 == Changelog ==
+
+= 1.2.0 =
+* New Feature: The payment links in RSS/Atom can now be added without adding the graphical buttons and are now on by default
+* New Feature: Payment links are now not only included in feed entries - they are now also by default included in the head-tag of entry pages which is usable for eg. browser extensions to detect the existence of a flattr button.
+* New Feature: The site itself can now be become flattrable - both feeds and the frontpage will by default in new installs have a payment links for the site itself. Existing pages needs to activate the "Make frontpage flattrable" option.
+* New Feature: Added a widget with a Flattr button for the entire site.
+* New Feature: Added a [flattr] shortcode for easy inclusion of Flattr buttons in posts and pages
+* New Feature: A post can now specify a custom URL for the Flattr button to flattr instead of the post itself. Thanks for the patch [Erik](http://tapiren.se/2012/02/18/wordpress-flattr-plugin-1-0-1-custom-urls/)!
+* New Feature: Made it possible to set a date from which the user specific button setting should be activated
+* Fix: User specific buttons can now be activated for all content
+* Fix: No longer prevents caching due to needless session initialization
+* Fix: Settings that can be overriden by a user setting is now by default not saved in a post but rather the site setting or user setting is instead picked when the button is viewed. This means that user settings for content type and language will now be respected.
+* Fix: Users with double encoding troubles of payment metadata in their feeds can now disable the encoding through the settings.
+* + more minor fixes and tweaks
+
+= 1.1.1 =
+* Added support for the new button popout. 
+* Replaced getBasePath() with plugin_dir_path()
+
+= 1.1.0 =
+* New Feature: Added support for WordPress uninstall feature. To use it you deactivate and delete the plugin from the plugin list.
+* Fix: Descriptions sent to Flattr are now assembled in a totaly new way as a custom kind of excerpts that are limited to maximum 30 words
+* Fix: The javascript loaded from Flattr.com is now loaded asynchronously
+* Fix: The javascript loaded from Flattr.com is now only loaded in the frontend when dynamic buttons are used
+
+= 1.0.2 =
+* Fix: "Include in RSS/Atom feeds" setting wouldn't save
+
+= 1.0.1 =
+* Fix: Button type wasn't respected
+
+= 1.0.0 =
+* New Feature: Add additional tags to Flattr buttons to make your things appear better in the Flattr catalog. Defaults to add the "blog" tag.
+* Fix: The payment links in RSS/Atom feeds will now point directly to Flattr.com to make it easier for clients to detect flattrable posts
+* Fix: Compatibility with WP_DEBUG - many PHP warnings and notices has been fixed
+* Fix: Some adjustments to better support PHP versions prior to 5.3 has been made
+* Fix: The plugin has been stable for a long time – it's time to have the version number reflect that - welcome to 1.0.0!
+
+= 0.99.3 =
+* Fix: Feeds should now validate
+
+= 0.99.2 =
+* Fix: Wizard should work with PHP 5.2 now
+
+= 0.99.1 =
+* Important: Please skip this update if the current installed version works for you
+* Important: Due to API changes all registered Flattr apps must be re-created and re-authorized (which should work like a charm now!)
+* New Feature: complete rewrite for new Flattr API v2
+* New Feature: new oAuth wizard
+* New Feature: Payment Link entities for Atom and RSS feeds
+* Fix: user based flattr buttons
+* Removed: Tabbing
+
+= 0.9.25.5 =
+* Fix: Erroneous escaping in advanced thing submit (by qnrq)
 
 = 0.9.25.4 =
 * New Feature: Initial test with WP 3.2 passed
@@ -189,14 +263,3 @@ Fixed tags
 
 = 0.4 =
 * First public version
-
-== Frequently Asked Questions ==
-
-Q: I recieve an error message when trying to (re-)authorize my blog with flattr, what's wrong?
-A: Please clear session/cookie/browser cache and try again please.
-
-== Support ==
-
-For support requests regarding the wordpress plugin, please visit the plugin support forum: http://wordpress.org/tags/flattr?forum_id=10
-
-For every other Flattr support request head over to the Flattr forum: http://forum.flattr.net/

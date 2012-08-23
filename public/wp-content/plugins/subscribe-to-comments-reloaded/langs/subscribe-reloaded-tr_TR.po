@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Subscribe to Comments Reloaded\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-26 13:16-0500\n"
-"PO-Revision-Date: 2011-07-26 13:16-0500\n"
-"Last-Translator: due chiacchiere <info@duechiacchiere.it>\n"
+"POT-Creation-Date: 2011-07-25 16:02-0500\n"
+"PO-Revision-Date: 2011-07-26 03:12+0200\n"
+"Last-Translator: Furkan Yeşilyurt <sspawnn@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -200,7 +200,7 @@ msgstr "Bildiriler"
 #: options/index.php:45
 #: options/panel2.php:35
 #: options/panel3.php:39
-#: options/panel4.php:36
+#: options/panel4.php:34
 msgid "Options"
 msgstr "Ayarlar"
 
@@ -261,7 +261,7 @@ msgstr "Aboneliği Güncelle"
 #: options/panel1-edit-subscription.php:10
 #: options/panel1.php:19
 #: options/panel1.php:81
-#: options/panel1.php:114
+#: options/panel1.php:113
 #: templates/author.php:50
 #: templates/user.php:46
 msgid "Please remember: this operation cannot be undone. Are you sure you want to proceed?"
@@ -433,53 +433,53 @@ msgstr "Açıklama: Y = tüm yorumlar, R = yalnızca yanıtlar, C = pasif"
 msgid "Date and Time"
 msgstr "Tarih ve Saat"
 
-#: options/panel1.php:113
+#: options/panel1.php:112
 msgid "Edit"
 msgstr "Düzenle"
 
-#: options/panel1.php:114
+#: options/panel1.php:113
 #: templates/author.php:69
 #: templates/user.php:63
 msgid "Delete"
 msgstr "Sil"
 
-#: options/panel1.php:122
+#: options/panel1.php:121
 #: templates/author.php:68
 #: templates/user.php:62
 msgid "Action:"
 msgstr "Eylem:"
 
-#: options/panel1.php:123
+#: options/panel1.php:122
 msgid "Delete forever"
 msgstr "Tamamen sil"
 
-#: options/panel1.php:124
+#: options/panel1.php:123
 #: templates/author.php:70
 #: templates/user.php:64
 msgid "Suspend"
 msgstr "Dondur"
 
-#: options/panel1.php:125
+#: options/panel1.php:124
 msgid "Activate and set to Y"
 msgstr "Aktifleştir ve Y olarak ayarla"
 
-#: options/panel1.php:126
+#: options/panel1.php:125
 msgid "Activate and set to R"
 msgstr "Aktifleştir ve R olarak ayarla"
 
-#: options/panel1.php:127
+#: options/panel1.php:126
 #: templates/author.php:72
 #: templates/user.php:66
 msgid "Activate"
 msgstr "Aktifleştir"
 
-#: options/panel1.php:128
+#: options/panel1.php:127
 #: templates/author.php:73
 #: templates/user.php:67
 msgid "Update subscriptions"
 msgstr "Abonelikleri güncelle"
 
-#: options/panel1.php:132
+#: options/panel1.php:131
 msgid "Sorry, no subscriptions match your search criteria."
 msgstr "Üzgünüm, arama kriterlerinize uygun abonelik bulunamadı."
 
@@ -528,14 +528,14 @@ msgstr "Yazar"
 
 #: options/panel2.php:25
 #: options/panel3.php:26
-#: options/panel4.php:25
+#: options/panel4.php:23
 #: options/panel5.php:22
 msgid "Your settings have been successfully updated."
 msgstr "Ayarlarınız başarıyla kaydedildi."
 
 #: options/panel2.php:28
 #: options/panel3.php:29
-#: options/panel4.php:28
+#: options/panel4.php:26
 #: options/panel5.php:25
 msgid "There was an error updating the following fields:"
 msgstr "Ayarlarınız kaydedilirken şu hatalara rastlandı:"
@@ -590,7 +590,7 @@ msgstr "Yazar ve administratörlere gösterilen metin. İzin verilen etiketler: 
 
 #: options/panel2.php:97
 #: options/panel3.php:145
-#: options/panel4.php:105
+#: options/panel4.php:103
 #: options/panel5.php:83
 msgid "Save Changes"
 msgstr "Ayarları Kaydet"
@@ -679,7 +679,7 @@ msgid "Specify your custom HTML code to be added to the HEAD section of the page
 msgstr "Sayfanın HEAD bölümüne eklenecek özel HTML kodunu belirtin. Değerler için <strong>bir</strong> virgül kullanınız."
 
 #: options/panel3.php:70
-#: options/panel4.php:52
+#: options/panel4.php:50
 msgid "Messages"
 msgstr "Mesajlar"
 
@@ -690,9 +690,9 @@ msgstr "Mesajlar"
 #: options/panel3.php:115
 #: options/panel3.php:125
 #: options/panel3.php:135
-#: options/panel4.php:63
-#: options/panel4.php:79
-#: options/panel4.php:95
+#: options/panel4.php:61
+#: options/panel4.php:77
+#: options/panel4.php:93
 msgid "Bold"
 msgstr "Kalın"
 
@@ -703,9 +703,9 @@ msgstr "Kalın"
 #: options/panel3.php:116
 #: options/panel3.php:126
 #: options/panel3.php:136
-#: options/panel4.php:64
-#: options/panel4.php:80
-#: options/panel4.php:96
+#: options/panel4.php:62
+#: options/panel4.php:78
+#: options/panel4.php:94
 msgid "Italic"
 msgstr "İtalik"
 
@@ -716,9 +716,9 @@ msgstr "İtalik"
 #: options/panel3.php:117
 #: options/panel3.php:127
 #: options/panel3.php:137
-#: options/panel4.php:65
-#: options/panel4.php:81
-#: options/panel4.php:97
+#: options/panel4.php:63
+#: options/panel4.php:79
+#: options/panel4.php:95
 msgid "Link"
 msgstr "Link"
 
@@ -729,9 +729,9 @@ msgstr "Link"
 #: options/panel3.php:118
 #: options/panel3.php:128
 #: options/panel3.php:138
-#: options/panel4.php:66
-#: options/panel4.php:82
-#: options/panel4.php:98
+#: options/panel4.php:64
+#: options/panel4.php:80
+#: options/panel4.php:96
 msgid "Image"
 msgstr "Resim"
 
@@ -763,75 +763,75 @@ msgstr "Yazarların aboneliklerini yönettiği sayfadaki giriş mesajı."
 msgid "Introductory text for the users' management page."
 msgstr "Kullanıcıların aboneliklerini yönettiği sayfadaki giriş mesajı."
 
-#: options/panel4.php:13
-#: options/panel4.php:40
+#: options/panel4.php:11
+#: options/panel4.php:38
 msgid "Sender name"
 msgstr "Gönderici adı"
 
-#: options/panel4.php:14
-#: options/panel4.php:45
+#: options/panel4.php:12
+#: options/panel4.php:43
 msgid "Sender email address"
 msgstr "Gönderici eposta adresi"
 
-#: options/panel4.php:15
-#: options/panel4.php:56
+#: options/panel4.php:13
+#: options/panel4.php:54
 msgid "Notification subject"
 msgstr "Bildiri Konusu"
 
-#: options/panel4.php:16
-#: options/panel4.php:61
+#: options/panel4.php:14
+#: options/panel4.php:59
 msgid "Notification message"
 msgstr "Bildiri mesajı"
 
-#: options/panel4.php:17
-#: options/panel4.php:72
+#: options/panel4.php:15
+#: options/panel4.php:70
 msgid "Double check subject"
 msgstr "Doğrulama konusu"
 
-#: options/panel4.php:18
-#: options/panel4.php:77
+#: options/panel4.php:16
+#: options/panel4.php:75
 msgid "Double check message"
 msgstr "Doğrulama mesajı"
 
-#: options/panel4.php:19
-#: options/panel4.php:88
+#: options/panel4.php:17
+#: options/panel4.php:86
 msgid "Management subject"
 msgstr "Abonelikler konusu"
 
-#: options/panel4.php:20
-#: options/panel4.php:93
+#: options/panel4.php:18
+#: options/panel4.php:91
 msgid "Management message"
 msgstr "Abonelikler mesajı"
 
-#: options/panel4.php:42
+#: options/panel4.php:40
 msgid "Name to use for the \"from\" field when sending a new notification to the user."
 msgstr "Yeni yorumların bildirisinde gönderenin adı."
 
-#: options/panel4.php:47
+#: options/panel4.php:45
 msgid "Email address to use for the \"from\" field when sending a new notification to the user."
 msgstr "Yeni yorumların bildirisinde gönderenin eposta adresi."
 
-#: options/panel4.php:58
+#: options/panel4.php:56
 msgid "Subject of the notification email. Allowed tag: [post_title]"
 msgstr "Bildiri epostasının konusu. İzin verilen etiketler: [post_title]"
 
-#: options/panel4.php:69
+#: options/panel4.php:67
 msgid "Content of the notification email. Allowed tags: [post_title], [comment_permalink], [comment_author], [comment_content], [post_permalink], [manager_link]"
 msgstr "Bildiri epostasının içeriği. İzin verilen etiketler: [post_title], [comment_permalink], [comment_author], [comment_content], [post_permalink], [manager_link]"
 
-#: options/panel4.php:74
+#: options/panel4.php:72
 msgid "Subject of the confirmation email. Allowed tag: [post_title]"
 msgstr "Doğrulama epostasının konusu. İzin verilen etiketler: [post_title]"
 
-#: options/panel4.php:85
+#: options/panel4.php:83
 msgid "Content of the confirmation email. Allowed tags: [post_permalink], [confirm_link], [post_title], [manager_link]"
 msgstr "Doğrulama epostasının içeriği. İzin verilen etiketler: [post_permalink], [confirm_link], [post_title], [manager_link]"
 
-#: options/panel4.php:90
+#: options/panel4.php:88
 msgid "Subject of the mail sent to those who request to access their management page. Allowed tag: [blog_name]"
 msgstr "Aboneliklerini incelemek isteyenlere gönderilen mailin konusu. İzin verilen etiketler: [blog_name]"
 
-#: options/panel4.php:101
+#: options/panel4.php:99
 msgid "Content of the management email. Allowed tags: [blog_name], [manager_link]"
 msgstr "Abonelik inceleme mailinin içeriği. İzin verilen etiketler: [blog_name], [manager_link]"
 

@@ -7,10 +7,10 @@ if (!function_exists('is_admin') || !is_admin()){
 // Update options
 if (isset($_POST['options'])){
 	$faulty_fields = '';
-	if (isset($_POST['options']['manager_page_enabled']) && !subscribe_reloaded_update_option('manager_page_enabled', $_POST['options']['manager_page_enabled'], 'text')) $faulty_fields = __('Virtual Management Page','subscribe-reloaded').', ';
+	if (isset($_POST['options']['manager_page_enabled']) && !subscribe_reloaded_update_option('manager_page_enabled', $_POST['options']['manager_page_enabled'], 'yesno')) $faulty_fields = __('Virtual Management Page','subscribe-reloaded').', ';
 	if (isset($_POST['options']['manager_page_title']) && !subscribe_reloaded_update_option('manager_page_title', $_POST['options']['manager_page_title'], 'text')) $faulty_fields = __('Page title','subscribe-reloaded').', ';
-	if (isset($_POST['options']['manager_page']) && !subscribe_reloaded_update_option('manager_page', $_POST['options']['manager_page'], 'text')) $faulty_fields = __('Management URL','subscribe-reloaded').', ';
-	if (isset($_POST['options']['custom_header_meta']) && !subscribe_reloaded_update_option('custom_header_meta', $_POST['options']['custom_header_meta'], 'text')) $faulty_fields = __('Custom HEAD meta','subscribe-reloaded').', ';
+	if (isset($_POST['options']['manager_page']) && !subscribe_reloaded_update_option('manager_page', $_POST['options']['manager_page'], 'text-no-encode')) $faulty_fields = __('Management URL','subscribe-reloaded').', ';
+	if (isset($_POST['options']['custom_header_meta']) && !subscribe_reloaded_update_option('custom_header_meta', $_POST['options']['custom_header_meta'], 'text-no-encode')) $faulty_fields = __('Custom HEAD meta','subscribe-reloaded').', ';
 	
 	if (isset($_POST['options']['request_mgmt_link']) && !subscribe_reloaded_update_option('request_mgmt_link', $_POST['options']['request_mgmt_link'], 'text')) $faulty_fields = __('Request link','subscribe-reloaded').', ';
 	if (isset($_POST['options']['request_mgmt_link_thankyou']) && !subscribe_reloaded_update_option('request_mgmt_link_thankyou', $_POST['options']['request_mgmt_link_thankyou'], 'text')) $faulty_fields = __('Request submitted','subscribe-reloaded').', ';

@@ -10,7 +10,7 @@ if (isset($_POST['options'])){
 	$faulty_fields = '';
 	if (isset($_POST['options']['purge_days']) && !subscribe_reloaded_update_option('purge_days', $_POST['options']['purge_days'], 'integer')) $faulty_fields = __('Autopurge requests','subscribe-reloaded').', ';
 	if (isset($_POST['options']['enable_double_check']) && !subscribe_reloaded_update_option('enable_double_check', $_POST['options']['enable_double_check'], 'yesno')) $faulty_fields = __('Enable double check','subscribe-reloaded').', ';
-	if (isset($_POST['options']['notify_authors']) && !subscribe_reloaded_update_option('notify_authors', $_POST['options']['notify_authors'], 'yesno')) $faulty_fields = __('Notify authors','subscribe-reloaded').', ';
+	if (isset($_POST['options']['notify_authors']) && !subscribe_reloaded_update_option('notify_authors', $_POST['options']['notify_authors'], 'yesno')) $faulty_fields = __('Subscribe authors','subscribe-reloaded').', ';
 	if (isset($_POST['options']['enable_html_emails']) && !subscribe_reloaded_update_option('enable_html_emails', $_POST['options']['enable_html_emails'], 'yesno')) $faulty_fields = __('Enable HTML emails','subscribe-reloaded').', ';
 	if (isset($_POST['options']['process_trackbacks']) && !subscribe_reloaded_update_option('process_trackbacks', $_POST['options']['process_trackbacks'], 'yesno')) $faulty_fields = __('Send trackbacks','subscribe-reloaded').', ';
 	if (isset($_POST['options']['enable_admin_messages']) && !subscribe_reloaded_update_option('enable_admin_messages', $_POST['options']['enable_admin_messages'], 'yesno')) $faulty_fields = __('Notify admin','subscribe-reloaded').', ';
@@ -44,11 +44,11 @@ wp_print_scripts( 'quicktags' );
 			<div class="description"><?php _e('Send a notification email to confirm the subscription (to avoid addresses misuse).','subscribe-reloaded'); ?></div></td>
 	</tr>
 	<tr>
-		<th scope="row"><label for="notify_authors"><?php _e('Notify admin','subscribe-reloaded') ?></label></th>
+		<th scope="row"><label for="notify_authors"><?php _e('Subscribe authors','subscribe-reloaded') ?></label></th>
 		<td>
 			<input type="radio" name="options[notify_authors]" id="notify_authors" value="yes"<?php echo (subscribe_reloaded_get_option('notify_authors') == 'yes')?' checked="checked"':''; ?>> <?php _e('Yes','subscribe-reloaded') ?> &nbsp; &nbsp; &nbsp;
 			<input type="radio" name="options[notify_authors]" value="no" <?php echo (subscribe_reloaded_get_option('notify_authors') == 'no')?'  checked="checked"':''; ?>> <?php _e('No','subscribe-reloaded') ?>
-			<div class="description"><?php _e('Notify the administrator when a new comment is posted.','subscribe-reloaded'); ?></div></td>
+			<div class="description"><?php _e('Automatically subscribe authors to their own articles (not retroactive).','subscribe-reloaded'); ?></div></td>
 	</tr>
 	<tr>
 		<th scope="row"><label for="enable_html_emails"><?php _e('Enable HTML emails','subscribe-reloaded') ?></label></th>

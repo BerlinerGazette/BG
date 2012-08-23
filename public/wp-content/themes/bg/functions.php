@@ -116,10 +116,6 @@ if ( function_exists('register_sidebars') ) {
 		'name' => 'Sidebar left top (global)',
 		'id' => 'main_sidebar_left_top',
 	));
-	register_sidebar(array(
-		'name' => 'Sidebar left btm (global)',
-		'id' => 'main_sidebar_left_btm',
-	));
 	
 	// right sidebar
 	register_sidebar(array(
