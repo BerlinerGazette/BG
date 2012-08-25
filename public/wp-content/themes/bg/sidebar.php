@@ -6,7 +6,6 @@
 			$category = get_the_category();
 			$cat = $category[0]->cat_ID;
 		}
-		
 		// Liquid Writing Sidebar
 		if (isset($cat) && !is_front_page() && $cat == BGProjectConfig::$liquidwriting['category_id']) {
 			dynamic_sidebar('liquidwriting');
@@ -23,6 +22,9 @@
 		} elseif (isset($cat) && !is_front_page() && $cat == BGProjectConfig::$bqv['category_id']) {
 			dynamic_sidebar('bqv-left');
 			require TEMPLATEPATH.'/elements/teaser/hund.php';
+		// BBPress Sidebar
+		} elseif (is_bbpress()) {
+			dynamic_sidebar('bbpress_left');
 		// Everything else
 		} else {
 			dynamic_sidebar('main_sidebar_left_top');

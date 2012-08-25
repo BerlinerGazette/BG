@@ -70,11 +70,6 @@ class BGTime
 }
 
 
-
-
-
-
-
  /**
  * stuff below this comment is from the theme template, not sure what is in use
  * and what not - ephigenia
@@ -132,7 +127,8 @@ if ( function_exists('register_sidebars') ) {
 		'name' => 'liquidwriting',
 		'id' => 'sidebar-liquidwriting',
 	));
-	// lebeenskünstler project
+
+	// lebenskünstler project
 	register_sidebar(array(
 		'name' => 'lebenskuenstler-left',
 		'id' => 'sidebar-lebenskuenstler-left'
@@ -160,6 +156,12 @@ if ( function_exists('register_sidebars') ) {
 	register_sidebar(array(
 		'name' => 'bqv-right',
 		'id' => 'sidebar-bqv-right',
+	));
+
+	// bbpress (forum) sidebar
+	register_sidebar(array(
+		'name' => 'bbpress-left',
+		'id' => 'sidebar-bbpress-left',
 	));
 }
 
