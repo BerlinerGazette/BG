@@ -1,14 +1,12 @@
 // sidebar widgets
 // ---------------
 .widget {
+	margin-bottom: 1em;
 	.author {
 		width: 204px;
 		height: 204px;
 		float: left;
 		margin: 2px 5px 0px 0px;
-	}
-	h2 {
-		margin: 0em;	
 	}
 }
 
@@ -77,7 +75,7 @@ a.teaser {
 	}
 	ul {
 		margin-bottom: 1em;
-		&.last {
+		&:last-child, &.last {
 			margin-bottom: 0em;
 		}
 	}
