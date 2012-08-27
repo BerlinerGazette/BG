@@ -24,7 +24,7 @@
 			require TEMPLATEPATH.'/elements/teaser/hund.php';
 		// BBPress Sidebar
 		} elseif (is_bbpress()) {
-			dynamic_sidebar('bbpress_left');
+			dynamic_sidebar('sidebar-bbpress-left');
 		// Everything else
 		} else {
 			dynamic_sidebar('main_sidebar_left_top');

@@ -2,3 +2,13 @@
 #center.bbpress {
 	width: 680px;
 }
+
+// Sidebar Styles for BBPRess Widget
+li.widget_display_topics {
+	@extend .widget;
+	> ul {
+		> li {
+
+		}
+	}
+}

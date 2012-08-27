@@ -1,3 +1,26 @@
+// sidebar widgets
+// ---------------
+.widget {
+	.author {
+		width: 204px;
+		height: 204px;
+		float: left;
+		margin: 2px 5px 0px 0px;
+	}
+	h2 {
+		margin: 0em;	
+	}
+}
+
+// custom widgets
+// --------------
+.widget_text {
+	margin-bottom: 1em;
+	display: block;
+}
+.widget_betterblogroll h2 {
+	display: none;
+}
 .widget_rss {
 	display: block;
 	line-height: 1.5em;
@@ -13,4 +36,65 @@
 			}
 		}
 	}
+}
+
+// Teaser
+// ------
+a.teaser {
+	font-size: 1.2em;
+	line-height: 1.2em;
+	font-weight: bold;
+	text-decoration: none;
+}
+.teaser {
+	display: block;
+	line-height: 1.5em;
+	background-color: #ebebeb;
+	border: 1px solid #dbdbdb;
+	margin-bottom: 1em;
+	padding: .6em .5em .5em .5em;
+	&.noBorder {
+		border: none;
+		background-color: inherit;
+		padding: 0;
+	}
+	&.white {
+		background-color: #ffffff;
+	}
+	select {
+		width: 200px;
+	}
+	a img {
+		text-decoration: none;
+	}
+	img {
+		margin: 0em 0em 1em 0em;
+		&.full {
+			margin-top: -0.8em;
+			margin-left: -8px;
+			margin-bottom: 0.5em;
+		}
+	}
+	ul {
+		margin-bottom: 1em;
+		&.last {
+			margin-bottom: 0em;
+		}
+	}
+}
+
+// widgets that look like teasers
+.ngg_images,
+.widget_betterblogroll,
+.widget_currentauthor,
+.widget_links,
+.widget_randomauthor,
+.widget_sidebar_category_dropdown,
+.widget_sidebar_current_category_feed,
+{
+	@extend .teaser;
+}
+.widget_sidebar_category_dropdown,
+.ngg_images {
+	background-color: #ffffff;
 }

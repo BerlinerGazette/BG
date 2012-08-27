@@ -1,0 +1,9 @@
+// icons
+// -----
+@each $icon in feed, flickr, youtube, twitter, facebook, delicious, spreadshirt, vimeo, flattr, google-plus, soundcloud {
+	.icon-#{$icon} {
+		$image: "icon/" + $icon + "-16x16.png";
+		@include background(inline-image($image) no-repeat left center);
+		padding-left: image-width($image) + 4px;
+	}
+}
