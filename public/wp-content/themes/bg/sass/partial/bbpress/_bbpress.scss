@@ -1,4 +1,10 @@
 // BB Press Style
+
+// Config
+// ------
+$meta-text-color: lighten($text-color, 50);
+
+
 #center.bbpress {
 	width: 680px;
 }
@@ -7,19 +13,26 @@
 li.widget_display_forums,
 li.widget_display_topics,
 li.bbp_widget_login,
+li.widget_display_views,
 {
 	@extend .teaser;
 }
 
 // forum overview table header
 #bbpress-forums {
-	p.bbp-topic-meta {
+	.bbp-topic-meta {
 		margin: 0;
 		font-size: inherit;
+		color: $meta-text-color;
+		a {
+			color: $meta-text-color;
+		}
 	}
 	.bbp-forum-content {
-		color: lighten($text-color, 50);
+		color: $meta-text-color;
 	}
+
+	// forum listing
 	ul.bbp-forums {
 		border: none;
 	}
@@ -30,6 +43,11 @@ li.bbp_widget_login,
 	}
 	li.bbp-footer {
 		background: none;
+		border: none;
+	}
+
+	// topic listing
+	.bbp-topics {
 		border: none;
 	}
 }
