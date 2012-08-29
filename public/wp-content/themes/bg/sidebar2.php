@@ -71,13 +71,6 @@
 			) {
 			require TEMPLATEPATH.'/elements/flickr_badge.php';
 		}
-		// require TEMPLATEPATH.'/elements/teaser/emergeandsee.php';
-		// require TEMPLATEPATH.'/elements/teaser/polar.php';
-		// require TEMPLATEPATH.'/elements/teaser/lima.php';
-		// require TEMPLATEPATH.'/elements/teaser/fluter.php';
-		// require TEMPLATEPATH.'/elements/teaser/springerin.php';
-		// require TEMPLATEPATH.'/elements/teaser/re_campaign.php';
-		
 		if (function_exists('dynamic_sidebar')) {
 			dynamic_sidebar('main_sidebar_right');
 		}
@@ -101,9 +94,12 @@
 		if (isset($cat) && !is_front_page() && $cat == BGProjectConfig::$bqv['category_id']) {
 			dynamic_sidebar('bqv-right');
 		}
+		// digital backyards
+		if (isset($cat) && !is_front_page() && $cat == BGProjectConfig::$digitalBackyards['category_id']) {
+			dynamic_sidebar('sidebar-digital-backyards-right');
+		}
 	}
 	
 	?>
-	
 	</ul>	
 </div>
