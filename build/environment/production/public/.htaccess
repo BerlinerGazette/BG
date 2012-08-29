@@ -15,23 +15,25 @@ RewriteRule ^(florian-kosak|magdalena-taube|krystian-woznicki|sarah-curth|marcel
 
 # temporary redirects and other domains
 # -------------------------------------
-RewriteRule ^vernetzt-schreiben/? /seminar/projekte/vernetzt-schreiben/ [QSA,R,L]
+RewriteRule ^vernetzt-schreiben/? 	/seminar/projekte/vernetzt-schreiben/ [QSA,R,L]
 # Liquid Writing
-RewriteCond %{HTTP_HOST}   ^liquidwriting\.org/$ [NC]
-RewriteRule ^(.*)$         http://berlinergazette.de/seminar/projekte/liquidwriting [L,R=301]
-RewriteRule ^liquidwriting/? /seminar/projekte/liquidwriting/ [QSA,R,L]
+RewriteCond %{HTTP_HOST}   			^liquidwriting\.org/$ [NC]
+RewriteRule ^(.*)$         			http://berlinergazette.de/seminar/projekte/liquidwriting [L,R=301]
+RewriteRule ^liquidwriting/? 		/seminar/projekte/liquidwriting/ [QSA,R,L]
 # Medienaktivismus
-RewriteCond %{HTTP_HOST}   ^medienaktivismus\.info$ [NC]
-RewriteRule ^(.*)$         http://berlinergazette.de/seminar/projekte/medienaktivismus [L,R=301]
-RewriteRule ^medienaktivismus/? /seminar/projekte/medienaktivismus/ [QSA,R,L]
+RewriteCond %{HTTP_HOST}  		 	^medienaktivismus\.info$ [NC]
+RewriteRule ^(.*)$       		  	http://berlinergazette.de/seminar/projekte/medienaktivismus [L,R=301]
+RewriteRule ^medienaktivismus/? 	/seminar/projekte/medienaktivismus/ [QSA,R,L]
 # Lebenskünstler
-RewriteCond %{HTTP_HOST}   ^lebenskuenstler-projekt\.de$ [NC]
-RewriteRule ^(.*)$         http://berlinergazette.de/seminar/projekte/lebenskuenstler [L,R=301]
-RewriteRule ^lebenskuenstler/? /seminar/projekte/lebenskuenstler/ [QSA,R,L]
+RewriteCond %{HTTP_HOST}   			^lebenskuenstler-projekt\.de$ [NC]
+RewriteRule ^(.*)$         			http://berlinergazette.de/seminar/projekte/lebenskuenstler [L,R=301]
+RewriteRule ^lebenskuenstler/? 		/seminar/projekte/lebenskuenstler/ [QSA,R,L]
 # L311 / Learning from Fukushima Symposium
 RewriteRule ^learning-from-fukushima/? /symposium/learning-from-fukushima/ [QSA,R,L]
 # BQV (2012)
-RewriteRule ^bqv/? /seminar/projekte/bqv/ [QSA,R,L]
+RewriteRule ^bqv/? 					/seminar/projekte/bqv/ [QSA,R,L]
+# Digital Backyards (2012)
+RewriteRule ^digital-backyards/? 	/symposium/digital-backyards/ [QSA,R,L]
 
 # wp-rewrite rules
 RewriteCond %{REQUEST_FILENAME} !-f
