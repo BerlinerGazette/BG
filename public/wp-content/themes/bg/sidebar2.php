@@ -21,7 +21,8 @@
 	
 	// CATEGORY PAGE
 	if (!isset($cat) || (isset($cat) && !in_array($cat, array(
-		BGProjectConfig::$bqv['category_id']
+		BGProjectConfig::$bqv['category_id'],
+		BGProjectConfig::$digitalBackyards['category_id'],
 		)))) {
 		require TEMPLATEPATH.'/elements/categoryPage.php';
 	}
@@ -55,6 +56,7 @@
 		BGProjectConfig::$lebenskuenstler['category_id'],
 		BGProjectConfig::$l311['category_id'],
 		BGProjectConfig::$bqv['category_id'],
+		BGProjectConfig::$digitalBackyards['category_id'],
 		)))) {
 		require TEMPLATEPATH.'/elements/feeds.php';
 		require TEMPLATEPATH.'/elements/teaser/hund.php';

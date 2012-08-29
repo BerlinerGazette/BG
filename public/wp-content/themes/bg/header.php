@@ -37,6 +37,11 @@
 		$backgroundImage = get_post_meta($page->ID, 'backgroundImage');
 		$backgroundImage = $backgroundImage[0];
 	}
+	if (!empty($pageNames) && ($page = get_page_by_title($pageNames[0].'_Center', false))) {
+		$backgroundImage = get_post_meta($page->ID, 'backgroundImage');
+		$backgroundImage = $backgroundImage[0];
+	}
+
 	if ($cat == BGProjectConfig::$l311['category_id']) {
 		$backgroundImage = 'http://berlinergazette.de/wp-content/uploads/Berliner_Gazette_Netzwerk_20101.jpg';
 	}
