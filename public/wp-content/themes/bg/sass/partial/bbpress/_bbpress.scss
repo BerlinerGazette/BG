@@ -4,7 +4,6 @@
 // ------
 $meta-text-color: lighten($text-color, 50);
 
-
 #center.bbpress {
 	width: 680px;
 }
@@ -14,29 +13,38 @@ li.widget_display_forums,
 li.widget_display_topics,
 li.bbp_widget_login,
 li.widget_display_views,
+li.widget_display_replies,
 {
 	@extend .teaser;
 }
 
-// disable all outlines
-#bbpress-forums ul.bbp-lead-topic,
-#bbpress-forums ul.bbp-topics,
-#bbpress-forums ul.bbp-forums,
-#bbpress-forums ul.bbp-replies,
-#bbpress-forums fieldset.bbp-form,
-{
-	border: none;
-}
-// disale styling of fieldset
-#bbpress-forums fieldset.bbp-form {
-	padding: 0;
-	legend {
-		@extend h3
+li.widget_display_topics,
+li.widget_display_replies, {
+	> ul > li {
+		font-size: 0.9em;
+		border-bottom: 1px solid darken(#ebebeb, 20);
+		padding-bottom: 0.5em;
+		margin-bottom: 0.5em;
+		&:last-child {
+			padding-bottom: 0;
+			margin-bottom: 0;
+			border-bottom: 0;
+		}
 	}
 }
 
 // forum overview table header
 #bbpress-forums {
+	// disable all outlines
+	ul.bbp-lead-topic,
+	ul.bbp-topics,
+	ul.bbp-forums,
+	
+	fieldset.bbp-form,
+	{
+		border: none;
+	}
+
 	.bbp-topic-meta {
 		margin: 0;
 		font-size: inherit;
@@ -63,5 +71,50 @@ li.widget_display_views,
 	// thread view
 	li.bbp-footer {
 		display: none;
+	}
+
+	// form
+	fieldset.bbp-form {
+		margin: 0;
+		padding: 0em;
+
+		// resetting widths
+		p, 
+		textarea,
+		select,
+		input,
+		{
+			width: auto;
+		}
+		
+		fieldset {
+			legend {
+				display: none;
+			}
+		}
+		legend {
+			@extend h3
+		}
+		label, input {
+			clear: both;
+			width: auto;
+		}
+		label {
+			&:after {
+				content: '';
+			}
+		}
+		p.form-allowed-tags {
+			code {
+				border: #CEE1EF 1px solid;
+				@include background(aliceBlue);
+				display: table-cell;
+				padding: 0.5em;
+				font-family: Monaco, Courier;
+			}
+		}
+		.bbp-submit-wrapper {
+			float: left;
+		}
 	}
 }
