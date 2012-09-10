@@ -99,6 +99,9 @@ class BGProjectConfig {
 	public static $bqv = array(
 		'category_id' => 1112,
 	);
+	public static $digitalBackyards = array(
+		'category_id' => 1247,
+	);
 }
 
 /* blast you red baron! */
@@ -162,6 +165,16 @@ if ( function_exists('register_sidebars') ) {
 	register_sidebar(array(
 		'name' => 'bbpress-left',
 		'id' => 'sidebar-bbpress-left',
+	));
+	
+	// Digital Backyards (2012)
+	register_sidebar(array(
+		'name' => 'digital-backyards-left',
+		'id' => 'sidebar-digital-backyards-left',
+	));
+	register_sidebar(array(
+		'name' => 'digital-backyards-right',
+		'id' => 'sidebar-digital-backyards-right',
 	));
 }
 

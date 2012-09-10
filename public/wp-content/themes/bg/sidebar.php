@@ -25,6 +25,10 @@
 		// BBPress Sidebar
 		} elseif (is_bbpress()) {
 			dynamic_sidebar('sidebar-bbpress-left');
+		// Digital Backyards (2012)
+		} elseif (isset($cat) && !is_front_page() && $cat == BGProjectConfig::$digitalBackyards['category_id']) {
+			dynamic_sidebar('sidebar-digital-backyards-left');
+			require TEMPLATEPATH.'/elements/teaser/hund.php';
 		// Everything else
 		} else {
 			dynamic_sidebar('main_sidebar_left_top');
