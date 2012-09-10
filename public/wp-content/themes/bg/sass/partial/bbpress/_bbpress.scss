@@ -18,6 +18,23 @@ li.widget_display_views,
 	@extend .teaser;
 }
 
+// disable all outlines
+#bbpress-forums ul.bbp-lead-topic,
+#bbpress-forums ul.bbp-topics,
+#bbpress-forums ul.bbp-forums,
+#bbpress-forums ul.bbp-replies,
+#bbpress-forums fieldset.bbp-form,
+{
+	border: none;
+}
+// disale styling of fieldset
+#bbpress-forums fieldset.bbp-form {
+	padding: 0;
+	legend {
+		@extend h3
+	}
+}
+
 // forum overview table header
 #bbpress-forums {
 	.bbp-topic-meta {
@@ -33,9 +50,6 @@ li.widget_display_views,
 	}
 
 	// forum listing
-	ul.bbp-forums {
-		border: none;
-	}
 	li.bbp-header {
 		background: $app-background-color;
 		border: none;
@@ -46,8 +60,8 @@ li.widget_display_views,
 		border: none;
 	}
 
-	// topic listing
-	.bbp-topics {
-		border: none;
+	// thread view
+	li.bbp-footer {
+		display: none;
 	}
 }

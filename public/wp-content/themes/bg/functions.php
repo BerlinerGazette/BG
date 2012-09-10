@@ -163,17 +163,17 @@ if ( function_exists('register_sidebars') ) {
 
 	// bbpress (forum) sidebar
 	register_sidebar(array(
-		'name' => 'bbpress-left',
+		'name' => 'Forum (links)',
 		'id' => 'sidebar-bbpress-left',
 	));
-	
+
 	// Digital Backyards (2012)
 	register_sidebar(array(
-		'name' => 'digital-backyards-left',
+		'name' => 'Digital Backyards (links)',
 		'id' => 'sidebar-digital-backyards-left',
 	));
 	register_sidebar(array(
-		'name' => 'digital-backyards-right',
+		'name' => 'Digital Backyards (rechts)',
 		'id' => 'sidebar-digital-backyards-right',
 	));
 }
