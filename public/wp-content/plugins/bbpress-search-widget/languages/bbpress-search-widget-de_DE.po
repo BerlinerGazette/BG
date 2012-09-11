@@ -1,0 +1,198 @@
+# This German Language File: Copyright (C) 2011-2012 by David Decker of deckerweb.de & genesisthemes.de
+# This file is distributed under the same license as the bbPress Search Widget Plugin package.
+#
+# Weitere deutsche Sprachdateien fuer bbPress Plugin und WordPress sind hier zu finden:
+# --> http://deckerweb.de/sprachdateien/
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bbPress Search Widget Plugin\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/bbpress-search-widget\n"
+"POT-Creation-Date: 2012-05-23 18:28+0100\n"
+"PO-Revision-Date: 2012-05-23 18:35+0100\n"
+"Last-Translator: David Decker <deckerweb.mobil@googlemail.com>\n"
+"Language-Team: DECKERWEB <deckerweb.mobil@googlemail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#@ bbpress-search-widget
+#. translators: plugin header field 'Name'
+#: bbpress-search-widget.php:0
+#: includes/bbpsw-admin.php:112
+#: includes/bbpsw-admin.php:122
+msgid "bbPress Search Widget"
+msgstr "bbPress Such-Widget"
+
+#@ bbpress-search-widget
+#. translators: plugin header field 'PluginURI'
+#: bbpress-search-widget.php:0
+#: includes/bbpsw-admin.php:22
+msgid "http://genesisthemes.de/en/wp-plugins/bbpress-search-widget/"
+msgstr "http://genesisthemes.de/plugins/bbpress-search-widget/"
+
+#@ bbpress-search-widget
+#. translators: plugin header field 'Author'
+#: bbpress-search-widget.php:0
+msgid "David Decker - DECKERWEB"
+msgstr "David Decker - DECKERWEB.de"
+
+#@ bbpress-search-widget
+#. translators: plugin header field 'AuthorURI'
+#: bbpress-search-widget.php:0
+msgid "http://deckerweb.de/"
+msgstr "http://deckerweb.de/"
+
+#@ bbpress-search-widget
+#: includes/bbpsw-admin.php:40
+msgid "Go to the Widgets settings page"
+msgstr "Zur Widgets-Einstellungen Seite ..."
+
+#@ bbpress-search-widget
+#: includes/bbpsw-admin.php:40
+msgid "Widgets"
+msgstr "Widgets"
+
+#@ bbpress-search-widget
+#: includes/bbpsw-admin.php:65
+#: includes/bbpsw-admin.php:117
+msgid "FAQ"
+msgstr "FAQ - Häufige Fragen"
+
+#@ bbpress-search-widget
+#: includes/bbpsw-admin.php:66
+#: includes/bbpsw-admin.php:117
+msgid "Support"
+msgstr "Hilfe &amp; Unterstützung (Support)"
+
+#@ bbpress-search-widget
+#: includes/bbpsw-admin.php:23
+msgid "http://genesisthemes.de/en/donate/"
+msgstr "http://genesisthemes.de/spenden/"
+
+#@ bbpress-search-widget
+#: includes/bbpsw-admin.php:68
+#: includes/bbpsw-admin.php:117
+msgid "Donate"
+msgstr "Spenden"
+
+#@ bbpress-search-widget
+#: bbpress-search-widget.php:155
+#: bbpress-search-widget.php:178
+#: includes/bbpsw-admin.php:113
+msgid "bbPress Forum Search"
+msgstr "bbPress Forum-Suche"
+
+#@ bbpress-search-widget
+#: bbpress-search-widget.php:192
+msgid "Search the forums"
+msgstr "Foren durchsuchen"
+
+#@ bbpress-search-widget
+#: bbpress-search-widget.php:193
+msgid "Search"
+msgstr "Suchen"
+
+#@ bbpress-search-widget
+#: bbpress-search-widget.php:255
+msgid "Title:"
+msgstr "Titel:"
+
+#@ bbpress-search-widget
+#. translators: plugin header field 'Description'
+#: bbpress-search-widget.php:0
+msgid "This Plugin adds a search widget for the bbPress 2.x forum plugin post types independent from the regular WordPress search."
+msgstr "Dieses Plugin fügt ein Such-Widget für das bbPress 2.x Forum-Plugin hinzu, um dessen Inhaltstypen ( Themen, Antworten) unabhängig von der normalen WordPress-Suche durchsuchen zu können."
+
+#@ bbpress-search-widget
+#: bbpress-search-widget.php:151
+msgid "Search box for the bbPress 2.x forum plugin. Search in forum topics and replies only. (No mix up with regular WordPress search!)"
+msgstr "Suchformular für das bbPress 2.x Forum-Plugin. Suche beschränkt auf Foren-Themen und Antworten. (Kein Vermischen mit der regulären WordPress-Suche!)"
+
+#@ bbpress-search-widget
+#: bbpress-search-widget.php:191
+msgid "Search forum in topics and replies for:"
+msgstr "Suche in Foren-Themen und Antworten:"
+
+#@ bbpress-search-widget
+#: bbpress-search-widget.php:261
+msgid "Optional intro text:"
+msgstr "Optionaler Intro-Text:"
+
+#@ bbpress-search-widget
+#: bbpress-search-widget.php:262
+msgid "For example add some additional forum/search info etc."
+msgstr "Zum Beispiel für zusätzliche Forum-/ Such-Infos etc."
+
+#@ bbpress-search-widget
+#: bbpress-search-widget.php:263
+#: bbpress-search-widget.php:272
+msgid "Just leave blank to not use at all."
+msgstr "Einfach frei lassen, um dieses Feld <em>nicht</em> zu nutzen."
+
+#@ bbpress-search-widget
+#: bbpress-search-widget.php:270
+msgid "Optional outro text:"
+msgstr "Optionaler Outro-Text:"
+
+#@ bbpress-search-widget
+#: bbpress-search-widget.php:271
+msgid "For example add some additional user instructions etc."
+msgstr "Zum Beispiel um zusätzliche Benutzer-Instruktionen hinzuzufügen etc."
+
+#@ bbpress-search-widget
+#. translators: plugin header field 'Version'
+#: bbpress-search-widget.php:0
+msgid "1.2"
+msgstr "1.2"
+
+#@ bbpress-search-widget
+#: includes/bbpsw-admin.php:67
+#: includes/bbpsw-admin.php:117
+msgid "Translations"
+msgstr "Übersetzungen"
+
+#@ bbpress-search-widget
+#: includes/bbpsw-admin.php:113
+#, php-format
+msgid "Added Widget by the plugin: %s"
+msgstr "Hinzugefügtes Widget durch das Plugin: %s"
+
+#@ bbpress-search-widget
+#: includes/bbpsw-admin.php:114
+#, php-format
+msgid "It searches only in the post types %s and %s and outputs the results formatted like the other search results (of WordPress)."
+msgstr "Es wird nur in den Inhaltstypen (Post Types) %s und %s des Forums gesucht. Die Suchergebnisse werden in der Regel so formatiert wie die anderen Suchergebnisse (von WordPress)."
+
+#@ bbpress-search-widget
+#: includes/bbpsw-admin.php:114
+msgid "Topic"
+msgstr "Thema"
+
+#@ bbpress-search-widget
+#: includes/bbpsw-admin.php:114
+msgid "Reply"
+msgstr "Antwort (Beiträge zu Themen)"
+
+#@ bbpress-search-widget
+#: includes/bbpsw-admin.php:115
+msgid "Please note: This plugin does not mix up its displayed search results with WordPress built-in search. It is limited to the bbPress forum post types. For enhanced styling of the widget and/or the search results please have a look on the FAQ page linked below."
+msgstr "Bitte beachten: Dieses Plugin vermischt die angezeigten Ergebnisse nicht mit der regulären WordPress-Suche. Es ist beschränkt auf die bbPress Foren-Inhaltstypen. Für erweitertes/ angepasstes Styling des Widgets und/ oder der Sucherergebnisse bitte die FAQ-Seite (Häufige Fragen) unten beachten."
+
+#@ bbpress-search-widget
+#: includes/bbpsw-admin.php:116
+msgid "Important plugin links:"
+msgstr "Wichtige Plugin-Links:"
+
+#@ bbpress-search-widget
+#: includes/bbpsw-admin.php:117
+msgid "Plugin Homepage"
+msgstr "Plugin-Webseite"
+
