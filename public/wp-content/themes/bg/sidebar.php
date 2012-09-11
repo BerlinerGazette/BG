@@ -23,7 +23,7 @@
 			dynamic_sidebar('bqv-left');
 			require TEMPLATEPATH.'/elements/teaser/hund.php';
 		// BBPress Sidebar
-		} elseif (is_bbpress()) {
+		} elseif (function_exists('is_bbpress') && is_bbpress()) {
 			dynamic_sidebar('sidebar-bbpress-left');
 		// Digital Backyards (2012)
 		} elseif (isset($cat) && !is_front_page() && $cat == BGProjectConfig::$digitalBackyards['category_id']) {
