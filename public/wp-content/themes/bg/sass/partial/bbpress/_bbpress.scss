@@ -39,18 +39,8 @@ li.widget_display_replies, {
 // forum overview table header
 #bbpress-forums {
 
-	// // elements that should be hidden
-	// div.bbp-pagination-count,
-	// div.bbp-template-notice,
-	// {
-	// 	display: none;
-	// }
-
 	// disable all outlines
 	ul.bbp-lead-topic,
-	ul.bbp-topics,
-	ul.bbp-forums,
-	
 	fieldset.bbp-form,
 	{
 		border: none;
@@ -128,4 +118,9 @@ li.widget_display_replies, {
 			float: left;
 		}
 	}
+}
+
+// author page
+#author-description {
+	margin-left: 0 !important;
 }
