@@ -5,10 +5,11 @@
 $meta-text-color: lighten($text-color, 50);
 
 #center.bbpress {
+	float: right;
 	width: 680px;
-	margin-left: 5px;
-	margin-right: 25px;
+	margin-right: 5px;
 }
+
 
 // Sidebar Styles for BBPRess Widget
 li.widget_display_forums,
@@ -37,6 +38,14 @@ li.widget_display_replies, {
 
 // forum overview table header
 #bbpress-forums {
+
+	// // elements that should be hidden
+	// div.bbp-pagination-count,
+	// div.bbp-template-notice,
+	// {
+	// 	display: none;
+	// }
+
 	// disable all outlines
 	ul.bbp-lead-topic,
 	ul.bbp-topics,
