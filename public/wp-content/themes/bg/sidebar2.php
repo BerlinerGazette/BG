@@ -101,7 +101,6 @@
 			dynamic_sidebar('sidebar-digital-backyards-right');
 		}
 	}
-	
 	?>
-	</ul>	
+	</ul>
 </div>
