@@ -12,7 +12,7 @@ $(document).ready(function() {
 				$('#blogpost-ticker li:first').fadeIn();
 			});
 			ticker();
-		}, 6000);
+		}, 9000);
 	}
 	ticker();
 });

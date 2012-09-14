@@ -11,7 +11,7 @@
 			powered by <a href="http://www.wordpress.org/" rel="external" title="Wordpress Homepage">Wordpress</a>,
 			Theme: Berliner Gazette,
 			Hosting: <a href="http://df.eu/kwk/277171/" rel="external">Domainfactory</a>,
-			Programmierung &amp; Gestaltung: <a href="http://www.marceleichner.de" title="Professionelle Web- und PHP Entwicklung aus Berlin">Marcel Eichner // Ephigenia</a>, 
+			Programmierung &amp; Gestaltung: <a href="http://www.foobugs.com" title="foobugs - Oelke &amp; Eichner GbR - Professionelle Web-Anwendungsentwicklung aus Berlin">foobugs Oelke &amp; Eichner GbR</a>, 
 		<?php wp_footer(); ?>
 		<?php if (get_current_user() == 'ephigenia') {
 			printf('<br />'.__('%d queries. %s seconds.', 'kubrick'), get_num_queries(), timer_stop(0, 3));

@@ -45,6 +45,10 @@
 	if ($cat == BGProjectConfig::$l311['category_id']) {
 		$backgroundImage = 'http://berlinergazette.de/wp-content/uploads/Berliner_Gazette_Netzwerk_20101.jpg';
 	}
+	// Digital Backyards Background in Forum
+	if (function_exists('is_bbpress') && is_bbpress()) {
+		$backgroundImage = 'http://berlinergazette.de/wp-content/uploads/Digital-Backy0ards-BG-Logo-041.jpg';
+	}
 	if (!empty($backgroundImage)) {
 		?>
 		<style>
@@ -63,7 +67,16 @@
 		<div id="header">
 			<h1>
 				<a href="<?php bloginfo('url'); ?>" title="zur Startseite" rel="index">
-					<img src="<?php bloginfo('template_directory'); ?>/images/berliner_gazette_logo.gif" alt="" />
+					<?php
+					$logoFilename = 'berliner_gazette_logo_de.gif';
+					if (
+						(function_exists('is_bbpress') && is_bbpress()) ||
+						(isset($cat) && $cat == BGProjectConfig::$digitalBackyards['category_id'])
+						) {
+						$logoFilename = 'berliner_gazette_logo_en.gif';
+					}
+					?>
+					<img src="<?php bloginfo('template_directory'); ?>/images/<?= $logoFilename; ?>" alt="" />
 				</a>
 			</h1>
 			<div id="topbar">
