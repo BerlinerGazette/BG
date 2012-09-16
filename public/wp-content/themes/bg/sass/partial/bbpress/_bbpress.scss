@@ -6,8 +6,14 @@ $meta-text-color: lighten($text-color, 50);
 
 #center.bbpress {
 	float: right;
-	width: 680px;
+	width: 640px;
 	margin-right: 5px;
+	.leftSidebar {
+		width: 260px;
+	}
+	.bbpress-twitter-wall {
+		margin-bottom: 5px;
+	}
 }
 
 

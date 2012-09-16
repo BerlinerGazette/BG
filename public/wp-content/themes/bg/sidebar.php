@@ -25,6 +25,9 @@
 		// BBPress Sidebar
 		} elseif (function_exists('is_bbpress') && is_bbpress()) {
 			dynamic_sidebar('sidebar-bbpress-left');
+			?>
+			<iframe width="260" height="450" class="bbpress-twitter-wall" src="http://twitter-wall.berlinergazette.de/public/"></iframe>
+			<?php
 		// Digital Backyards (2012)
 		} elseif (isset($cat) && !is_front_page() && $cat == BGProjectConfig::$digitalBackyards['category_id']) {
 			dynamic_sidebar('sidebar-digital-backyards-left');
