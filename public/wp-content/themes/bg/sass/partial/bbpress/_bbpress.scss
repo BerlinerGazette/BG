@@ -8,12 +8,15 @@ $meta-text-color: lighten($text-color, 50);
 	float: right;
 	width: 640px;
 	margin-right: 5px;
-	.leftSidebar {
-		width: 260px;
-	}
 	.bbpress-twitter-wall {
 		margin-bottom: 5px;
 	}
+}
+body.bbPress .leftSidebar {
+	width: 260px !important;
+}
+body.bbPress .rightSidebar {
+
 }
 
 
