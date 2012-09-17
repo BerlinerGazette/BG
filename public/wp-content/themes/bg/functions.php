@@ -166,6 +166,10 @@ if ( function_exists('register_sidebars') ) {
 		'name' => 'Forum (links)',
 		'id' => 'sidebar-bbpress-left',
 	));
+	register_sidebar(array(
+		'name' => 'Forum (rechts)',
+		'id' => 'sidebar-bbpress-right',
+	));
 
 	// Digital Backyards (2012)
 	register_sidebar(array(

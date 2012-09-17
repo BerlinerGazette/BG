@@ -51,17 +51,19 @@
 	// if (is_single()) {
 	// 	require TEMPLATEPATH.'/elements/recentPosts.php';
 	// }
-	if (!isset($cat) || (isset($cat) && !in_array($cat, array(
+	$isBBPress = (function_exists('is_bbpress') && is_bbpress());
+	$isProjectCategory = !isset($cat) || (isset($cat) && !in_array($cat, array(
 		BGProjectConfig::$liquidwriting['category_id'],
 		BGProjectConfig::$lebenskuenstler['category_id'],
 		BGProjectConfig::$l311['category_id'],
 		BGProjectConfig::$bqv['category_id'],
-		BGProjectConfig::$digitalBackyards['category_id'],
-		)))) {
+		BGProjectConfig::$digitalBackyards['category_id']
+		)));
+	if ($isProjectCategory && !$isBBPress) {
 		require TEMPLATEPATH.'/elements/feeds.php';
 		require TEMPLATEPATH.'/elements/teaser/hund.php';
-		require TEMPLATEPATH.'/elements/newsletterForm.php';	
-	}	
+		require TEMPLATEPATH.'/elements/newsletterForm.php';
+	}
 	
 	// show sidebar only in author, index page, search
 	if (is_home() || (is_tag() && empty($cat))) {
@@ -99,6 +101,12 @@
 		// digital backyards
 		if (isset($cat) && !is_front_page() && $cat == BGProjectConfig::$digitalBackyards['category_id']) {
 			dynamic_sidebar('sidebar-digital-backyards-right');
+		}
+		if (function_exists('is_bbpress') && is_bbpress()) {
+			dynamic_sidebar('sidebar-bbpress-right');
+			?>
+			<iframe width="260" height="450" class="bbpress-twitter-wall" src="http://twitter-wall.berlinergazette.de/"></iframe>
+			<?php
 		}
 	}
 	?>

@@ -5,14 +5,12 @@
 $meta-text-color: lighten($text-color, 50);
 
 #center.bbpress {
-	float: right;
-	width: 640px;
-	margin-right: 5px;
+	width: 390px;
 	.bbpress-twitter-wall {
 		margin-bottom: 5px;
 	}
 }
-body.bbPress .leftSidebar {
+body.bbPress .rightSidebar {
 	width: 260px !important;
 }
 body.bbPress .rightSidebar {
