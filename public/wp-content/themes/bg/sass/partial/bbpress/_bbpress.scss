@@ -4,19 +4,6 @@
 // ------
 $meta-text-color: lighten($text-color, 50);
 
-#center.bbpress {
-	width: 390px;
-	.bbpress-twitter-wall {
-		margin-bottom: 5px;
-	}
-}
-body.bbPress .rightSidebar {
-	width: 260px !important;
-}
-body.bbPress .rightSidebar {
-
-}
-
 
 // Sidebar Styles for BBPRess Widget
 li.widget_display_forums,
@@ -46,6 +33,15 @@ li.widget_display_replies, {
 // forum overview table header
 #bbpress-forums {
 
+	&,
+	ul.bbp-lead-topic, 
+	ul.bbp-topics,
+	ul.bbp-forums, 
+	ul.bbp-replies,
+	{
+		font-size: inherit;
+	}
+
 	// disable all outlines
 	ul.bbp-lead-topic,
 	fieldset.bbp-form,
@@ -67,6 +63,7 @@ li.widget_display_replies, {
 
 	// forum listing
 	li.bbp-header {
+		font-size: $meta-font-size;
 		background: $app-background-color;
 		border: none;
 		border-bottom: 2px solid invert($app-background-color);
@@ -79,6 +76,25 @@ li.widget_display_replies, {
 	// thread view
 	li.bbp-footer {
 		display: none;
+	}
+
+	li.bbp-topic-title {
+		width: 65%;
+	}
+
+	// topic header
+	li.bbp-header {
+		div.bbp-reply-content {
+			margin: 0;
+		}
+	}
+	div.bbp-reply-content {
+		margin: 0;
+	}
+	.bbp-meta {
+		font-size: $meta-font-size;
+		line-height: 200%;
+		border-top: 1px solid #B1B1B1;
 	}
 
 	// form

@@ -11,6 +11,13 @@
 
 <div id="bbpress-forums">
 
+	<div class="bbp-breadcrumb">
+		<p>
+			<a href="/forums/forum/digital-backyards/" class="bbp-breadcrumb-home">Digital Backyards Forum</a>
+			<span class="bbp-breadcrumb-separator">›</span> <span class="bbp-breadcrumb-current">topic title</span>
+		</p>
+	</div>
+
 	<?php do_action( 'bbp_template_before_single_topic' ); ?>
 
 	<?php if ( post_password_required() ) : ?>
