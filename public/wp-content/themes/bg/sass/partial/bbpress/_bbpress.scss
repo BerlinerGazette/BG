@@ -30,6 +30,14 @@ li.widget_display_replies, {
 	}
 }
 
+.bbp-topics-front ul.super-sticky,
+.bbp-topics ul.super-sticky,
+.bbp-topics ul.sticky,
+.bbp-forum-content ul.sticky
+{
+	background: darken(white, 7) !important;
+}
+
 // forum overview table header
 #bbpress-forums {
 
@@ -40,6 +48,10 @@ li.widget_display_replies, {
 	ul.bbp-replies,
 	{
 		font-size: inherit;
+	}
+
+	.bbp-pagination-count {
+		font-size: $meta-font-size;
 	}
 
 	// disable all outlines
@@ -88,6 +100,8 @@ li.widget_display_replies, {
 			margin: 0;
 		}
 	}
+
+
 	div.bbp-reply-content {
 		margin: 0;
 	}
