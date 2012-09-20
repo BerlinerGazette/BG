@@ -80,8 +80,14 @@
 				</a>
 			</h1>
 			<div id="topbar">
-				<?php require_once TEMPLATEPATH.'/elements/blogpost-ticker.php' ?>
-				<?php require_once TEMPLATEPATH.'/elements/searchform.php'; ?>
+				<?php
+				if (function_exists('is_bbpress') && is_bbpress()) {
+					echo 'Welcome to the collaborative platform of “Digital Backyards”';
+				} else {
+					require_once TEMPLATEPATH.'/elements/blogpost-ticker.php';
+				}
+				require_once TEMPLATEPATH.'/elements/searchform.php';
+				?>
 			</div>
 		</div>
 		<div id="body">
