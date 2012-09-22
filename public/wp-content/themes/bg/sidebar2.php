@@ -105,7 +105,7 @@
 		if (function_exists('is_bbpress') && is_bbpress()) {
 			dynamic_sidebar('sidebar-bbpress-right');
 			?>
-			<iframe width="220" height="450" class="bbpress-twitter-wall" src="http://twitter-wall.berlinergazette.de/?page=1"></iframe>
+			<div class="db-twitter-wall twitter-wall"></div>
 			<?php
 		}
 	}

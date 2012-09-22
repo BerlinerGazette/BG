@@ -3,6 +3,9 @@ input, textarea, select {
 }
 
 form {
+	fieldset {
+		width: 100%;
+	}
 	p {
 		label {
 			width: 120px;

@@ -33,18 +33,16 @@
 
 			<?php do_action( 'bbp_theme_before_topic_form' ); ?>
 
-			<fieldset class="bbp-form">
-				<legend>
-
-					<?php
+			<h3><?php
 						if ( bbp_is_topic_edit() )
 							printf( __( 'Now Editing &ldquo;%s&rdquo;', 'bbpress' ), bbp_get_topic_title() );
 						else
 							bbp_is_single_forum() ? printf( __( 'Create New Topic in &ldquo;%s&rdquo;', 'bbpress' ), bbp_get_forum_title() ) : _e( 'Create New Topic', 'bbpress' );
-					?>
+			?>
+			</h3>
 
-				</legend>
-
+			<fieldset>
+			
 				<?php do_action( 'bbp_theme_before_topic_form_notices' ); ?>
 
 				<?php if ( !bbp_is_topic_edit() && bbp_is_forum_closed() ) : ?>
@@ -65,132 +63,130 @@
 
 				<?php do_action( 'bbp_template_notices' ); ?>
 
-				<div>
+				<?php bbp_get_template_part( 'form', 'anonymous' ); ?>
 
-					<?php bbp_get_template_part( 'form', 'anonymous' ); ?>
+				<?php do_action( 'bbp_theme_before_topic_form_title' ); ?>
 
-					<?php do_action( 'bbp_theme_before_topic_form_title' ); ?>
+				<p>
+					<label for="bbp_topic_title"><?php echo __( 'Topic Title', 'bbpress' ); ?></label>
+					<input type="text" id="bbp_topic_title" value="<?php bbp_form_topic_title(); ?>" tabindex="<?php bbp_tab_index(); ?>" size="40" name="bbp_topic_title" maxlength="<?php bbp_title_max_length(); ?>" />
+				</p>
+
+				<?php do_action( 'bbp_theme_after_topic_form_title' ); ?>
+
+				<?php do_action( 'bbp_theme_before_topic_form_content' ); ?>
+
+				<?php if ( !function_exists( 'wp_editor' ) ) : ?>
 
 					<p>
-						<label for="bbp_topic_title"><?php printf( __( 'Topic Title (Maximum Length: %d):', 'bbpress' ), bbp_get_title_max_length() ); ?></label><br />
-						<input type="text" id="bbp_topic_title" value="<?php bbp_form_topic_title(); ?>" tabindex="<?php bbp_tab_index(); ?>" size="40" name="bbp_topic_title" maxlength="<?php bbp_title_max_length(); ?>" />
+						<label for="bbp_topic_content"><?php _e( 'Topic', 'bbpress' ); ?></label>
+						<textarea id="bbp_topic_content" tabindex="<?php bbp_tab_index(); ?>" name="bbp_topic_content "rows="7" cols="57"><?php bbp_form_topic_content(); ?></textarea>
 					</p>
 
-					<?php do_action( 'bbp_theme_after_topic_form_title' ); ?>
+				<?php else : ?>
 
-					<?php do_action( 'bbp_theme_before_topic_form_content' ); ?>
+					<?php bbp_the_content( array( 'context' => 'topic' ) ); ?>
 
-					<?php if ( !function_exists( 'wp_editor' ) ) : ?>
+				<?php endif; ?>
 
-						<p>
-							<label for="bbp_topic_content"><?php _e( 'Topic:', 'bbpress' ); ?></label><br />
-							<textarea id="bbp_topic_content" tabindex="<?php bbp_tab_index(); ?>" name="bbp_topic_content" cols="60" rows="6"><?php bbp_form_topic_content(); ?></textarea>
-						</p>
+				<?php do_action( 'bbp_theme_after_topic_form_content' ); ?>
 
-					<?php else : ?>
+				<?php if ( !current_user_can( 'unfiltered_html' ) ) : ?>
 
-						<?php bbp_the_content( array( 'context' => 'topic' ) ); ?>
+					<p class="form-allowed-tags">
+						<code>
+							<strong>Allowed Tags:</strong><br />
+							<?php bbp_allowed_tags(); ?>
+						</code>
+					</p>
 
-					<?php endif; ?>
+				<?php endif; ?>
 
-					<?php do_action( 'bbp_theme_after_topic_form_content' ); ?>
+				<?php if ( !bbp_is_single_forum() ) : ?>
 
-					<?php if ( !current_user_can( 'unfiltered_html' ) ) : ?>
+					<?php do_action( 'bbp_theme_before_topic_form_forum' ); ?>
 
-						<p class="form-allowed-tags">
-							<label><?php _e( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:','bbpress' ); ?></label><br />
-							<code><?php bbp_allowed_tags(); ?></code>
-						</p>
+					<p>
+						<label for="bbp_forum_id"><?php _e( 'Forum:', 'bbpress' ); ?></label><br />
+						<?php bbp_dropdown( array( 'selected' => bbp_get_form_topic_forum() ) ); ?>
+					</p>
 
-					<?php endif; ?>
+					<?php do_action( 'bbp_theme_after_topic_form_forum' ); ?>
 
-					<?php if ( !bbp_is_single_forum() ) : ?>
+				<?php endif; ?>
 
-						<?php do_action( 'bbp_theme_before_topic_form_forum' ); ?>
+				<?php if ( current_user_can( 'moderate' ) ) : ?>
 
-						<p>
-							<label for="bbp_forum_id"><?php _e( 'Forum:', 'bbpress' ); ?></label><br />
-							<?php bbp_dropdown( array( 'selected' => bbp_get_form_topic_forum() ) ); ?>
-						</p>
+					<?php do_action( 'bbp_theme_before_topic_form_type' ); ?>
 
-						<?php do_action( 'bbp_theme_after_topic_form_forum' ); ?>
+					<p>
 
-					<?php endif; ?>
+						<label for="bbp_stick_topic"><?php _e( 'Topic Type:', 'bbpress' ); ?></label><br />
 
-					<?php if ( current_user_can( 'moderate' ) ) : ?>
+						<?php bbp_topic_type_select(); ?>
 
-						<?php do_action( 'bbp_theme_before_topic_form_type' ); ?>
+					</p>
 
-						<p>
+					<?php do_action( 'bbp_theme_after_topic_form_type' ); ?>
 
-							<label for="bbp_stick_topic"><?php _e( 'Topic Type:', 'bbpress' ); ?></label><br />
+				<?php endif; ?>
 
-							<?php bbp_topic_type_select(); ?>
+				<?php if ( bbp_is_subscriptions_active() && !bbp_is_anonymous() && ( !bbp_is_topic_edit() || ( bbp_is_topic_edit() && !bbp_is_topic_anonymous() ) ) ) : ?>
 
-						</p>
+					<?php do_action( 'bbp_theme_before_topic_form_subscriptions' ); ?>
 
-						<?php do_action( 'bbp_theme_after_topic_form_type' ); ?>
+					<p>
+						<input name="bbp_topic_subscription" id="bbp_topic_subscription" type="checkbox" value="bbp_subscribe" <?php bbp_form_topic_subscribed(); ?> tabindex="<?php bbp_tab_index(); ?>" />
 
-					<?php endif; ?>
+						<?php if ( bbp_is_topic_edit() && ( get_the_author_meta( 'ID' ) != bbp_get_current_user_id() ) ) : ?>
 
-					<?php if ( bbp_is_subscriptions_active() && !bbp_is_anonymous() && ( !bbp_is_topic_edit() || ( bbp_is_topic_edit() && !bbp_is_topic_anonymous() ) ) ) : ?>
+							<label for="bbp_topic_subscription"><?php _e( 'Notify the author of follow-up replies via email', 'bbpress' ); ?></label>
 
-						<?php do_action( 'bbp_theme_before_topic_form_subscriptions' ); ?>
+						<?php else : ?>
 
-						<p>
-							<input name="bbp_topic_subscription" id="bbp_topic_subscription" type="checkbox" value="bbp_subscribe" <?php bbp_form_topic_subscribed(); ?> tabindex="<?php bbp_tab_index(); ?>" />
+							<label for="bbp_topic_subscription"><?php _e( 'Notify me of follow-up replies via email', 'bbpress' ); ?></label>
 
-							<?php if ( bbp_is_topic_edit() && ( get_the_author_meta( 'ID' ) != bbp_get_current_user_id() ) ) : ?>
+						<?php endif; ?>
+					</p>
 
-								<label for="bbp_topic_subscription"><?php _e( 'Notify the author of follow-up replies via email', 'bbpress' ); ?></label>
+					<?php do_action( 'bbp_theme_after_topic_form_subscriptions' ); ?>
 
-							<?php else : ?>
+				<?php endif; ?>
 
-								<label for="bbp_topic_subscription"><?php _e( 'Notify me of follow-up replies via email', 'bbpress' ); ?></label>
+				<?php if ( bbp_allow_revisions() && bbp_is_topic_edit() ) : ?>
 
-							<?php endif; ?>
-						</p>
+					<?php do_action( 'bbp_theme_before_topic_form_revisions' ); ?>
 
-						<?php do_action( 'bbp_theme_after_topic_form_subscriptions' ); ?>
+					<fieldset class="bbp-form">
+						<legend><?php _e( 'Revision', 'bbpress' ); ?></legend>
+						<div>
+							<input name="bbp_log_topic_edit" id="bbp_log_topic_edit" type="checkbox" value="1" <?php bbp_form_topic_log_edit(); ?> tabindex="<?php bbp_tab_index(); ?>" />
+							<label for="bbp_log_topic_edit"><?php _e( 'Keep a log of this edit:', 'bbpress' ); ?></label><br />
+						</div>
 
-					<?php endif; ?>
+						<div>
+							<label for="bbp_topic_edit_reason"><?php printf( __( 'Optional reason for editing:', 'bbpress' ), bbp_get_current_user_name() ); ?></label><br />
+							<input type="text" value="<?php bbp_form_topic_edit_reason(); ?>" tabindex="<?php bbp_tab_index(); ?>" size="40" name="bbp_topic_edit_reason" id="bbp_topic_edit_reason" />
+						</div>
+					</fieldset>
 
-					<?php if ( bbp_allow_revisions() && bbp_is_topic_edit() ) : ?>
+					<?php do_action( 'bbp_theme_after_topic_form_revisions' ); ?>
 
-						<?php do_action( 'bbp_theme_before_topic_form_revisions' ); ?>
+				<?php endif; ?>
 
-						<fieldset class="bbp-form">
-							<legend><?php _e( 'Revision', 'bbpress' ); ?></legend>
-							<div>
-								<input name="bbp_log_topic_edit" id="bbp_log_topic_edit" type="checkbox" value="1" <?php bbp_form_topic_log_edit(); ?> tabindex="<?php bbp_tab_index(); ?>" />
-								<label for="bbp_log_topic_edit"><?php _e( 'Keep a log of this edit:', 'bbpress' ); ?></label><br />
-							</div>
+				<?php do_action( 'bbp_theme_before_topic_form_submit_wrapper' ); ?>
 
-							<div>
-								<label for="bbp_topic_edit_reason"><?php printf( __( 'Optional reason for editing:', 'bbpress' ), bbp_get_current_user_name() ); ?></label><br />
-								<input type="text" value="<?php bbp_form_topic_edit_reason(); ?>" tabindex="<?php bbp_tab_index(); ?>" size="40" name="bbp_topic_edit_reason" id="bbp_topic_edit_reason" />
-							</div>
-						</fieldset>
+				<div class="bbp-submit-wrapper">
 
-						<?php do_action( 'bbp_theme_after_topic_form_revisions' ); ?>
+					<?php do_action( 'bbp_theme_before_topic_form_submit_button' ); ?>
 
-					<?php endif; ?>
+					<button type="submit" tabindex="<?php bbp_tab_index(); ?>" id="bbp_topic_submit" name="bbp_topic_submit" class="button submit"><?php _e( 'Submit', 'bbpress' ); ?></button>
 
-					<?php do_action( 'bbp_theme_before_topic_form_submit_wrapper' ); ?>
-
-					<div class="bbp-submit-wrapper">
-
-						<?php do_action( 'bbp_theme_before_topic_form_submit_button' ); ?>
-
-						<button type="submit" tabindex="<?php bbp_tab_index(); ?>" id="bbp_topic_submit" name="bbp_topic_submit" class="button submit"><?php _e( 'Submit', 'bbpress' ); ?></button>
-
-						<?php do_action( 'bbp_theme_after_topic_form_submit_button' ); ?>
-
-					</div>
-
-					<?php do_action( 'bbp_theme_after_topic_form_submit_wrapper' ); ?>
+					<?php do_action( 'bbp_theme_after_topic_form_submit_button' ); ?>
 
 				</div>
+
+				<?php do_action( 'bbp_theme_after_topic_form_submit_wrapper' ); ?>
 
 				<?php bbp_topic_form_fields(); ?>
 

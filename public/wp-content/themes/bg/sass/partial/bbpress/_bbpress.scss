@@ -38,6 +38,19 @@ li.widget_display_replies, {
 	background: darken(white, 7) !important;
 }
 
+p.form-allowed-tags {
+	display: block;
+	width: auto !important;
+	code {
+		width: auto !important;
+		border: #CEE1EF 1px solid;
+		@include background(aliceBlue);
+		display: block;
+		padding: 0.5em;
+		font-family: Monaco, Courier;
+	}
+}
+
 // forum overview table header
 #bbpress-forums {
 
@@ -140,15 +153,6 @@ li.widget_display_replies, {
 		label {
 			&:after {
 				content: '';
-			}
-		}
-		p.form-allowed-tags {
-			code {
-				border: #CEE1EF 1px solid;
-				@include background(aliceBlue);
-				display: table-cell;
-				padding: 0.5em;
-				font-family: Monaco, Courier;
 			}
 		}
 		.bbp-submit-wrapper {

@@ -28,8 +28,8 @@
 			<?php do_action( 'bbp_theme_before_topic_started_by' ); ?>
 
 			<span class="bbp-topic-started-by">Started by: <?php
-			if (bbp_is_reply_anonymous(bbp_get_reply_id())) {
-				bbp_reply_author_link( array('show_role' => false , 'type' => 'name'));
+			if (bbp_is_topic_anonymous(bbp_get_topic_id())) {
+				bbp_topic_author_link( array('show_role' => false, 'type' => 'name'));
 			} else {
 				the_author_posts_link();
 			}

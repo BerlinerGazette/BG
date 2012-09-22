@@ -25,8 +25,9 @@
 
 			<?php do_action( 'bbp_theme_before_reply_form' ); ?>
 
-			<fieldset class="bbp-form">
-				<legend><?php printf( __( 'Reply To: %s', 'bbpress' ), bbp_get_topic_title() ); ?></legend>
+			<h3><?php printf( __( 'Reply To: %s', 'bbpress' ), bbp_get_topic_title() ); ?></h3>
+
+			<fieldset>
 
 				<?php do_action( 'bbp_theme_before_reply_form_notices' ); ?>
 
@@ -72,8 +73,10 @@
 					<?php if ( !current_user_can( 'unfiltered_html' ) ) : ?>
 
 						<p class="form-allowed-tags">
-							<label><?php _e( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:','bbpress' ); ?></label><br />
-							<code><?php bbp_allowed_tags(); ?></code>
+						<code>
+							<strong>Allowed Tags:</strong><br />
+							<?php bbp_allowed_tags(); ?>
+						</code>
 						</p>
 
 					<?php endif; ?>
