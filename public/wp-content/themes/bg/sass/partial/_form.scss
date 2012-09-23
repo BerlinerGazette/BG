@@ -17,6 +17,9 @@ form {
 		}
 		input {
 			width: 300px;
+			&[type="checkbox"] {
+				width: auto;
+			}
 		}
 		textarea {
 			width: 420px;
