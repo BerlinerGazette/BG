@@ -1,0 +1,13 @@
+// styles for twitter-wall
+.twitter-wall {
+	height: 600px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	input.q {
+		width: 100%;
+	}
+	margin-bottom: 1em;
+	.twt-border {
+		min-width: 210px !important;
+	}
+}
