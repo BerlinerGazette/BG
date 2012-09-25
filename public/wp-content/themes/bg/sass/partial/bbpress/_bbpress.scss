@@ -38,6 +38,16 @@ li.widget_display_replies, {
 	background: darken(white, 7) !important;
 }
 
+div.bbp-topic-header,
+div.bbp-reply-header,
+li.bbp-body div.hentry,
+{
+	padding: 0.5em 0.5em 1em 0.5em;
+}
+div.bbp-reply-content p:last-child {
+	margin-bottom: 0;
+}
+
 p.form-allowed-tags {
 	display: block;
 	width: auto !important;
@@ -114,11 +124,15 @@ p.form-allowed-tags {
 		}
 	}
 
-
-	div.bbp-reply-content {
+	// topic content single entry
+	div.bbp-reply-content,
+	div.div.bbp-topic-content,
+	{
 		margin: 0;
+		padding: 0em 0.5em 0 0;
 	}
 	.bbp-meta {
+		text-align: right;
 		font-size: $meta-font-size;
 		line-height: 200%;
 		border-bottom: 1px solid #B1B1B1;

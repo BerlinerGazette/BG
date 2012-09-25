@@ -14,7 +14,7 @@
 	<div class="bbp-breadcrumb">
 		<p>
 			<a href="/forums/forum/digital-backyards/" class="bbp-breadcrumb-home">Digital Backyards Forum</a>
-			<span class="bbp-breadcrumb-separator">›</span> <span class="bbp-breadcrumb-current">topic title</span>
+			<span class="bbp-breadcrumb-separator">›</span> <span class="bbp-breadcrumb-current"><?= bbp_get_topic_title() ?></span>
 		</p>
 	</div>
 

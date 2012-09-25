@@ -8,13 +8,6 @@
  */
 
 ?>
-<!--
-<div class="bbp-reply-header">
-
-	
-
-</div><!-- .bbp-reply-header -->
-
 <div id="post-<?php bbp_reply_id(); ?>" <?php bbp_reply_class(); ?>>
 
 	<div class="bbp-reply-content">

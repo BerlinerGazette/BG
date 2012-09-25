@@ -1,4 +1,4 @@
-<li class="teaser" style="font-weight:bold; font-size: 1.2em; line-height: 1.2em;">
+<li class="teaser teaser-hund" style="font-weight:bold; font-size: 1.2em; line-height: 1.2em;">
 	<img title="Spenden" src="http://berlinergazette.de/wp-content/uploads/bg_dog_185px_white_transparent.png" alt="Die Berliner Gazette durch Spenden unterstützen" />
 	<?php if (!isset($cat) || $cat != BGProjectConfig::$digitalBackyards['category_id']) { ?>
 	<p>
