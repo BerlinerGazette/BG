@@ -1,4 +1,5 @@
 /**
+ * ScrollTo Plugin
  * Copyright (c) 2007-2012 Ariel Flesler - aflesler(at)gmail(dot)com | http://flesler.blogspot.com
  * Dual licensed under MIT and GPL.
  * @author Ariel Flesler
@@ -23,7 +24,7 @@ TwitterWall = function(selector, apiRoot) {
 		q: ''
 	};
 
-	this.template = '<input type="search" class="q" name="q" value="" placeholder="search" /><div class="tweets"></div>';
+	this.template = '<div class="searchForm"><input type="search" class="q" name="q" value="" placeholder="search" /></div><div class="tweets"></div>';
 	this.el = $(selector).html(this.template);
 
 	this.searchInput = this.el.find('input');
