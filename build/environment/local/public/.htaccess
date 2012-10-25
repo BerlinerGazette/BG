@@ -36,6 +36,8 @@ RewriteRule ^bqv/? 						/seminar/projekte/bqv/ [QSA,R,L]
 RewriteRule ^symposium/digital-backyards/forum 	/digital-backyards/forum [QSA,R,L]
 RewriteRule ^digital-backyards/forum? 			/forums/forum/digital-backyards/ [QSA,R,L]
 RewriteRule ^digital-backyards/? 				/symposium/digital-backyards/ [QSA,R,L]
+RewriteRule ^digitalbackyards/? 				/symposium/digital-backyards/ [QSA,R,L]
+RewriteRule ^digi-yards-documentation/?			/forums/forum/digital-backyards/ [QSA,R,L]
 RewriteRule ^forums/$							/forums/forum/digital-backyards/ [QSA,R,L]
 
 # wp-rewrite rules
