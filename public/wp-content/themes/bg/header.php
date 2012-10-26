@@ -82,7 +82,7 @@
 			<div id="topbar">
 				<?php
 				if (function_exists('is_bbpress') && is_bbpress()) {
-					echo 'Welcome to the collaborative platform of “Digital Backyards”';
+					echo 'Welcome to the documentation of “Digital Backyards”';
 				} else {
 					require_once TEMPLATEPATH.'/elements/blogpost-ticker.php';
 				}
