@@ -33,6 +33,7 @@ TwitterWall = function(selector, apiRoot) {
 		if (keyCode != 13) {
 			return true;
 		}
+		that.ticks = 0;
 		that.loadTweets({
 			q: $(this).val()
 		});
@@ -70,9 +71,15 @@ TwitterWall = function(selector, apiRoot) {
 		}
 		that.el.find('.tweets').html(rendered);
 		if (that.ticks < 1) {
-			$('body').append('<script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>');
+			that.appendTwitterScript();
 		}
 		return that;
+	};
+
+	this.appendTwitterScript = function() 
+	{
+		$('body').append('<script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>');
+		return true;
 	};
 
 	this.renderSingleTweet = function(tweet)

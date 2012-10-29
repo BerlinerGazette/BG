@@ -104,9 +104,6 @@
 		}
 		if (function_exists('is_bbpress') && is_bbpress()) {
 			dynamic_sidebar('sidebar-bbpress-right');
-			?>
-			<div class="db-twitter-wall twitter-wall"></div>
-			<?php
 		}
 	}
 	?>

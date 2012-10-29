@@ -50,7 +50,9 @@ $(document).ready(function() {
 	$('#searchForm input[type=text], #NewsletterForm input[type=text]').toggleValue();
 
 	// Twitter Wall
-	wall = new TwitterWall('.db-twitter-wall', 'http://twitter-wall.berlinergazette.de/?ajax=1');
+	if ($('.db-twitter-wall').length > 0) {
+		var wall = new TwitterWall('.db-twitter-wall', 'http://twitter-wall.berlinergazette.de/?ajax=1');
+	}
 	
 	// autolink dropdowns with urls
 	$('select.autoLink').change(function(e) {

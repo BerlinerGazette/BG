@@ -31,18 +31,17 @@
 			?>
 			<br />
 			<?php
-		} ?>
-		
-		<?php
+		} 
+
 		// found posts
 		if (have_posts()) { ?>
-		<h1><?= sprintf(__('Suchbegriff <q>%s</q> in Beiträgen'), $s) ?></h1>
-		<ul class="posts">
-			<?php while (have_posts()) {
-				require TEMPLATEPATH.'/elements/post.php';
-			} ?>
-		</ul>
-		<?php require TEMPLATEPATH.'/elements/navigation.php';
+			<h1><?= sprintf(__('Suchbegriff <q>%s</q> in Beiträgen'), $s) ?></h1>
+			<ul class="posts">
+				<?php while (have_posts()) {
+					require TEMPLATEPATH.'/elements/post.php';
+				} ?>
+			</ul>
+			<?php require TEMPLATEPATH.'/elements/navigation.php';
 		} // have_posts
 		
 	} // if ?>
