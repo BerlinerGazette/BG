@@ -30,7 +30,7 @@
 						$(this).val('').toggleClass(options.toggleClass);
 					}
 				}).blur(function() {
-					if ($.trim($(this).val()) == '') {
+					if ($.trim($(this).val()) === '') {
 						$(this).val(options.value).toggleClass(options.toggleClass);
 					}
 				});
