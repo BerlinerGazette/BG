@@ -5,7 +5,7 @@ Plugin URI: http://www.nextgen-gallery.com/
 Description: A NextGENeration Photo Gallery for WordPress
 Author: Photocrati
 Author URI: http://www.photocrati.com/
-Version: 1.9.6
+Version: 1.9.12
 
 Copyright (c) 2007-2011 by Alex Rabe & NextGEN DEV-Team
 Copyright (c) 2012 Photocrati Media
@@ -45,14 +45,13 @@ if (!class_exists('E_Clean_Exit')) {
 if (!class_exists('nggLoader')) {
 	class nggLoader {
 
-		var $version     = '1.9.6';
-		var $dbversion   = '1.8.0';
-		var $minimum_WP  = '3.2';
+		var $version     = '1.9.12';
+		var $dbversion   = '1.8.1';
+		var $minimum_WP  = '3.5';
 		var $donators    = 'http://www.nextgen-gallery.com/donators.php';
 		var $options     = '';
 		var $manage_page;
 		var $add_PHP5_notice = false;
-		var $update_notice_setting = 'ngg_show_update_notice';
 
 		function nggLoader() {
 
@@ -77,16 +76,13 @@ if (!class_exists('nggLoader')) {
 			register_deactivation_hook( $this->plugin_name, array(&$this, 'deactivate') );
 
 			// Register a uninstall hook to remove all tables & option automatic
-			register_uninstall_hook( $this->plugin_name, array('nggLoader', 'uninstall') );
+			register_uninstall_hook( $this->plugin_name, array(__CLASS__, 'uninstall') );
 
 			// Start this plugin once all other plugins are fully loaded
 			add_action( 'plugins_loaded', array(&$this, 'start_plugin') );
 
 			// Register_taxonomy must be used during the init
 			add_action( 'init', array(&$this, 'register_taxonomy') );
-
-			// Hook to upgrade all blogs with one click and adding a new one later
-			add_action( 'wpmu_upgrade_site', array(&$this, 'multisite_upgrade') );
 			add_action( 'wpmu_new_blog', array(&$this, 'multisite_new_blog'), 10, 6);
 
 			// Add a message for PHP4 Users, can disable the update message later on
@@ -104,13 +100,6 @@ if (!class_exists('nggLoader')) {
 
 			// Handle upload requests
 			add_action('init', array(&$this, 'handle_upload_request'));
-
-			// Display "Photocrati Acquisition Announcement"
-			add_action('admin_init', array(&$this, 'display_update_notice'));
-
-			// AJAX action to hide news notice
-			add_action('wp_ajax_hide_news_notice', array(&$this, 'hide_news_notice'));
-
 		}
 
 		function start_plugin() {
@@ -123,9 +112,6 @@ if (!class_exists('nggLoader')) {
 			// All credits to the tranlator
 			$this->translator  = '<p class="hint">'. __('<strong>Translation by : </strong><a target="_blank" href="http://alexrabe.de/wordpress-plugins/nextgen-gallery/languages/">See here</a>', 'nggallery') . '</p>';
 			$this->translator .= '<p class="hint">'. __('<strong>This translation is not yet updated for Version 1.9.0</strong>. If you would like to help with translation, download the current po from the plugin folder and read <a href="http://alexrabe.de/wordpress-plugins/wordtube/translation-of-plugins/">here</a> how you can translate the plugin.', 'nggallery') . '</p>';
-
-			// Check for upgrade
-			$this->check_for_upgrade();
 
 			// Content Filters
 			add_filter('ngg_gallery_name', 'sanitize_title');
@@ -147,8 +133,8 @@ if (!class_exists('nggLoader')) {
 				add_action('parse_request',  array(&$this, 'check_request') );
 
 				// Add the script and style files
-				add_action('template_redirect', array(&$this, 'load_scripts') );
-				add_action('template_redirect', array(&$this, 'load_styles') );
+				add_action('wp_enqueue_scripts', array(&$this, 'load_scripts') );
+				add_action('wp_enqueue_scripts', array(&$this, 'load_styles') );
 
 			}
 		}
@@ -231,23 +217,6 @@ if (!class_exists('nggLoader')) {
 
 			return true;
 
-		}
-
-		function check_for_upgrade() {
-
-			// Inform about a database upgrade
-			if( get_option( 'ngg_db_version' ) != NGG_DBVERSION ) {
-				if ( isset ($_GET['page']) && $_GET['page'] == NGGFOLDER ) return;
-				add_action(
-					'admin_notices',
-					create_function(
-						'',
-						'echo \'<div id="message" class="error"><p><strong>' . __('Please update the database of NextGEN Gallery.', 'nggallery') . ' <a href="admin.php?page=nextgen-gallery">' . __('Click here to proceed.', 'nggallery') . '</a>' . '</strong></p></div>\';'
-					)
-				);
-			}
-
-			return;
 		}
 
 		function define_tables() {
@@ -343,8 +312,6 @@ if (!class_exists('nggLoader')) {
 				if ( is_admin() ) {
 					require_once (dirname (__FILE__) . '/admin/admin.php');
 					require_once (dirname (__FILE__) . '/admin/media-upload.php');
-					if ( defined('IS_WP_3_3') )
-						require_once (dirname (__FILE__) . '/admin/pointer.php');
 					$this->nggAdminPanel = new nggAdminPanel();
 				}
 			}
@@ -463,6 +430,37 @@ if (!class_exists('nggLoader')) {
 			}
 		}
 
+		/**
+		 * Removes all transients created by NextGEN. Called during activation
+		 * and deactivation routines
+		 */
+		static function remove_transients()
+		{
+			global $wpdb, $_wp_using_ext_object_cache;
+
+			// Fetch all transients
+			$query = "
+				SELECT option_name FROM {$wpdb->options}
+				WHERE option_name LIKE '%ngg_request%'
+			";
+			$transient_names = $wpdb->get_col($query);;
+
+			// Delete all transients in the database
+			$query = "
+				DELETE FROM {$wpdb->options}
+				WHERE option_name LIKE '%ngg_request%'
+			";
+			$wpdb->query($query);
+
+			// If using an external caching mechanism, delete the cached items
+			if ($_wp_using_ext_object_cache) {
+				foreach ($transient_names as $transient) {
+					wp_cache_delete($transient, 'transient');
+					wp_cache_delete(substr($transient, 11), 'transient');
+				}
+			}
+		}
+
 		function activate() {
 			global $wpdb;
 			//Starting from version 1.8.0 it's works only with PHP5.2
@@ -471,6 +469,9 @@ if (!class_exists('nggLoader')) {
 					wp_die("Sorry, but you can't run this plugin, it requires PHP 5.2 or higher.");
 					return;
 			}
+
+			// Clean up transients
+			self::remove_transients();
 
 			include_once (dirname (__FILE__) . '/admin/install.php');
 
@@ -482,7 +483,7 @@ if (!class_exists('nggLoader')) {
 
 				if ($isNetwork and $isActivation){
 					$old_blog = $wpdb->blogid;
-					$blogids = $wpdb->get_col($wpdb->prepare("SELECT blog_id FROM $wpdb->blogs"));
+					$blogids = $wpdb->get_col($wpdb->prepare("SELECT blog_id FROM $wpdb->blogs", NULL));
 					foreach ($blogids as $blog_id) {
 						switch_to_blog($blog_id);
 						nggallery_install();
@@ -504,23 +505,17 @@ if (!class_exists('nggLoader')) {
 			// remove & reset the init check option
 			delete_option( 'ngg_init_check' );
 			delete_option( 'ngg_update_exists' );
+
+			// Clean up transients
+			self::remove_transients();
 		}
 
 		function uninstall() {
+			// Clean up transients
+			self::remove_transients();
+
 			include_once (dirname (__FILE__) . '/admin/install.php');
 			nggallery_uninstall();
-		}
-
-		function multisite_upgrade ( $blog_id ) {
-			global $wpdb;
-
-			include_once (dirname (__FILE__) . '/admin/upgrade.php');
-
-			$current_blog = $wpdb->blogid;
-			switch_to_blog( $blog_id );
-			ngg_upgrade();
-			switch_to_blog($current_blog);
-			return;
 		}
 
 		function disable_upgrade($option){
@@ -565,62 +560,6 @@ if (!class_exists('nggLoader')) {
 			if ( isset( $_GET['test-footer'] ) )
 				add_action( 'wp_footer', create_function('', 'echo \'<!--wp_footer-->\';'), 99999 );
 		}
-
-		/**
-		 * Gets the notice flag
-		 * @return string
-		 */
-		function get_notice_flag()
-		{
-			return str_replace('.', '', $this->update_notice_setting.$this->version);
-		}
-
-
-		/**
-		* Displays the latest update notice to an Administrator
-		*/
-		function display_update_notice()
-		{
-			if (is_admin() &&
-				current_user_can('administrator') &&
-				!(get_user_setting($this->get_notice_flag(), FALSE))) {
-
-				// Register a new script
-				wp_register_style('ngg_social_media', path_join(
-					NGGALLERY_URLPATH,
-					'admin/css/ngg_social_media.css'
-				));
-				wp_register_script('ngg_social_media', path_join(
-					NGGALLERY_URLPATH,
-					'admin/js/ngg_social_media.js'
-				), array('jquery'));
-				wp_register_script('ngg_news_notice', path_join(
-					NGGALLERY_URLPATH,
-					'admin/js/ngg_news_notice.js'
-				), array('wp-pointer', 'ngg_social_media'));
-
-				// Get the announcement notice content
-				ob_start();
-				require(path_join(
-					NGGALLERY_ABSPATH,
-					implode(DIRECTORY_SEPARATOR, array('admin', 'templates', 'latest_news_notice.php'))
-				));
-				$content = ob_get_contents();
-				ob_end_clean();
-
-				// Display the pointer
-				wp_enqueue_style( 'wp-pointer' );
-				wp_enqueue_script( 'utils' ); // for user settings
-				wp_enqueue_style('ngg_social_media');
-				wp_enqueue_script('ngg_news_notice');
-				wp_localize_script('ngg_news_notice', 'nggAdmin', array(
-					'content'	=>	$content,
-					'setting'	=>	$this->get_notice_flag(),
-					'nonce'		=> wp_create_nonce()
-				));
-			}
-		}
-
 
 		/**
 		* Handles upload requests
