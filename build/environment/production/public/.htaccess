@@ -31,7 +31,7 @@ RewriteRule ^lebenskuenstler/? 			/seminar/projekte/lebenskuenstler/ [QSA,R,L]
 # L311 / Learning from Fukushima Symposium
 RewriteRule ^learning-from-fukushima/? /symposium/learning-from-fukushima/ [QSA,R,L]
 # BQV (2012)
-RewriteRule ^bqv/? 						/seminar/projekte/bqv/ [QSA,R,L]
+RewriteRule ^bqv/? 						/seminar/bqv/ [QSA,R,L]
 # Digital Backyards (2012)
 RewriteRule ^symposium/digital-backyards/forum 	/digital-backyards/forum [QSA,R,L]
 RewriteRule ^digital-backyards/forum? 			/forums/forum/digital-backyards/ [QSA,R,L]
