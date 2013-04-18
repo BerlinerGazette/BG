@@ -9,7 +9,7 @@ RewriteCond %{REQUEST_URI} !^/(wp-login.php|wp-admin/|wp-content/plugins/|wp-inc
 RewriteRule .* - [F,NS,L]
 
 # redirect author names called via autor/[authoruri] to their profile
-RewriteRule ^autor/([^\/]+)/? /author/$1 [QSA,R,L]
+RewriteRule ^autor/([^\/]+)/? 			/author/$1 [QSA,R,L]
 # redirect some author names to their profiles directly
 RewriteRule ^(florian-kosak|magdalena-taube|krystian-woznicki|sarah-curth|marcel-eichner|lena-posingies|anton-scholz|fabian-wolff|david-pachali|chris-piallat|andi-weiland)/? /author/$1 [QSA,R,L]
 
@@ -39,6 +39,8 @@ RewriteRule ^digital-backyards/? 				/symposium/digital-backyards/ [QSA,R,L]
 RewriteRule ^digitalbackyards/? 				/symposium/digital-backyards/ [QSA,R,L]
 RewriteRule ^digi-yards-documentation/?			/forums/forum/digital-backyards/ [QSA,R,L]
 RewriteRule ^forums/$							/forums/forum/digital-backyards/ [QSA,R,L]
+# Complexity (2013)
+RewriteRule ^complicity/?$				/symposium/complicity/ [QSA,R,L]
 
 # wp-rewrite rules
 RewriteCond %{REQUEST_FILENAME} !-f
