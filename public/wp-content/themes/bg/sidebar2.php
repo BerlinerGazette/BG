@@ -43,6 +43,9 @@
 	if (isset($cat) && in_array($cat, array(BGProjectConfig::$bqv['category_id']))) {
 		$showMainSidebarDetailPage = false;
 	}
+	if (function_exists('is_bbpress') && is_bbpress()) {
+		$showMainSidebarDetailPage = false;
+	}
 	if ($showMainSidebarDetailPage) {
 		dynamic_sidebar('main_sidebar_right_detailpage');
 	}
